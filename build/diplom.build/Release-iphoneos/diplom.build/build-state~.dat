@@ -1,0 +1,279 @@
+Tdiplom
+v4
+r1
+cCheck dependencies
+cProcessInfoPlistFile /Antosha/diplom/build/Release-iphoneos/diplom.app/Info.plist diplom/diplom-Info.plist
+cProcessPCH /var/folders/1-/1-ysrVaAGQ8WzLhiiNJA5U+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/diplom-Prefix-dmbicliqiyokyeatfckccowzbdpe/diplom-Prefix.pch.pth diplom/diplom-Prefix.pch normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/main.o /Antosha/diplom/diplom/main.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/diplomViewController.o /Antosha/diplom/diplom/diplomViewController.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/diplomAppDelegate.o /Antosha/diplom/diplom/diplomAppDelegate.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cLd /Antosha/diplom/build/Release-iphoneos/diplom.app/diplom normal armv7
+cGenerateDSYMFile /Antosha/diplom/build/Release-iphoneos/diplom.app.dSYM /Antosha/diplom/build/Release-iphoneos/diplom.app/diplom
+cCopyStringsFile /Antosha/diplom/build/Release-iphoneos/diplom.app/en.lproj/InfoPlist.strings diplom/en.lproj/InfoPlist.strings
+cCompileStoryboard /Antosha/diplom/diplom/en.lproj/MainStoryboard.storyboard
+cCopyPNGFile /Antosha/diplom/build/Release-iphoneos/diplom.app/ad_1.png diplom/ad_1.png
+cTouch /Antosha/diplom/build/Release-iphoneos/diplom.app
+cValidate /Antosha/diplom/build/Release-iphoneos/diplom.app
+
+N/Antosha/diplom/build/Release-iphoneos/diplom.app
+t2
+s0
+
+N/Antosha/diplom/build/Release-iphoneos/diplom.app.dSYM
+t2
+s0
+
+N/Antosha/diplom/build/Release-iphoneos/diplom.app/Info.plist
+t2
+s0
+
+N/Antosha/diplom/build/Release-iphoneos/diplom.app/PkgInfo
+t2
+s0
+
+N/Antosha/diplom/build/Release-iphoneos/diplom.app/ad_1.png
+t2
+s0
+
+N/Antosha/diplom/build/Release-iphoneos/diplom.app/diplom
+t2
+s0
+
+N/Antosha/diplom/build/Release-iphoneos/diplom.app/en.lproj/InfoPlist.strings
+t2
+s0
+
+N/Antosha/diplom/build/Release-iphoneos/diplom.app/en.lproj/MainStoryboard.storyboardc
+t2
+s0
+
+N/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/diplom.LinkFileList
+c0000000050731A970000000000000134
+t1349720727
+s308
+
+N/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/diplomAppDelegate.o
+t2
+s0
+
+N/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/diplomViewController.o
+t2
+s0
+
+N/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/main.o
+t2
+s0
+
+N/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/com.apple.build-tools.platform.validate
+t2
+s0
+
+N/Antosha/diplom/diplom/ad_1.png
+c000000004F4463550000000000052F9C
+t1329881941
+s339868
+
+N/Antosha/diplom/diplom/diplom-Prefix.pch
+c0000000050730936000000000000013B
+t1349716278
+s315
+
+N/Antosha/diplom/diplom/diplomAppDelegate.m
+c0000000050730937000000000000084F
+t1349716279
+s2127
+
+N/Antosha/diplom/diplom/diplomViewController.m
+c000000005073176E00000000000019B0
+t1349719918
+s6576
+
+N/Antosha/diplom/diplom/en.lproj/InfoPlist.strings
+c0000000050730936000000000000002D
+t1349716278
+s45
+
+N/Antosha/diplom/diplom/en.lproj/MainStoryboard.storyboard
+c000000005073176E00000000000016C0
+t1349719918
+s5824
+
+N/Antosha/diplom/diplom/main.m
+c0000000050730936000000000000015C
+t1349716278
+s348
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk
+c000000004F65D4DA0000000000000110
+t1332073690
+s272
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c000000004E72F28700000000003AB0A0
+t1316156039
+s3846304
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004E72F3440000000000529540
+t1316156228
+s5412160
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c000000004E7808C7000000000078BE50
+t1316489415
+s7913040
+
+N/var/folders/1-/1-ysrVaAGQ8WzLhiiNJA5U+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/diplom-Prefix-dmbicliqiyokyeatfckccowzbdpe/diplom-Prefix.pch.pth
+t2
+s0
+
+Ndiplom/diplom-Info.plist
+c000000005073093600000000000004F6
+t1349716278
+s1270
+
+CCheck dependencies
+r0
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies83e031175223b641^b2d456175223b641^---0#1#0#--18"Check dependencies36"8D5FEFC0-03E2-439F-91E5-809379862BC5-
+
+CCompileC build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/diplomAppDelegate.o /Antosha/diplom/diplom/diplomAppDelegate.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s371413527.663733
+e371413527.790565
+r1
+xCompileC
+xbuild/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/diplomAppDelegate.o
+x/Antosha/diplom/diplom/diplomAppDelegate.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection50"Compile /Antosha/diplom/diplom/diplomAppDelegate.mc11baa175223b641^c763ca175223b641^---0#0#0#-19%DVTDocumentLocation2@58"file://localhost/Antosha/diplom/diplom/diplomAppDelegate.m0000000000000000^2292"CompileC build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/diplomAppDelegate.o diplom/diplomAppDelegate.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Antosha/diplom    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/clang -x objective-c -arch armv7 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -Os -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk -gdwarf-2 -fvisibility=hidden -Wno-sign-conversion -mthumb "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -miphoneos-version-min=5.0 -iquote /Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/diplom-generated-files.hmap -I/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/diplom-own-target-headers.hmap -I/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/diplom-all-target-headers.hmap -iquote /Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/diplom-project-headers.hmap -I/Antosha/diplom/build/Release-iphoneos/include -I/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/DerivedSources/armv7 -I/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/DerivedSources -F/Antosha/diplom/build/Release-iphoneos -DNS_BLOCK_ASSERTIONS=1 -include /var/folders/1-/1-ysrVaAGQ8WzLhiiNJA5U+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/diplom-Prefix-dmbicliqiyokyeatfckccowzbdpe/diplom-Prefix.pch -MMD -MT dependencies -MF /Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/diplomAppDelegate.d -c /Antosha/diplom/diplom/diplomAppDelegate.m -o /Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/diplomAppDelegate.o36"1C0FB344-9B2D-473A-B54E-D27B0F3E65C8-
+
+CCompileC build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/diplomViewController.o /Antosha/diplom/diplom/diplomViewController.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s371413527.663540
+e371413527.890510
+r1
+xCompileC
+xbuild/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/diplomViewController.o
+x/Antosha/diplom/diplom/diplomViewController.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+o/Antosha/diplom/diplom/diplomViewController.m:24:27:{24:27-24:31}: warning: passing 'diplomViewController *const __strong' to parameter of incompatible type 'id<UINavigationControllerDelegate,UIImagePickerControllerDelegate>' [3]
+o         picker.delegate = self;
+o                           ^~~~
+o1 warning generated.
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection53"Compile /Antosha/diplom/diplom/diplomViewController.m9cfda9175223b641^a9f8e3175223b641^-316"/Antosha/diplom/diplom/diplomViewController.m:24:27:{24:27-24:31}: warning: passing 'diplomViewController *const __strong' to parameter of incompatible type 'id<UINavigationControllerDelegate,UIImagePickerControllerDelegate>' [3]         picker.delegate = self;                           ^~~~1 warning generated.1(21%IDEActivityLogMessage2@149"Passing 'diplomViewController *const __strong' to parameter of incompatible type 'id<UINavigationControllerDelegate,UIImagePickerControllerDelegate>'-371413527#0#230#-1#-23%DVTTextDocumentLocation3@61"file://localhost/Antosha/diplom/diplom/diplomViewController.m0000000000000000^23#26#23#26#18446744073709551615#0#14"Semantic Issue1(3@61"file://localhost/Antosha/diplom/diplom/diplomViewController.m0000000000000000^23#26#23#30#18446744073709551615#0#-0#0#0#-19%DVTDocumentLocation4@61"file://localhost/Antosha/diplom/diplom/diplomViewController.m0000000000000000^2307"CompileC build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/diplomViewController.o diplom/diplomViewController.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Antosha/diplom    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/clang -x objective-c -arch armv7 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -Os -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk -gdwarf-2 -fvisibility=hidden -Wno-sign-conversion -mthumb "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -miphoneos-version-min=5.0 -iquote /Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/diplom-generated-files.hmap -I/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/diplom-own-target-headers.hmap -I/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/diplom-all-target-headers.hmap -iquote /Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/diplom-project-headers.hmap -I/Antosha/diplom/build/Release-iphoneos/include -I/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/DerivedSources/armv7 -I/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/DerivedSources -F/Antosha/diplom/build/Release-iphoneos -DNS_BLOCK_ASSERTIONS=1 -include /var/folders/1-/1-ysrVaAGQ8WzLhiiNJA5U+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/diplom-Prefix-dmbicliqiyokyeatfckccowzbdpe/diplom-Prefix.pch -MMD -MT dependencies -MF /Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/diplomViewController.d -c /Antosha/diplom/diplom/diplomViewController.m -o /Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/diplomViewController.o36"B92DF7D6-B6AD-44AB-82A8-C13C48C09AB3-
+
+CCompileC build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/main.o /Antosha/diplom/diplom/main.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s371413527.663527
+e371413527.767730
+r1
+xCompileC
+xbuild/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/main.o
+x/Antosha/diplom/diplom/main.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection37"Compile /Antosha/diplom/diplom/main.m0305aa175223b641^76aac4175223b641^---0#0#0#-19%DVTDocumentLocation2@45"file://localhost/Antosha/diplom/diplom/main.m0000000000000000^2227"CompileC build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/main.o diplom/main.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Antosha/diplom    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/clang -x objective-c -arch armv7 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -Os -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk -gdwarf-2 -fvisibility=hidden -Wno-sign-conversion -mthumb "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -miphoneos-version-min=5.0 -iquote /Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/diplom-generated-files.hmap -I/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/diplom-own-target-headers.hmap -I/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/diplom-all-target-headers.hmap -iquote /Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/diplom-project-headers.hmap -I/Antosha/diplom/build/Release-iphoneos/include -I/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/DerivedSources/armv7 -I/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/DerivedSources -F/Antosha/diplom/build/Release-iphoneos -DNS_BLOCK_ASSERTIONS=1 -include /var/folders/1-/1-ysrVaAGQ8WzLhiiNJA5U+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/diplom-Prefix-dmbicliqiyokyeatfckccowzbdpe/diplom-Prefix.pch -MMD -MT dependencies -MF /Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/main.d -c /Antosha/diplom/diplom/main.m -o /Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/main.o36"6E6AFC0A-0EAA-4C32-A195-4A4E60881E68-
+
+CCompileStoryboard /Antosha/diplom/diplom/en.lproj/MainStoryboard.storyboard
+s371413527.945906
+e371413529.495093
+r1
+xCompileStoryboard
+x/Antosha/diplom/diplom/en.lproj/MainStoryboard.storyboard
+oCouldn't open shared capabilities memory GSCapabilities (No such file or directory)
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection59"CompileStoryboard diplom/en.lproj/MainStoryboard.storyboard5c3af2175223b641^7ac67e195223b641^-84"Couldn't open shared capabilities memory GSCapabilities (No such file or directory)-0#0#0#-19%DVTDocumentLocation2@73"file://localhost/Antosha/diplom/diplom/en.lproj/MainStoryboard.storyboard0000000000000000^688"CompileStoryboard diplom/en.lproj/MainStoryboard.storyboard    cd /Antosha/diplom    setenv IBSC_MINIMUM_COMPATIBILITY_VERSION 5.0    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    setenv XCODE_DEVELOPER_USR_PATH /Developer/usr/bin/..    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Antosha/diplom/build/Release-iphoneos/diplom.app/en.lproj/MainStoryboard.storyboardc /Antosha/diplom/diplom/en.lproj/MainStoryboard.storyboard --sdk /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk36"B5429028-AFDA-47DE-9B60-D191534AC5E4-
+
+CCopyPNGFile /Antosha/diplom/build/Release-iphoneos/diplom.app/ad_1.png diplom/ad_1.png
+s371413527.945938
+e371413529.199713
+r1
+xCopyPNGFile
+x/Antosha/diplom/build/Release-iphoneos/diplom.app/ad_1.png
+xdiplom/ad_1.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection70"CopyPNGFile build/Release-iphoneos/diplom.app/ad_1.png diplom/ad_1.pngd639f2175223b641^022b33195223b641^---0#0#0#-19%DVTDocumentLocation2@47"file://localhost/Antosha/diplom/diplom/ad_1.png0000000000000000^519"CopyPNGFile build/Release-iphoneos/diplom.app/ad_1.png diplom/ad_1.png    cd /Antosha/diplom    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/PrivatePlugIns/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Antosha/diplom/diplom/ad_1.png /Antosha/diplom/build/Release-iphoneos/diplom.app/ad_1.png36"4F043177-074A-4BB3-96C2-5EDB454B0209-
+
+CCopyStringsFile /Antosha/diplom/build/Release-iphoneos/diplom.app/en.lproj/InfoPlist.strings diplom/en.lproj/InfoPlist.strings
+s371413527.945439
+e371413527.950265
+r1
+xCopyStringsFile
+x/Antosha/diplom/build/Release-iphoneos/diplom.app/en.lproj/InfoPlist.strings
+xdiplom/en.lproj/InfoPlist.strings
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection38"Copy diplom/en.lproj/InfoPlist.strings371cf2175223b641^3d44f3175223b641^---0#0#0#-19%DVTDocumentLocation2@65"file://localhost/Antosha/diplom/diplom/en.lproj/InfoPlist.strings0000000000000000^491"CopyStringsFile build/Release-iphoneos/diplom.app/en.lproj/InfoPlist.strings diplom/en.lproj/InfoPlist.strings    cd /Antosha/diplom    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    builtin-copyStrings --validate --inputencoding utf-8 --outputencoding binary --outdir /Antosha/diplom/build/Release-iphoneos/diplom.app/en.lproj -- diplom/en.lproj/InfoPlist.strings36"87A7D3D8-AEA9-433C-95F5-CA3027883445-
+
+CGenerateDSYMFile /Antosha/diplom/build/Release-iphoneos/diplom.app.dSYM /Antosha/diplom/build/Release-iphoneos/diplom.app/diplom
+s371413527.924525
+e371413527.943053
+r1
+xGenerateDSYMFile
+x/Antosha/diplom/build/Release-iphoneos/diplom.app.dSYM
+x/Antosha/diplom/build/Release-iphoneos/diplom.app/diplom
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection65"Generating /Antosha/diplom/build/Release-iphoneos/diplom.app.dSYMfdc1ec175223b641^ba6bf1175223b641^---0#0#0#-19%DVTDocumentLocation2@70"file://localhost/Antosha/diplom/build/Release-iphoneos/diplom.app.dSYM00f89810dcffdf42^438"GenerateDSYMFile build/Release-iphoneos/diplom.app.dSYM build/Release-iphoneos/diplom.app/diplom    cd /Antosha/diplom    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    /Developer/usr/bin/dsymutil /Antosha/diplom/build/Release-iphoneos/diplom.app/diplom -o /Antosha/diplom/build/Release-iphoneos/diplom.app.dSYM36"92005019-B8CA-4F41-BBD2-AF214BAF3CCD-
+
+CLd /Antosha/diplom/build/Release-iphoneos/diplom.app/diplom normal armv7
+s371413527.891741
+e371413527.923287
+r1
+xLd
+x/Antosha/diplom/build/Release-iphoneos/diplom.app/diplom
+xnormal
+xarmv7
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection61"Link /Antosha/diplom/build/Release-iphoneos/diplom.app/diplom5f5ee4175223b641^855dec175223b641^---0#0#0#--823"Ld build/Release-iphoneos/diplom.app/diplom normal armv7    cd /Antosha/diplom    setenv IPHONEOS_DEPLOYMENT_TARGET 5.0    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/clang -arch armv7 -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk -L/Antosha/diplom/build/Release-iphoneos -F/Antosha/diplom/build/Release-iphoneos -filelist /Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/diplom.LinkFileList -dead_strip -fobjc-arc -miphoneos-version-min=5.0 -framework UIKit -framework Foundation -framework CoreGraphics -o /Antosha/diplom/build/Release-iphoneos/diplom.app/diplom36"E4C7BD04-B46C-48E9-8663-04B33B318809-
+
+CProcessInfoPlistFile /Antosha/diplom/build/Release-iphoneos/diplom.app/Info.plist diplom/diplom-Info.plist
+s371413527.344445
+e371413527.348368
+r1
+xProcessInfoPlistFile
+x/Antosha/diplom/build/Release-iphoneos/diplom.app/Info.plist
+xdiplom/diplom-Info.plist
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection32"Process diplom/diplom-Info.plistcc4558175223b641^412e59175223b641^---0#0#0#-19%DVTDocumentLocation2@56"file://localhost/Antosha/diplom/diplom/diplom-Info.plist0000000000000000^528"ProcessInfoPlistFile build/Release-iphoneos/diplom.app/Info.plist diplom/diplom-Info.plist    cd /Antosha/diplom    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    builtin-infoPlistUtility diplom/diplom-Info.plist -genpkginfo /Antosha/diplom/build/Release-iphoneos/diplom.app/PkgInfo -expandbuildsettings -format binary -platform iphoneos -o /Antosha/diplom/build/Release-iphoneos/diplom.app/Info.plist36"B7B05AFE-4A43-4A84-9F11-28C09C119324-
+
+CProcessPCH /var/folders/1-/1-ysrVaAGQ8WzLhiiNJA5U+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/diplom-Prefix-dmbicliqiyokyeatfckccowzbdpe/diplom-Prefix.pch.pth diplom/diplom-Prefix.pch normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s371413527.350865
+e371413527.662351
+r1
+xProcessPCH
+x/var/folders/1-/1-ysrVaAGQ8WzLhiiNJA5U+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/diplom-Prefix-dmbicliqiyokyeatfckccowzbdpe/diplom-Prefix.pch.pth
+xdiplom/diplom-Prefix.pch
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection35"Precompile diplom/diplom-Prefix.pchf5f459175223b641^8e90a9175223b641^---0#0#0#-19%DVTDocumentLocation2@56"file://localhost/Antosha/diplom/diplom/diplom-Prefix.pch0000000000000000^2314"ProcessPCH /var/folders/1-/1-ysrVaAGQ8WzLhiiNJA5U+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/diplom-Prefix-dmbicliqiyokyeatfckccowzbdpe/diplom-Prefix.pch.pth diplom/diplom-Prefix.pch normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Antosha/diplom    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/clang -x objective-c-header -arch armv7 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -Os -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk -gdwarf-2 -fvisibility=hidden -Wno-sign-conversion -mthumb "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -miphoneos-version-min=5.0 -iquote /Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/diplom-generated-files.hmap -I/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/diplom-own-target-headers.hmap -I/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/diplom-all-target-headers.hmap -iquote /Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/diplom-project-headers.hmap -I/Antosha/diplom/build/Release-iphoneos/include -I/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/DerivedSources/armv7 -I/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/DerivedSources -F/Antosha/diplom/build/Release-iphoneos -DNS_BLOCK_ASSERTIONS=1 -c /Antosha/diplom/diplom/diplom-Prefix.pch -o /var/folders/1-/1-ysrVaAGQ8WzLhiiNJA5U+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/diplom-Prefix-dmbicliqiyokyeatfckccowzbdpe/diplom-Prefix.pch.pth -MMD -MT dependencies -MF /var/folders/1-/1-ysrVaAGQ8WzLhiiNJA5U+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/diplom-Prefix-dmbicliqiyokyeatfckccowzbdpe/diplom-Prefix.pch.d36"735EC045-B394-4BDE-B7FC-B81D8FD76939-
+
+CTouch /Antosha/diplom/build/Release-iphoneos/diplom.app
+s371413529.497816
+e371413529.504523
+r1
+xTouch
+x/Antosha/diplom/build/Release-iphoneos/diplom.app
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection55"Touch /Antosha/diplom/build/Release-iphoneos/diplom.app2c827f195223b641^452981195223b641^---0#0#0#--306"Touch build/Release-iphoneos/diplom.app    cd /Antosha/diplom    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    /usr/bin/touch -c /Antosha/diplom/build/Release-iphoneos/diplom.app36"3CF2EDFA-9DC2-4A92-BF20-A4066CD08ABC-
+
+CValidate /Antosha/diplom/build/Release-iphoneos/diplom.app
+s371413529.506930
+e371413529.939869
+r1
+xValidate
+x/Antosha/diplom/build/Release-iphoneos/diplom.app
+owarning: iPhone/iPod Touch: Info.plist: Unable to verify icon dimensions, no icon found.  You must define CFBundleIcons, CFBundleIconFiles, CFBundleIconFile, or provide a default Icon.png that is 57x57 (-19013)
+oUnable to validate your application. - (null)
+o
+owarning: Application failed codesign verification.  The signature was invalid, or it was not signed with an iPhone Distribution Certificate. (-19011)
+ofailed to extract requirements data: 1
+o/Antosha/diplom/build/Release-iphoneos/diplom.app: code object is not signed
+ofailed to extract entitlements: 1
+oAssertMacros: entitlements_requested, At least need an application-identifier entitlements file: /SourceCache/codesign_wrapper_Sim/Security-1245/codesign_wrapper/codesign_wrapper.c, line: 866
+o - (null)
+o
+owarning: Unable to extract codesigning entitlements from your application.  Please make sure diplom is a valid Mach executable that's properly codesigned. (-19050)
+o/Antosha/diplom/build/Release-iphoneos/diplom.app/diplom: code object is not signed
+o - (null)
+o
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection42"Validate build/Release-iphoneos/diplom.app0ad981195223b641^d89bf0195223b641^-1020"warning: iPhone/iPod Touch: Info.plist: Unable to verify icon dimensions, no icon found.  You must define CFBundleIcons, CFBundleIconFiles, CFBundleIconFile, or provide a default Icon.png that is 57x57 (-19013)Unable to validate your application. - (null)warning: Application failed codesign verification.  The signature was invalid, or it was not signed with an iPhone Distribution Certificate. (-19011)failed to extract requirements data: 1/Antosha/diplom/build/Release-iphoneos/diplom.app: code object is not signedfailed to extract entitlements: 1AssertMacros: entitlements_requested, At least need an application-identifier entitlements file: /SourceCache/codesign_wrapper_Sim/Security-1245/codesign_wrapper/codesign_wrapper.c, line: 866 - (null)warning: Unable to extract codesigning entitlements from your application.  Please make sure diplom is a valid Mach executable that's properly codesigned. (-19050)/Antosha/diplom/build/Release-iphoneos/diplom.app/diplom: code object is not signed - (null)3(21%IDEActivityLogMessage2@202" iPhone/iPod Touch: Info.plist: Unable to verify icon dimensions, no icon found.  You must define CFBundleIcons, CFBundleIconFiles, CFBundleIconFile, or provide a default Icon.png that is 57x57 (-19013)192"IPhone/iPod Touch: Info.plist: Unable to verify icon dimensions, no icon found.  You must define CFBundleIcons, CFBundleIconFiles, CFBundleIconFile, or provide a default Icon.png that is 57x57371413529#18446744073709551615#0#-1#-23%DVTTextDocumentLocation3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#---2@141" Application failed codesign verification.  The signature was invalid, or it was not signed with an iPhone Distribution Certificate. (-19011)131"Application failed codesign verification.  The signature was invalid, or it was not signed with an iPhone Distribution Certificate.371413529#18446744073709551615#0#-1#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#---2@155" Unable to extract codesigning entitlements from your application.  Please make sure diplom is a valid Mach executable that's properly codesigned. (-19050)145"Unable to extract codesigning entitlements from your application.  Please make sure diplom is a valid Mach executable that's properly codesigned.371413529#18446744073709551615#0#-1#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#---0#0#0#-19%DVTDocumentLocation4@66"file://localhost/Antosha/diplom/build/Release-iphoneos/diplom.app/0000000000000000^418"Validate build/Release-iphoneos/diplom.app    cd /Antosha/diplom    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    setenv PRODUCT_TYPE com.apple.product-type.application    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/Validation /Antosha/diplom/build/Release-iphoneos/diplom.app36"02AD0249-7870-4CCF-93AB-D23C91829F62-
+

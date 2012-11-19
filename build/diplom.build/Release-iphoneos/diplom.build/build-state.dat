@@ -1,0 +1,1123 @@
+Tdiplom
+v4
+r1
+cCheck dependencies
+cProcessInfoPlistFile /Antosha/diplom/build/Release-iphoneos/diplom.app/Info.plist diplom/diplom-Info.plist
+cProcessPCH /var/folders/1-/1-ysrVaAGQ8WzLhiiNJA5U+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/diplom-Prefix-edithoeeknbongekrwnxldbumzlb/diplom-Prefix.pch.pth diplom/diplom-Prefix.pch normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/main.o /Antosha/diplom/diplom/main.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/MBProgressHUD.o /Antosha/diplom/MBProgressHUD.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/diplomAppDelegate.o /Antosha/diplom/diplom/diplomAppDelegate.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/diplomViewController.o /Antosha/diplom/diplom/diplomViewController.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/NSString+Gender.o /Antosha/diplom/NSString+Gender.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/Vkontakte.o /Antosha/diplom/Vkontakte.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/VkontakteViewController.o /Antosha/diplom/VkontakteViewController.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/AutorisationController.o /Antosha/diplom/diplom/AutorisationController.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cLd /Antosha/diplom/build/Release-iphoneos/diplom.app/diplom normal armv7
+
+N/Antosha/diplom/MBProgressHUD.m
+c000000005071E34E00000000000063A4
+t1349641038
+s25508
+
+N/Antosha/diplom/NSString+Gender.m
+c000000004FF6698800000000000003D7
+t1341548936
+s983
+
+N/Antosha/diplom/Vkontakte.m
+c000000005080360E00000000000061C5
+t1350579726
+s25029
+
+N/Antosha/diplom/VkontakteViewController.m
+c000000004FF669880000000000002048
+t1341548936
+s8264
+
+N/Antosha/diplom/build/Release-iphoneos/diplom.app
+t1349731635
+s136
+
+N/Antosha/diplom/build/Release-iphoneos/diplom.app.dSYM
+t1349720727
+s102
+
+N/Antosha/diplom/build/Release-iphoneos/diplom.app/Info.plist
+t1349731635
+s1071
+
+N/Antosha/diplom/build/Release-iphoneos/diplom.app/PkgInfo
+t1349731635
+s8
+
+N/Antosha/diplom/build/Release-iphoneos/diplom.app/ad_1.png
+t2
+s0
+
+N/Antosha/diplom/build/Release-iphoneos/diplom.app/defaultIMG.png
+t2
+s0
+
+N/Antosha/diplom/build/Release-iphoneos/diplom.app/diplom
+t2
+s0
+
+N/Antosha/diplom/build/Release-iphoneos/diplom.app/en.lproj/InfoPlist.strings
+t2
+s0
+
+N/Antosha/diplom/build/Release-iphoneos/diplom.app/en.lproj/MainStoryboard.storyboardc
+t2
+s0
+
+N/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/AutorisationController.o
+t2
+s0
+
+N/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/MBProgressHUD.o
+t2
+s0
+
+N/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/NSString+Gender.o
+t2
+s0
+
+N/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/Vkontakte.o
+t2
+s0
+
+N/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/VkontakteViewController.o
+t2
+s0
+
+N/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/diplom.LinkFileList
+c00000000508051D90000000000000343
+t1350586841
+s835
+
+N/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/diplomAppDelegate.o
+t1349731636
+s46052
+
+N/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/diplomViewController.o
+t1350576962
+s76956
+
+N/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/main.o
+t1349731636
+s2924
+
+N/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/com.apple.build-tools.platform.validate
+t2
+s0
+
+N/Antosha/diplom/diplom/AutorisationController.m
+c00000000508042120000000000000CF4
+t1350582802
+s3316
+
+N/Antosha/diplom/diplom/ad_1.png
+c000000004F4463550000000000052F9C
+t1329881941
+s339868
+
+N/Antosha/diplom/diplom/defaultIMG.png
+c0000000050802C5A00000000000017F6
+t1350577242
+s6134
+
+N/Antosha/diplom/diplom/diplom-Prefix.pch
+c0000000050730936000000000000013B
+t1349716278
+s315
+
+N/Antosha/diplom/diplom/diplomAppDelegate.h
+c00000000507309370000000000000121
+t1349716279
+s289
+
+N/Antosha/diplom/diplom/diplomAppDelegate.m
+c0000000050730937000000000000084F
+t1349716279
+s2127
+
+N/Antosha/diplom/diplom/diplomViewController.h
+c00000000508043D800000000000003DF
+t1350583256
+s991
+
+N/Antosha/diplom/diplom/diplomViewController.m
+c00000000508043D80000000000002196
+t1350583256
+s8598
+
+N/Antosha/diplom/diplom/en.lproj/InfoPlist.strings
+c0000000050730936000000000000002D
+t1349716278
+s45
+
+N/Antosha/diplom/diplom/en.lproj/MainStoryboard.storyboard
+c00000000508043D800000000000050BF
+t1350583256
+s20671
+
+N/Antosha/diplom/diplom/main.m
+c0000000050730936000000000000015C
+t1349716278
+s348
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk
+c000000004F65D4DA0000000000000110
+t1332073690
+s272
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/AVFoundation.framework/AVFoundation
+c000000004E7807DB000000000015F8A0
+t1316489179
+s1439904
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c000000004E72F28700000000003AB0A0
+t1316156039
+s3846304
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/CoreMedia.framework/CoreMedia
+c000000004E78069100000000000748C0
+t1316488849
+s477376
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/CoreVideo.framework/CoreVideo
+c000000004E72F744000000000001A9B0
+t1316157252
+s108976
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004E72F3440000000000529540
+t1316156228
+s5412160
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/OpenGLES.framework/OpenGLES
+c000000004E72F6E00000000000017190
+t1316157152
+s94608
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/QuartzCore.framework/QuartzCore
+c000000004E72F8910000000000173260
+t1316157585
+s1520224
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c000000004E7808C7000000000078BE50
+t1316489415
+s7913040
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/build/Release-iphoneos/libGPUImage.a
+c00000000000000000000000000000000
+t2
+s0
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GLProgram.h
+c00000000506B1BCE0000000000000524
+t1349196750
+s1316
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImage.h
+c00000000506B1BCE0000000000001294
+t1349196750
+s4756
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImage3x3ConvolutionFilter.h
+c00000000506B1BCE000000000000028D
+t1349196750
+s653
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImage3x3TextureSamplingFilter.h
+c00000000506B1BCE0000000000000251
+t1349196750
+s593
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageAdaptiveThresholdFilter.h
+c00000000506B1BCE0000000000000106
+t1349196750
+s262
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageAddBlendFilter.h
+c00000000506B1BCE0000000000000065
+t1349196750
+s101
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageAlphaBlendFilter.h
+c00000000506B1BCE000000000000010A
+t1349196750
+s266
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageAmatorkaFilter.h
+c00000000506B1BCE00000000000001AD
+t1349196750
+s429
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageAverageColor.h
+c00000000506B1BCE0000000000000290
+t1349196750
+s656
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageAverageLuminanceThresholdFilter.h
+c00000000506B1BCE000000000000012D
+t1349196750
+s301
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageBilateralFilter.h
+c00000000506B1BCE000000000000006E
+t1349196750
+s110
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageBoxBlurFilter.h
+c00000000506B1BCE0000000000000167
+t1349196750
+s359
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageBrightnessFilter.h
+c00000000506B1BCE00000000000000F2
+t1349196750
+s242
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageBuffer.h
+c00000000506B1BCE00000000000000AF
+t1349196750
+s175
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageBulgeDistortionFilter.h
+c00000000506B1BCE0000000000000244
+t1349196750
+s580
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageCGAColorspaceFilter.h
+c00000000506B1BCE000000000000005A
+t1349196750
+s90
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageCannyEdgeDetectionFilter.h
+c00000000506B1BCE0000000000000A18
+t1349196750
+s2584
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageChromaKeyBlendFilter.h
+c00000000506B1BCE000000000000043E
+t1349196750
+s1086
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageChromaKeyFilter.h
+c00000000506B1BCE00000000000003DB
+t1349196750
+s987
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageClosingFilter.h
+c00000000506B1BCE00000000000001CB
+t1349196750
+s459
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageColorBurnBlendFilter.h
+c00000000506B1BCE00000000000000A0
+t1349196750
+s160
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageColorDodgeBlendFilter.h
+c00000000506B1BCE00000000000000A2
+t1349196750
+s162
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageColorInvertFilter.h
+c00000000506B1BCE000000000000005C
+t1349196750
+s92
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageColorMatrixFilter.h
+c00000000506B1BCE00000000000001EB
+t1349196750
+s491
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageColorPackingFilter.h
+c00000000506B1BCE00000000000000B8
+t1349196750
+s184
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageContrastFilter.h
+c00000000506B1BCE0000000000000127
+t1349196750
+s295
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageCropFilter.h
+c00000000506B1BCE00000000000001AD
+t1349196750
+s429
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageCrosshairGenerator.h
+c00000000506B1BCE00000000000002DE
+t1349196750
+s734
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageCrosshatchFilter.h
+c00000000506B1BCE00000000000001A8
+t1349196750
+s424
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageDarkenBlendFilter.h
+c00000000506B1BCE000000000000006C
+t1349196750
+s108
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageDifferenceBlendFilter.h
+c00000000506B1BCE0000000000000070
+t1349196750
+s112
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageDilationFilter.h
+c00000000506B1BCE000000000000034D
+t1349196750
+s845
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageDissolveBlendFilter.h
+c00000000506B1BCE000000000000011E
+t1349196750
+s286
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageDivideBlendFilter.h
+c00000000506B1BCE0000000000000068
+t1349196750
+s104
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageEmbossFilter.h
+c00000000506B1BCE00000000000000F5
+t1349196750
+s245
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageErosionFilter.h
+c00000000506B1BCE0000000000000230
+t1349196750
+s560
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageExclusionBlendFilter.h
+c00000000506B1BCE000000000000006F
+t1349196750
+s111
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageExposureFilter.h
+c00000000506B1BCE00000000000000EC
+t1349196750
+s236
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageFalseColorFilter.h
+c00000000506B1BCE0000000000000278
+t1349196750
+s632
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageFastBlurFilter.h
+c00000000506B1BCE0000000000000255
+t1349196750
+s597
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageFilter.h
+c00000000506B1BCE0000000000001529
+t1349196750
+s5417
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageFilterGroup.h
+c00000000506B1BCE0000000000000250
+t1349196750
+s592
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageFilterPipeline.h
+c00000000506B1BCE00000000000003FE
+t1349196750
+s1022
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageGammaFilter.h
+c00000000506B1BCE00000000000000DD
+t1349196750
+s221
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageGaussianBlurFilter.h
+c00000000506B1BCE0000000000000186
+t1349196750
+s390
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageGaussianSelectiveBlurFilter.h
+c00000000506B1BCE0000000000000458
+t1349196750
+s1112
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageGlassSphereFilter.h
+c00000000506B1BCE0000000000000078
+t1349196750
+s120
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageGrayscaleFilter.h
+c00000000506B1BCE000000000000012D
+t1349196750
+s301
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageHalftoneFilter.h
+c00000000506B1BCE0000000000000067
+t1349196750
+s103
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageHardLightBlendFilter.h
+c00000000506B1BCE000000000000006F
+t1349196750
+s111
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageHarrisCornerDetectionFilter.h
+c00000000506B1BCE00000000000009A0
+t1349196750
+s2464
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageHazeFilter.h
+c00000000506B1BCE0000000000000276
+t1349196750
+s630
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageHighPassFilter.h
+c00000000506B1BCE00000000000001FB
+t1349196750
+s507
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageHighlightShadowFilter.h
+c00000000506B1BCE0000000000000170
+t1349196750
+s368
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageHistogramFilter.h
+c00000000506B1BCE000000000000035A
+t1349196750
+s858
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageHistogramGenerator.h
+c00000000506B1BCE000000000000007F
+t1349196750
+s127
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageHueFilter.h
+c00000000506B1BCE00000000000000A6
+t1349196750
+s166
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageJFAVoroniFilter.h
+c00000000506B1BCE000000000000013F
+t1349196750
+s319
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageKuwaharaFilter.h
+c00000000506B1BCE0000000000000294
+t1349196750
+s660
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageLanczosResamplingFilter.h
+c00000000506B1BCE00000000000000C5
+t1349196750
+s197
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageLightenBlendFilter.h
+c00000000506B1BCE00000000000000CA
+t1349196750
+s202
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageLocalBinaryPatternFilter.h
+c00000000506B1BCE0000000000000083
+t1349196750
+s131
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageLookupFilter.h
+c00000000506B1BCE0000000000000527
+t1349196750
+s1319
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageLowPassFilter.h
+c00000000506B1BCE00000000000001D1
+t1349196750
+s465
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageLuminanceThresholdFilter.h
+c00000000506B1BCE0000000000000198
+t1349196750
+s408
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageLuminosity.h
+c00000000506B1BCE0000000000000281
+t1349196750
+s641
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageMaskFilter.h
+c00000000506B1BCE0000000000000061
+t1349196750
+s97
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageMedianFilter.h
+c00000000506B1BCE0000000000000077
+t1349196750
+s119
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageMissEtikateFilter.h
+c00000000506B1BCE00000000000001BF
+t1349196750
+s447
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageMonochromeFilter.h
+c00000000506B1BCE0000000000000157
+t1349196750
+s343
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageMosaicFilter.h
+c00000000506B1BCE0000000000000464
+t1349196750
+s1124
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageMotionDetector.h
+c00000000506B1BCE0000000000000300
+t1349196750
+s768
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageMovie.h
+c00000000506B1BCE00000000000004DF
+t1349196750
+s1247
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageMovieWriter.h
+c00000000506B1BCE0000000000000801
+t1349196750
+s2049
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageMultiplyBlendFilter.h
+c00000000506B1BCE000000000000006E
+t1349196750
+s110
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageNobleCornerDetectionFilter.h
+c00000000506B1BCE0000000000000164
+t1349196750
+s356
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageNonMaximumSuppressionFilter.h
+c00000000506B1BCE0000000000000086
+t1349196750
+s134
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageNormalBlendFilter.h
+c00000000506B1BCE0000000000000093
+t1349196750
+s147
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageOpacityFilter.h
+c00000000506B1BCE00000000000000E6
+t1349196750
+s230
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageOpenGLESContext.h
+c00000000506B1BCE0000000000000793
+t1349196750
+s1939
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageOpeningFilter.h
+c00000000506B1BCE00000000000001CD
+t1349196750
+s461
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageOutput.h
+c00000000506B1BCE0000000000000F24
+t1349196750
+s3876
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageOverlayBlendFilter.h
+c00000000506B1BCE0000000000000069
+t1349196750
+s105
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImagePerlinNoiseFilter.h
+c00000000506B1BCE000000000000013D
+t1349196750
+s317
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImagePicture.h
+c00000000506B1BCE0000000000000227
+t1349196750
+s551
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImagePinchDistortionFilter.h
+c00000000506B1BCE0000000000000253
+t1349196750
+s595
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImagePixellateFilter.h
+c00000000506B1BCE0000000000000175
+t1349196750
+s373
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImagePolarPixellateFilter.h
+c00000000506B1BCE00000000000001A4
+t1349196750
+s420
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImagePolkaDotFilter.h
+c00000000506B1BCE00000000000000BD
+t1349196750
+s189
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImagePosterizeFilter.h
+c00000000506B1BCE00000000000001AC
+t1349196750
+s428
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImagePrewittEdgeDetectionFilter.h
+c00000000506B1BCE0000000000000085
+t1349196750
+s133
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageRGBClosingFilter.h
+c00000000506B1BCE00000000000001DE
+t1349196750
+s478
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageRGBDilationFilter.h
+c00000000506B1BCE0000000000000229
+t1349196750
+s553
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageRGBErosionFilter.h
+c00000000506B1BCE0000000000000224
+t1349196750
+s548
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageRGBFilter.h
+c00000000506B1BCE000000000000019C
+t1349196750
+s412
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageRGBOpeningFilter.h
+c00000000506B1BCE00000000000001DF
+t1349196750
+s479
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageRawDataInput.h
+c00000000506B1BCE0000000000000278
+t1349196750
+s632
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageRawDataOutput.h
+c00000000506B1BCE00000000000003A4
+t1349196750
+s932
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageSaturationFilter.h
+c00000000506B1BCE0000000000000146
+t1349196750
+s326
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageScreenBlendFilter.h
+c00000000506B1BCE000000000000006C
+t1349196750
+s108
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageSepiaFilter.h
+c00000000506B1BCE0000000000000085
+t1349196750
+s133
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageSharpenFilter.h
+c00000000506B1BCE0000000000000129
+t1349196750
+s297
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageShiTomasiFeatureDetectionFilter.h
+c00000000506B1BCE00000000000001F5
+t1349196750
+s501
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageSketchFilter.h
+c00000000506B1BCE00000000000000F3
+t1349196750
+s243
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageSmoothToonFilter.h
+c00000000506B1BCE000000000000047F
+t1349196750
+s1151
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageSobelEdgeDetectionFilter.h
+c00000000506B1BCE00000000000001BE
+t1349196750
+s446
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageSoftEleganceFilter.h
+c00000000506B1BCE000000000000020F
+t1349196750
+s527
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageSoftLightBlendFilter.h
+c00000000506B1BCE000000000000006F
+t1349196750
+s111
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageSolidColorGenerator.h
+c00000000506B1BCE0000000000000215
+t1349196750
+s533
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageSourceOverBlendFilter.h
+c00000000506B1BCE000000000000006C
+t1349196750
+s108
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageSphereRefractionFilter.h
+c00000000506B1BCE0000000000000235
+t1349196750
+s565
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageStillCamera.h
+c00000000506B1BCE00000000000003D0
+t1349196750
+s976
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageStretchDistortionFilter.h
+c00000000506B1BCE0000000000000133
+t1349196750
+s307
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageSubtractBlendFilter.h
+c00000000506B1BCE000000000000006A
+t1349196750
+s106
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageSwirlFilter.h
+c00000000506B1BCE0000000000000240
+t1349196750
+s576
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageTextureInput.h
+c00000000506B1BCE0000000000000125
+t1349196750
+s293
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageTextureOutput.h
+c00000000506B1BCE00000000000001DE
+t1349196750
+s478
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageThresholdEdgeDetection.h
+c00000000506B1BCE0000000000000155
+t1349196750
+s341
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageTiltShiftFilter.h
+c00000000506B1BCE00000000000003A8
+t1349196750
+s936
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageToneCurveFilter.h
+c00000000506B1BCE000000000000046E
+t1349196750
+s1134
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageToonFilter.h
+c00000000506B1BCE0000000000000284
+t1349196750
+s644
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageTransformFilter.h
+c00000000506B1BCE00000000000002C0
+t1349196750
+s704
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageTwoInputFilter.h
+c00000000506B1BCE0000000000000263
+t1349196750
+s611
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageTwoPassFilter.h
+c00000000506B1BCE00000000000003A1
+t1349196750
+s929
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageTwoPassTextureSamplingFilter.h
+c00000000506B1BCE00000000000001A2
+t1349196750
+s418
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageUIElement.h
+c00000000506B1BCE0000000000000105
+t1349196750
+s261
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageUnsharpMaskFilter.h
+c00000000506B1BCE00000000000001E9
+t1349196750
+s489
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageVideoCamera.h
+c00000000506B1BCE0000000000000F22
+t1349196750
+s3874
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageView.h
+c00000000506B1BCE00000000000005E4
+t1349196750
+s1508
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageVignetteFilter.h
+c00000000506B1BCE00000000000001FF
+t1349196750
+s511
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageVoroniConsumerFilter.h
+c00000000506B1BCE00000000000000BE
+t1349196750
+s190
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageWhiteBalanceFilter.h
+c00000000506B1BCE0000000000000205
+t1349196750
+s517
+
+N/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source/GPUImageXYDerivativeFilter.h
+c00000000506B1BCE000000000000007D
+t1349196750
+s125
+
+N/var/folders/1-/1-ysrVaAGQ8WzLhiiNJA5U+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/diplom-Prefix-dmbicliqiyokyeatfckccowzbdpe/diplom-Prefix.pch.pth
+t2
+s0
+
+N/var/folders/1-/1-ysrVaAGQ8WzLhiiNJA5U+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/diplom-Prefix-edithoeeknbongekrwnxldbumzlb/diplom-Prefix.pch.pth
+t1349731635
+s3854068
+
+Ndiplom/diplom-Info.plist
+c000000005073093600000000000004F6
+t1349716278
+s1270
+
+CCheck dependencies
+r0
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies9a7ad1588930b641^6c5fe4598930b641^---0#1#0#--18"Check dependencies36"58D00CB1-C020-41D9-8599-405984DCCD6F-
+
+CCompileC build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/AutorisationController.o /Antosha/diplom/diplom/AutorisationController.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s372279646.967459
+e372279647.106760
+r1
+xCompileC
+xbuild/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/AutorisationController.o
+x/Antosha/diplom/diplom/AutorisationController.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection55"Compile /Antosha/diplom/diplom/AutorisationController.mcec5f75e8930b641^04551b5f8930b641^---0#0#0#-19%DVTDocumentLocation2@63"file://localhost/Antosha/diplom/diplom/AutorisationController.m0000000000000000^2451"CompileC build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/AutorisationController.o diplom/AutorisationController.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Antosha/diplom    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/clang -x objective-c -arch armv7 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -Os -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk -gdwarf-2 -fvisibility=hidden -Wno-sign-conversion -mthumb "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -miphoneos-version-min=5.0 -iquote /Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/diplom-generated-files.hmap -I/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/diplom-own-target-headers.hmap -I/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/diplom-all-target-headers.hmap -iquote /Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/diplom-project-headers.hmap -iquote/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source -I/Antosha/diplom/build/Release-iphoneos/include -I/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework -I/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/DerivedSources/armv7 -I/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/DerivedSources -F/Antosha/diplom/build/Release-iphoneos -DNS_BLOCK_ASSERTIONS=1 -include /var/folders/1-/1-ysrVaAGQ8WzLhiiNJA5U+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/diplom-Prefix-edithoeeknbongekrwnxldbumzlb/diplom-Prefix.pch -MMD -MT dependencies -MF /Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/AutorisationController.d -c /Antosha/diplom/diplom/AutorisationController.m -o /Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/AutorisationController.o36"25724435-C102-432E-9D36-82CC696C7670-
+
+CCompileC build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/MBProgressHUD.o /Antosha/diplom/MBProgressHUD.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s372279641.948288
+e372279646.217253
+r1
+xCompileC
+xbuild/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/MBProgressHUD.o
+x/Antosha/diplom/MBProgressHUD.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection39"Compile /Antosha/diplom/MBProgressHUD.me0f4f2598930b641^499e375e8930b641^---0#0#0#-19%DVTDocumentLocation2@47"file://localhost/Antosha/diplom/MBProgressHUD.m0000000000000000^2392"CompileC build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/MBProgressHUD.o MBProgressHUD.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Antosha/diplom    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/clang -x objective-c -arch armv7 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -Os -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk -gdwarf-2 -fvisibility=hidden -Wno-sign-conversion -mthumb "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -miphoneos-version-min=5.0 -iquote /Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/diplom-generated-files.hmap -I/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/diplom-own-target-headers.hmap -I/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/diplom-all-target-headers.hmap -iquote /Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/diplom-project-headers.hmap -iquote/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source -I/Antosha/diplom/build/Release-iphoneos/include -I/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework -I/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/DerivedSources/armv7 -I/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/DerivedSources -F/Antosha/diplom/build/Release-iphoneos -DNS_BLOCK_ASSERTIONS=1 -include /var/folders/1-/1-ysrVaAGQ8WzLhiiNJA5U+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/diplom-Prefix-edithoeeknbongekrwnxldbumzlb/diplom-Prefix.pch -MMD -MT dependencies -MF /Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/MBProgressHUD.d -c /Antosha/diplom/MBProgressHUD.m -o /Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/MBProgressHUD.o36"EC4B63AA-BA07-4FB0-AA58-C2F6900A18D8-
+
+CCompileC build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/NSString+Gender.o /Antosha/diplom/NSString+Gender.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s372279645.961483
+e372279646.133973
+r1
+xCompileC
+xbuild/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/NSString+Gender.o
+x/Antosha/diplom/NSString+Gender.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection41"Compile /Antosha/diplom/NSString+Gender.m4a42f65d8930b641^1a4d225e8930b641^---0#0#0#-19%DVTDocumentLocation2@49"file://localhost/Antosha/diplom/NSString+Gender.m0000000000000000^2402"CompileC build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/NSString+Gender.o NSString+Gender.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Antosha/diplom    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/clang -x objective-c -arch armv7 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -Os -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk -gdwarf-2 -fvisibility=hidden -Wno-sign-conversion -mthumb "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -miphoneos-version-min=5.0 -iquote /Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/diplom-generated-files.hmap -I/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/diplom-own-target-headers.hmap -I/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/diplom-all-target-headers.hmap -iquote /Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/diplom-project-headers.hmap -iquote/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source -I/Antosha/diplom/build/Release-iphoneos/include -I/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework -I/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/DerivedSources/armv7 -I/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/DerivedSources -F/Antosha/diplom/build/Release-iphoneos -DNS_BLOCK_ASSERTIONS=1 -include /var/folders/1-/1-ysrVaAGQ8WzLhiiNJA5U+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/diplom-Prefix-edithoeeknbongekrwnxldbumzlb/diplom-Prefix.pch -MMD -MT dependencies -MF /Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/NSString+Gender.d -c /Antosha/diplom/NSString+Gender.m -o /Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/NSString+Gender.o36"8D1D72EA-F7F1-4C09-9270-AD96DE9DCAED-
+
+CCompileC build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/Vkontakte.o /Antosha/diplom/Vkontakte.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s372279646.218511
+e372279646.789673
+r1
+xCompileC
+xbuild/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/Vkontakte.o
+x/Antosha/diplom/Vkontakte.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+o/Antosha/diplom/Vkontakte.m:215:2: warning: #warning Provide your vkontakte app id [-W#warnings,7]
+o #warning Provide your vkontakte app id
+o  ^
+o1 warning generated.
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection35"Compile /Antosha/diplom/Vkontakte.me10a385e8930b641^8928ca5e8930b641^-164"/Antosha/diplom/Vkontakte.m:215:2: warning: #warning Provide your vkontakte app id [-W#warnings,7] #warning Provide your vkontakte app id  ^1 warning generated.1(21%IDEActivityLogMessage2@38"#warning Provide your vkontakte app id-372279646#0#99#-1#-23%DVTTextDocumentLocation3@43"file://localhost/Antosha/diplom/Vkontakte.m0000000000000000^214#1#214#1#18446744073709551615#0#18"#warning Directive--0#0#0#-19%DVTDocumentLocation4@43"file://localhost/Antosha/diplom/Vkontakte.m0000000000000000^2372"CompileC build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/Vkontakte.o Vkontakte.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Antosha/diplom    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/clang -x objective-c -arch armv7 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -Os -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk -gdwarf-2 -fvisibility=hidden -Wno-sign-conversion -mthumb "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -miphoneos-version-min=5.0 -iquote /Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/diplom-generated-files.hmap -I/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/diplom-own-target-headers.hmap -I/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/diplom-all-target-headers.hmap -iquote /Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/diplom-project-headers.hmap -iquote/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source -I/Antosha/diplom/build/Release-iphoneos/include -I/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework -I/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/DerivedSources/armv7 -I/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/DerivedSources -F/Antosha/diplom/build/Release-iphoneos -DNS_BLOCK_ASSERTIONS=1 -include /var/folders/1-/1-ysrVaAGQ8WzLhiiNJA5U+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/diplom-Prefix-edithoeeknbongekrwnxldbumzlb/diplom-Prefix.pch -MMD -MT dependencies -MF /Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/Vkontakte.d -c /Antosha/diplom/Vkontakte.m -o /Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/Vkontakte.o36"28F3EBED-A43B-4530-8E16-5F943A1AB4B1-
+
+CCompileC build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/VkontakteViewController.o /Antosha/diplom/VkontakteViewController.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s372279646.790890
+e372279646.966206
+r1
+xCompileC
+xbuild/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/VkontakteViewController.o
+x/Antosha/diplom/VkontakteViewController.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection49"Compile /Antosha/diplom/VkontakteViewController.mb891ca5e8930b641^ef59f75e8930b641^---0#0#0#-19%DVTDocumentLocation2@57"file://localhost/Antosha/diplom/VkontakteViewController.m0000000000000000^2442"CompileC build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/VkontakteViewController.o VkontakteViewController.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Antosha/diplom    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/clang -x objective-c -arch armv7 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -Os -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk -gdwarf-2 -fvisibility=hidden -Wno-sign-conversion -mthumb "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -miphoneos-version-min=5.0 -iquote /Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/diplom-generated-files.hmap -I/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/diplom-own-target-headers.hmap -I/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/diplom-all-target-headers.hmap -iquote /Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/diplom-project-headers.hmap -iquote/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source -I/Antosha/diplom/build/Release-iphoneos/include -I/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework -I/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/DerivedSources/armv7 -I/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/DerivedSources -F/Antosha/diplom/build/Release-iphoneos -DNS_BLOCK_ASSERTIONS=1 -include /var/folders/1-/1-ysrVaAGQ8WzLhiiNJA5U+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/diplom-Prefix-edithoeeknbongekrwnxldbumzlb/diplom-Prefix.pch -MMD -MT dependencies -MF /Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/VkontakteViewController.d -c /Antosha/diplom/VkontakteViewController.m -o /Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/VkontakteViewController.o36"9A8693BF-75C9-450F-AF62-8D4477802E99-
+
+CCompileC build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/diplomAppDelegate.o /Antosha/diplom/diplom/diplomAppDelegate.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s371424435.935819
+e371424436.042814
+r1
+xCompileC
+xbuild/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/diplomAppDelegate.o
+x/Antosha/diplom/diplom/diplomAppDelegate.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection50"Compile /Antosha/diplom/diplom/diplomAppDelegate.mb7b7efb37c23b641^88f50ab47c23b641^---0#0#0#-19%DVTDocumentLocation2@58"file://localhost/Antosha/diplom/diplom/diplomAppDelegate.m0000000000000000^2426"CompileC build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/diplomAppDelegate.o diplom/diplomAppDelegate.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Antosha/diplom    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/clang -x objective-c -arch armv7 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -Os -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk -gdwarf-2 -fvisibility=hidden -Wno-sign-conversion -mthumb "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -miphoneos-version-min=5.0 -iquote /Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/diplom-generated-files.hmap -I/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/diplom-own-target-headers.hmap -I/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/diplom-all-target-headers.hmap -iquote /Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/diplom-project-headers.hmap -iquote/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source -I/Antosha/diplom/build/Release-iphoneos/include -I/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework -I/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/DerivedSources/armv7 -I/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/DerivedSources -F/Antosha/diplom/build/Release-iphoneos -DNS_BLOCK_ASSERTIONS=1 -include /var/folders/1-/1-ysrVaAGQ8WzLhiiNJA5U+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/diplom-Prefix-edithoeeknbongekrwnxldbumzlb/diplom-Prefix.pch -MMD -MT dependencies -MF /Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/diplomAppDelegate.d -c /Antosha/diplom/diplom/diplomAppDelegate.m -o /Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/diplomAppDelegate.o36"A2763306-E8B9-4ECD-9772-5770A54A136F-
+
+CCompileC build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/diplomViewController.o /Antosha/diplom/diplom/diplomViewController.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s372279641.950438
+e372279645.960201
+r1
+xCompileC
+xbuild/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/diplomViewController.o
+x/Antosha/diplom/diplom/diplomViewController.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection53"Compile /Antosha/diplom/diplom/diplomViewController.m4f76f3598930b641^78cff55d8930b641^---0#0#0#-19%DVTDocumentLocation2@61"file://localhost/Antosha/diplom/diplom/diplomViewController.m0000000000000000^2441"CompileC build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/diplomViewController.o diplom/diplomViewController.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Antosha/diplom    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/clang -x objective-c -arch armv7 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -Os -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk -gdwarf-2 -fvisibility=hidden -Wno-sign-conversion -mthumb "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -miphoneos-version-min=5.0 -iquote /Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/diplom-generated-files.hmap -I/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/diplom-own-target-headers.hmap -I/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/diplom-all-target-headers.hmap -iquote /Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/diplom-project-headers.hmap -iquote/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source -I/Antosha/diplom/build/Release-iphoneos/include -I/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework -I/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/DerivedSources/armv7 -I/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/DerivedSources -F/Antosha/diplom/build/Release-iphoneos -DNS_BLOCK_ASSERTIONS=1 -include /var/folders/1-/1-ysrVaAGQ8WzLhiiNJA5U+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/diplom-Prefix-edithoeeknbongekrwnxldbumzlb/diplom-Prefix.pch -MMD -MT dependencies -MF /Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/diplomViewController.d -c /Antosha/diplom/diplom/diplomViewController.m -o /Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/diplomViewController.o36"935DE7C2-5B57-4E12-B128-36565BE9EE5E-
+
+CCompileC build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/main.o /Antosha/diplom/diplom/main.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s371424435.935616
+e371424436.025234
+r1
+xCompileC
+xbuild/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/main.o
+x/Antosha/diplom/diplom/main.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection37"Compile /Antosha/diplom/diplom/main.m179eefb37c23b641^fb7606b47c23b641^---0#0#0#-19%DVTDocumentLocation2@45"file://localhost/Antosha/diplom/diplom/main.m0000000000000000^2361"CompileC build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/main.o diplom/main.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Antosha/diplom    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/clang -x objective-c -arch armv7 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -Os -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk -gdwarf-2 -fvisibility=hidden -Wno-sign-conversion -mthumb "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -miphoneos-version-min=5.0 -iquote /Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/diplom-generated-files.hmap -I/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/diplom-own-target-headers.hmap -I/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/diplom-all-target-headers.hmap -iquote /Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/diplom-project-headers.hmap -iquote/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source -I/Antosha/diplom/build/Release-iphoneos/include -I/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework -I/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/DerivedSources/armv7 -I/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/DerivedSources -F/Antosha/diplom/build/Release-iphoneos -DNS_BLOCK_ASSERTIONS=1 -include /var/folders/1-/1-ysrVaAGQ8WzLhiiNJA5U+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/diplom-Prefix-edithoeeknbongekrwnxldbumzlb/diplom-Prefix.pch -MMD -MT dependencies -MF /Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/main.d -c /Antosha/diplom/diplom/main.m -o /Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/main.o36"EEB49F3C-F219-4B14-AD01-AA7A8F6415D7-
+
+CCompileStoryboard /Antosha/diplom/diplom/en.lproj/MainStoryboard.storyboard
+s371413527.945906
+e371413529.495093
+r1
+xCompileStoryboard
+x/Antosha/diplom/diplom/en.lproj/MainStoryboard.storyboard
+oCouldn't open shared capabilities memory GSCapabilities (No such file or directory)
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection59"CompileStoryboard diplom/en.lproj/MainStoryboard.storyboard5c3af2175223b641^7ac67e195223b641^-84"Couldn't open shared capabilities memory GSCapabilities (No such file or directory)-0#0#0#-19%DVTDocumentLocation2@73"file://localhost/Antosha/diplom/diplom/en.lproj/MainStoryboard.storyboard0000000000000000^688"CompileStoryboard diplom/en.lproj/MainStoryboard.storyboard    cd /Antosha/diplom    setenv IBSC_MINIMUM_COMPATIBILITY_VERSION 5.0    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    setenv XCODE_DEVELOPER_USR_PATH /Developer/usr/bin/..    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Antosha/diplom/build/Release-iphoneos/diplom.app/en.lproj/MainStoryboard.storyboardc /Antosha/diplom/diplom/en.lproj/MainStoryboard.storyboard --sdk /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk36"B5429028-AFDA-47DE-9B60-D191534AC5E4-
+
+CCopyPNGFile /Antosha/diplom/build/Release-iphoneos/diplom.app/ad_1.png diplom/ad_1.png
+s371413527.945938
+e371413529.199713
+r1
+xCopyPNGFile
+x/Antosha/diplom/build/Release-iphoneos/diplom.app/ad_1.png
+xdiplom/ad_1.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection70"CopyPNGFile build/Release-iphoneos/diplom.app/ad_1.png diplom/ad_1.pngd639f2175223b641^022b33195223b641^---0#0#0#-19%DVTDocumentLocation2@47"file://localhost/Antosha/diplom/diplom/ad_1.png0000000000000000^519"CopyPNGFile build/Release-iphoneos/diplom.app/ad_1.png diplom/ad_1.png    cd /Antosha/diplom    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/PrivatePlugIns/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Antosha/diplom/diplom/ad_1.png /Antosha/diplom/build/Release-iphoneos/diplom.app/ad_1.png36"4F043177-074A-4BB3-96C2-5EDB454B0209-
+
+CCopyPNGFile /Antosha/diplom/build/Release-iphoneos/diplom.app/defaultIMG.png diplom/defaultIMG.png
+r0
+
+CCopyStringsFile /Antosha/diplom/build/Release-iphoneos/diplom.app/en.lproj/InfoPlist.strings diplom/en.lproj/InfoPlist.strings
+s371413527.945439
+e371413527.950265
+r1
+xCopyStringsFile
+x/Antosha/diplom/build/Release-iphoneos/diplom.app/en.lproj/InfoPlist.strings
+xdiplom/en.lproj/InfoPlist.strings
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection38"Copy diplom/en.lproj/InfoPlist.strings371cf2175223b641^3d44f3175223b641^---0#0#0#-19%DVTDocumentLocation2@65"file://localhost/Antosha/diplom/diplom/en.lproj/InfoPlist.strings0000000000000000^491"CopyStringsFile build/Release-iphoneos/diplom.app/en.lproj/InfoPlist.strings diplom/en.lproj/InfoPlist.strings    cd /Antosha/diplom    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    builtin-copyStrings --validate --inputencoding utf-8 --outputencoding binary --outdir /Antosha/diplom/build/Release-iphoneos/diplom.app/en.lproj -- diplom/en.lproj/InfoPlist.strings36"87A7D3D8-AEA9-433C-95F5-CA3027883445-
+
+CGenerateDSYMFile /Antosha/diplom/build/Release-iphoneos/diplom.app.dSYM /Antosha/diplom/build/Release-iphoneos/diplom.app/diplom
+s371413527.924525
+e371413527.943053
+r1
+xGenerateDSYMFile
+x/Antosha/diplom/build/Release-iphoneos/diplom.app.dSYM
+x/Antosha/diplom/build/Release-iphoneos/diplom.app/diplom
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection65"Generating /Antosha/diplom/build/Release-iphoneos/diplom.app.dSYMfdc1ec175223b641^ba6bf1175223b641^---0#0#0#-19%DVTDocumentLocation2@70"file://localhost/Antosha/diplom/build/Release-iphoneos/diplom.app.dSYM00f89810dcffdf42^438"GenerateDSYMFile build/Release-iphoneos/diplom.app.dSYM build/Release-iphoneos/diplom.app/diplom    cd /Antosha/diplom    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    /Developer/usr/bin/dsymutil /Antosha/diplom/build/Release-iphoneos/diplom.app/diplom -o /Antosha/diplom/build/Release-iphoneos/diplom.app.dSYM36"92005019-B8CA-4F41-BBD2-AF214BAF3CCD-
+
+CLd /Antosha/diplom/build/Release-iphoneos/diplom.app/diplom normal armv7
+s372279647.108006
+e372279647.118828
+r0
+xLd
+x/Antosha/diplom/build/Release-iphoneos/diplom.app/diplom
+xnormal
+xarmv7
+oclang: error: no such file or directory: '/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/build/Release-iphoneos/libGPUImage.a'
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection61"Link /Antosha/diplom/build/Release-iphoneos/diplom.app/diplombebd1b5f8930b641^fe621e5f8930b641^-95"Command /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/clang failed with exit code 11(21%IDEActivityLogMessage2@94"Command /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/clang failed with exit code 1-372279647#18446744073709551615#0#-2#--25"Apple Mach-O Linker Error--0#0#0#--1017"Ld build/Release-iphoneos/diplom.app/diplom normal armv7    cd /Antosha/diplom    setenv IPHONEOS_DEPLOYMENT_TARGET 5.0    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/clang -arch armv7 -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk -L/Antosha/diplom/build/Release-iphoneos -F/Antosha/diplom/build/Release-iphoneos -filelist /Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/Objects-normal/armv7/diplom.LinkFileList -dead_strip -fobjc-arc -miphoneos-version-min=5.0 /Users/admin/Desktop/BradLarson-GPUImage-a984bcb/build/Release-iphoneos/libGPUImage.a -framework QuartzCore -framework AVFoundation -framework OpenGLES -framework CoreVideo -framework CoreMedia -framework UIKit -framework Foundation -framework CoreGraphics -o /Antosha/diplom/build/Release-iphoneos/diplom.app/diplom36"A88C03E3-DA2F-407F-A66D-5EEA3E0B9586-
+
+CProcessInfoPlistFile /Antosha/diplom/build/Release-iphoneos/diplom.app/Info.plist diplom/diplom-Info.plist
+s371424435.043592
+e371424435.223058
+r1
+xProcessInfoPlistFile
+x/Antosha/diplom/build/Release-iphoneos/diplom.app/Info.plist
+xdiplom/diplom-Info.plist
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection32"Process diplom/diplom-Info.plistbd510bb37c23b641^763539b37c23b641^---0#0#0#-19%DVTDocumentLocation2@56"file://localhost/Antosha/diplom/diplom/diplom-Info.plist0000000000000000^528"ProcessInfoPlistFile build/Release-iphoneos/diplom.app/Info.plist diplom/diplom-Info.plist    cd /Antosha/diplom    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    builtin-infoPlistUtility diplom/diplom-Info.plist -genpkginfo /Antosha/diplom/build/Release-iphoneos/diplom.app/PkgInfo -expandbuildsettings -format binary -platform iphoneos -o /Antosha/diplom/build/Release-iphoneos/diplom.app/Info.plist36"F5378AB8-E351-4907-B634-9C34D6D6E748-
+
+CProcessPCH /var/folders/1-/1-ysrVaAGQ8WzLhiiNJA5U+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/diplom-Prefix-dmbicliqiyokyeatfckccowzbdpe/diplom-Prefix.pch.pth diplom/diplom-Prefix.pch normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s371413527.350865
+e371413527.662351
+r1
+xProcessPCH
+x/var/folders/1-/1-ysrVaAGQ8WzLhiiNJA5U+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/diplom-Prefix-dmbicliqiyokyeatfckccowzbdpe/diplom-Prefix.pch.pth
+xdiplom/diplom-Prefix.pch
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection35"Precompile diplom/diplom-Prefix.pchf5f459175223b641^8e90a9175223b641^---0#0#0#-19%DVTDocumentLocation2@56"file://localhost/Antosha/diplom/diplom/diplom-Prefix.pch0000000000000000^2314"ProcessPCH /var/folders/1-/1-ysrVaAGQ8WzLhiiNJA5U+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/diplom-Prefix-dmbicliqiyokyeatfckccowzbdpe/diplom-Prefix.pch.pth diplom/diplom-Prefix.pch normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Antosha/diplom    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/clang -x objective-c-header -arch armv7 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -Os -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk -gdwarf-2 -fvisibility=hidden -Wno-sign-conversion -mthumb "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -miphoneos-version-min=5.0 -iquote /Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/diplom-generated-files.hmap -I/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/diplom-own-target-headers.hmap -I/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/diplom-all-target-headers.hmap -iquote /Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/diplom-project-headers.hmap -I/Antosha/diplom/build/Release-iphoneos/include -I/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/DerivedSources/armv7 -I/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/DerivedSources -F/Antosha/diplom/build/Release-iphoneos -DNS_BLOCK_ASSERTIONS=1 -c /Antosha/diplom/diplom/diplom-Prefix.pch -o /var/folders/1-/1-ysrVaAGQ8WzLhiiNJA5U+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/diplom-Prefix-dmbicliqiyokyeatfckccowzbdpe/diplom-Prefix.pch.pth -MMD -MT dependencies -MF /var/folders/1-/1-ysrVaAGQ8WzLhiiNJA5U+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/diplom-Prefix-dmbicliqiyokyeatfckccowzbdpe/diplom-Prefix.pch.d36"735EC045-B394-4BDE-B7FC-B81D8FD76939-
+
+CProcessPCH /var/folders/1-/1-ysrVaAGQ8WzLhiiNJA5U+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/diplom-Prefix-edithoeeknbongekrwnxldbumzlb/diplom-Prefix.pch.pth diplom/diplom-Prefix.pch normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s371424435.226768
+e371424435.934348
+r1
+xProcessPCH
+x/var/folders/1-/1-ysrVaAGQ8WzLhiiNJA5U+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/diplom-Prefix-edithoeeknbongekrwnxldbumzlb/diplom-Prefix.pch.pth
+xdiplom/diplom-Prefix.pch
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection35"Precompile diplom/diplom-Prefix.pch124b3ab37c23b641^c231efb37c23b641^---0#0#0#-19%DVTDocumentLocation2@56"file://localhost/Antosha/diplom/diplom/diplom-Prefix.pch0000000000000000^2448"ProcessPCH /var/folders/1-/1-ysrVaAGQ8WzLhiiNJA5U+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/diplom-Prefix-edithoeeknbongekrwnxldbumzlb/diplom-Prefix.pch.pth diplom/diplom-Prefix.pch normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Antosha/diplom    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/clang -x objective-c-header -arch armv7 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -Os -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk -gdwarf-2 -fvisibility=hidden -Wno-sign-conversion -mthumb "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -miphoneos-version-min=5.0 -iquote /Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/diplom-generated-files.hmap -I/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/diplom-own-target-headers.hmap -I/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/diplom-all-target-headers.hmap -iquote /Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/diplom-project-headers.hmap -iquote/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework/Source -I/Antosha/diplom/build/Release-iphoneos/include -I/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework -I/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/DerivedSources/armv7 -I/Antosha/diplom/build/diplom.build/Release-iphoneos/diplom.build/DerivedSources -F/Antosha/diplom/build/Release-iphoneos -DNS_BLOCK_ASSERTIONS=1 -c /Antosha/diplom/diplom/diplom-Prefix.pch -o /var/folders/1-/1-ysrVaAGQ8WzLhiiNJA5U+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/diplom-Prefix-edithoeeknbongekrwnxldbumzlb/diplom-Prefix.pch.pth -MMD -MT dependencies -MF /var/folders/1-/1-ysrVaAGQ8WzLhiiNJA5U+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/diplom-Prefix-edithoeeknbongekrwnxldbumzlb/diplom-Prefix.pch.d36"58D6B782-BF21-4114-96C4-9E41EE3BBAC4-
+
+CTouch /Antosha/diplom/build/Release-iphoneos/diplom.app
+s371413529.497816
+e371413529.504523
+r1
+xTouch
+x/Antosha/diplom/build/Release-iphoneos/diplom.app
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection55"Touch /Antosha/diplom/build/Release-iphoneos/diplom.app2c827f195223b641^452981195223b641^---0#0#0#--306"Touch build/Release-iphoneos/diplom.app    cd /Antosha/diplom    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    /usr/bin/touch -c /Antosha/diplom/build/Release-iphoneos/diplom.app36"3CF2EDFA-9DC2-4A92-BF20-A4066CD08ABC-
+
+CValidate /Antosha/diplom/build/Release-iphoneos/diplom.app
+s371413529.506930
+e371413529.939869
+r1
+xValidate
+x/Antosha/diplom/build/Release-iphoneos/diplom.app
+owarning: iPhone/iPod Touch: Info.plist: Unable to verify icon dimensions, no icon found.  You must define CFBundleIcons, CFBundleIconFiles, CFBundleIconFile, or provide a default Icon.png that is 57x57 (-19013)
+oUnable to validate your application. - (null)
+o
+owarning: Application failed codesign verification.  The signature was invalid, or it was not signed with an iPhone Distribution Certificate. (-19011)
+ofailed to extract requirements data: 1
+o/Antosha/diplom/build/Release-iphoneos/diplom.app: code object is not signed
+ofailed to extract entitlements: 1
+oAssertMacros: entitlements_requested, At least need an application-identifier entitlements file: /SourceCache/codesign_wrapper_Sim/Security-1245/codesign_wrapper/codesign_wrapper.c, line: 866
+o - (null)
+o
+owarning: Unable to extract codesigning entitlements from your application.  Please make sure diplom is a valid Mach executable that's properly codesigned. (-19050)
+o/Antosha/diplom/build/Release-iphoneos/diplom.app/diplom: code object is not signed
+o - (null)
+o
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection42"Validate build/Release-iphoneos/diplom.app0ad981195223b641^d89bf0195223b641^-1020"warning: iPhone/iPod Touch: Info.plist: Unable to verify icon dimensions, no icon found.  You must define CFBundleIcons, CFBundleIconFiles, CFBundleIconFile, or provide a default Icon.png that is 57x57 (-19013)Unable to validate your application. - (null)warning: Application failed codesign verification.  The signature was invalid, or it was not signed with an iPhone Distribution Certificate. (-19011)failed to extract requirements data: 1/Antosha/diplom/build/Release-iphoneos/diplom.app: code object is not signedfailed to extract entitlements: 1AssertMacros: entitlements_requested, At least need an application-identifier entitlements file: /SourceCache/codesign_wrapper_Sim/Security-1245/codesign_wrapper/codesign_wrapper.c, line: 866 - (null)warning: Unable to extract codesigning entitlements from your application.  Please make sure diplom is a valid Mach executable that's properly codesigned. (-19050)/Antosha/diplom/build/Release-iphoneos/diplom.app/diplom: code object is not signed - (null)3(21%IDEActivityLogMessage2@202" iPhone/iPod Touch: Info.plist: Unable to verify icon dimensions, no icon found.  You must define CFBundleIcons, CFBundleIconFiles, CFBundleIconFile, or provide a default Icon.png that is 57x57 (-19013)192"IPhone/iPod Touch: Info.plist: Unable to verify icon dimensions, no icon found.  You must define CFBundleIcons, CFBundleIconFiles, CFBundleIconFile, or provide a default Icon.png that is 57x57371413529#18446744073709551615#0#-1#-23%DVTTextDocumentLocation3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#---2@141" Application failed codesign verification.  The signature was invalid, or it was not signed with an iPhone Distribution Certificate. (-19011)131"Application failed codesign verification.  The signature was invalid, or it was not signed with an iPhone Distribution Certificate.371413529#18446744073709551615#0#-1#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#---2@155" Unable to extract codesigning entitlements from your application.  Please make sure diplom is a valid Mach executable that's properly codesigned. (-19050)145"Unable to extract codesigning entitlements from your application.  Please make sure diplom is a valid Mach executable that's properly codesigned.371413529#18446744073709551615#0#-1#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#---0#0#0#-19%DVTDocumentLocation4@66"file://localhost/Antosha/diplom/build/Release-iphoneos/diplom.app/0000000000000000^418"Validate build/Release-iphoneos/diplom.app    cd /Antosha/diplom    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    setenv PRODUCT_TYPE com.apple.product-type.application    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/Validation /Antosha/diplom/build/Release-iphoneos/diplom.app36"02AD0249-7870-4CCF-93AB-D23C91829F62-
+

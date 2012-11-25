@@ -7,9 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FBConnect.h"
+#import "UIViewControllerFacebookAlbums.h"
+
+@class UIViewControllerFacebookAlbums;
+
 
 @interface diplomAppDelegate : UIResponder <UIApplicationDelegate>
-
+{
+    UIViewControllerFacebookAlbums *facebookController;
+}
 @property (strong, nonatomic) UIWindow *window;
+@property (nonatomic, retain)  UIViewControllerFacebookAlbums *facebookController;
+@property (nonatomic, strong) Facebook *facebook;
 
 @end

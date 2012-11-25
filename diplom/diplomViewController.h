@@ -12,6 +12,8 @@
 #import <AssetsLibrary/AssetsLibrary.h>
 #import <MessageUI/MessageUI.h>
 #import "StandardFilters.h"
+#import "diplomAppDelegate.h"
+#import "FBConnect.h"
 
 @interface diplomViewController : UIViewController < UINavigationControllerDelegate,UIAlertViewDelegate, VkontakteViewControllerDelegate,VkontakteDelegate, MBProgressHUDDelegate, UIGestureRecognizerDelegate,UIActionSheetDelegate, MFMailComposeViewControllerDelegate,UIScrollViewDelegate>
 

@@ -107,7 +107,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];    
-    self.navigationController.navigationBarHidden=YES;
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackTranslucent];
 }
 
@@ -119,8 +118,12 @@
 
 
 
+-(void) viewWillAppear:(BOOL)animated
+{
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
+    [super viewWillAppear:animated];
 
-
+}
 
 
 @end

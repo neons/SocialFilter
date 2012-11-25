@@ -87,13 +87,15 @@
                                                           delegate:self 
                                                  cancelButtonTitle:@"Cancel" 
                                             destructiveButtonTitle:nil 
-                                                 otherButtonTitles:@"Save Photo", @"Email",@"share in VK",nil];
+                                                 otherButtonTitles:@"Save Photo", @"Email",@"share in VK",@"share in FB",nil];
     actSheet.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
     [actSheet showInView:self.view];
 }
 
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex 
 {
+    NSLog(@"action");
+
     switch (buttonIndex) {
         case 0:{
             _hud = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
@@ -159,7 +161,44 @@
             });
         }
             break;
-        
+        case 3:
+        {    NSLog(@"share");
+
+            diplomAppDelegate *delegate = (diplomAppDelegate *)[[UIApplication sharedApplication] delegate];
+            if (![[delegate facebook] isSessionValid]) 
+            {
+                UIAlertView * message = [[UIAlertView alloc] initWithTitle:@"Временное" message:@"Для отправки нажмите |share in FB| повторно" delegate:nil cancelButtonTitle:@"ок" otherButtonTitles:nil];
+                [message show];
+                NSArray * permissions = [[NSArray alloc] initWithObjects:@"offline_access",@"publish_stream",@"user_photos",  nil];
+                [[delegate facebook] authorize:permissions];
+                NSLog(@"not valid");
+                
+            } 
+            
+            else 
+                
+            {
+                
+                _hud = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+                [self.navigationController.view addSubview:_hud];
+                _hud.dimBackground = YES;
+                [_hud show:YES];
+                
+                NSLog(@"valid");
+                FBSession.activeSession  = delegate.facebook.session;            
+                [FBRequestConnection startForUploadPhoto:_mainImage.image 
+                                       completionHandler:^(FBRequestConnection *connection, id result, NSError *error) { [_hud hide:YES];
+                                           [_hud removeFromSuperview];
+                                           _hud = nil;
+
+                                       }];
+            }
+
+        }
+            
+            
+            break;
+ 
         default:
             
             break;
@@ -227,10 +266,6 @@
     _parametersButtonScroll.hidden = YES;
     _slider.hidden=YES;
 }
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-}
 
 - (void)viewWillDisappear:(BOOL)animated
 {
@@ -241,17 +276,13 @@
 	[super viewWillDisappear:animated];
 }
 
-- (void)viewDidDisappear:(BOOL)animated
-{
-	[super viewDidDisappear:animated];
-}
+
 
 
 
 - (IBAction)defaultfilterbutton:(UIButton *)sender 
 {
     [_mainImage setImage:_nonFilterImage];
-    
 }
 
 
@@ -264,7 +295,6 @@
     {
         case 6:
         {
-           
             StandardFilter1 *stillImageFilter = [[StandardFilter1 alloc] init];
             quickFilteredImage = [stillImageFilter imageByFilteringImage:[_arrayWhithPhoto lastObject]];
         }
@@ -677,7 +707,6 @@
     _hud.dimBackground = YES;
     _hud.delegate = self;
     [_hud show:YES];
-    
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
         
         [_vkontakte postImageToWall:[_mainImage image]];
@@ -698,6 +727,16 @@
 {
     
 }
+
+
+
+
+
+- (void)request:(FBRequest *)request didFailWithError:(NSError *)error {
+    NSLog(@"%@", [error localizedDescription]);
+    NSLog(@"Err details: %@", [error description]);
+}
+
 
 
 @end

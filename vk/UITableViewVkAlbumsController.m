@@ -18,6 +18,7 @@
 @end
 
 @implementation UITableViewVkAlbumsController
+
 @synthesize dictionaryOfAlbums=_dictionaryOfAlbums;
 @synthesize vkontakte=_vkontakte;
 @synthesize tableView=_tableView;

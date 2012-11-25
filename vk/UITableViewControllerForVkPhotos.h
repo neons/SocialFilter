@@ -15,11 +15,9 @@
 
 
 @interface UITableViewControllerForVkPhotos : UIViewController <VkontakteDelegate, UINavigationControllerDelegate, UITableViewDelegate, UITableViewDataSource,GKImageCropControllerDelegate, MBProgressHUDDelegate>
-@property (strong,nonatomic) NSDictionary *dictionaryWithArrayofPhoto;
-@property (strong, nonatomic) Vkontakte *vkontakte;
+
 @property (strong,nonatomic ) NSString *aid;
-@property (strong, nonatomic) NSMutableDictionary * staticImageDictionary;
-@property (nonatomic, assign) CGSize cropSize;
+
 
 
 

@@ -8,13 +8,17 @@
 
 #import "UITableViewControllerForVkPhotos.h"
 @interface UITableViewControllerForVkPhotos()
-@property (nonatomic, strong) NSData *data;
 @property  BOOL  needCache;
 @property (nonatomic, strong ) NSString * filePath;
-@property (strong, nonatomic)     MBProgressHUD *hud;
+@property (strong, nonatomic)  MBProgressHUD *hud;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) UIImage *defaultImage;
+@property (strong, nonatomic) NSMutableDictionary * staticImageDictionary;
+@property (nonatomic, assign) CGSize cropSize;
+@property (strong,nonatomic) NSDictionary *dictionaryWithArrayofPhoto;
+@property (strong, nonatomic) Vkontakte *vkontakte;
 
+-(void)saveCache;
 -(void) createTable;
 
 @end
@@ -24,14 +28,12 @@
 @synthesize vkontakte=_vkontakte;
 @synthesize aid=_aid;
 @synthesize staticImageDictionary=_staticImageDictionary;
-@synthesize data=_data;
 @synthesize needCache=_needCache;
 @synthesize filePath=_filePath;
 @synthesize cropSize;
 @synthesize hud=_hud;
 @synthesize tableView = _tableView;
 @synthesize defaultImage=_defaultImage;
- // для остановки установить значение "NO"
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -81,8 +83,8 @@
     [_hud show:YES];
      dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         _filePath = [DOCUMENTS stringByAppendingPathComponent:_aid];
-        _data = [[NSMutableData alloc]initWithContentsOfFile:_filePath];
-        NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:_data];
+         NSMutableData *data = [[NSMutableData alloc]initWithContentsOfFile:_filePath];
+        NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:data];
         _staticImageDictionary = [unarchiver decodeObjectForKey: @"static"];
         [unarchiver finishDecoding];
         NSLog(@"static %i", [_staticImageDictionary count]);
@@ -286,23 +288,12 @@
 -(void)pickImageForEdit :(id) sender
 {
     UITapGestureRecognizer *gesture = (UITapGestureRecognizer *) sender;
-    NSString *photoUrl=[[_dictionaryWithArrayofPhoto objectForKey:[NSString stringWithFormat:@"PhotoInSection%iInRow%i",gesture.view.tag/10,gesture.view.tag%10]]objectForKey:@"src_big"];
+    NSString *photoUrl=[[_dictionaryWithArrayofPhoto objectForKey:[NSString stringWithFormat:@"PhotoInSection%iInRow%i",gesture.view.tag/10,gesture.view.tag%10]]objectForKey:@"src_xbig"];
     NSData *photoData = [NSData dataWithContentsOfURL:[NSURL URLWithString:photoUrl]];
-    if (_needCache) 
-    {
+    
         if (_needCache) 
-        { dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            NSMutableData *data = [[NSMutableData alloc]init];
-            NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc]initForWritingWithMutableData:data];
-            [archiver encodeObject:_staticImageDictionary forKey: @"static"];
-            [archiver finishEncoding];
-            NSLog(@"first file %@",_filePath);
-            [data writeToFile:_filePath atomically:YES];        dispatch_sync(dispatch_get_main_queue(), ^{
-                NSLog(@"successful save");         
-            });
-        });
-        }
-    }
+            [self saveCache];
+    
     
     GKImageCropViewController *cropController = [[GKImageCropViewController alloc] init];
     cropController.sourceImage = [UIImage imageWithData:photoData];
@@ -421,7 +412,14 @@
 {
     [[self navigationController] popViewControllerAnimated:YES];
     if (_needCache) 
-    { dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [self saveCache];
+
+}
+
+-(void)saveCache
+{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        _filePath = [DOCUMENTS stringByAppendingPathComponent:_aid];
         NSMutableData *data = [[NSMutableData alloc]init];
         NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc]initForWritingWithMutableData:data];
         [archiver encodeObject:_staticImageDictionary forKey: @"static"];
@@ -429,14 +427,9 @@
         NSLog(@"first file %@",_filePath);
         [data writeToFile:_filePath atomically:YES];        dispatch_sync(dispatch_get_main_queue(), ^{
             NSLog(@"successful save");         
-
         });
     });
-        
-    }
-
+    
 }
-
-
 
 @end

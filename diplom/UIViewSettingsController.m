@@ -31,10 +31,8 @@
 
 - (void)didReceiveMemoryWarning
 {
-    // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
     
-    // Release any cached data, images, etc that aren't in use.
 }
 
 - (IBAction)closeButton:(UIButton *)sender 
@@ -44,18 +42,11 @@
 }
 #pragma mark - View lifecycle
 
-/*
-// Implement loadView to create a view hierarchy programmatically, without using a nib.
-- (void)loadView
-{
-}
-*/
 
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib. settingsCell
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-     
     _arrayWithSettings = [NSArray arrayWithObjects:@"Удалить кэш фото", nil];
 }
 
@@ -64,14 +55,10 @@
 {
     [self setTableView:nil];
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    //#warning Incomplete method implementation.
-    // Return the number of rows in the section.
     return [_arrayWithSettings count];
 }
 
@@ -79,27 +66,17 @@
 {
     
     static NSString *CellIdentifier = @"settingsCell";
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];}
-   
+    
     cell.textLabel.text = [_arrayWithSettings objectAtIndex:indexPath.row];
-    
-    
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
-    
-    
     if (indexPath.row==0) {
         NSFileManager *fileMgr = [[NSFileManager alloc] init];
         NSError *error = nil;
@@ -116,8 +93,7 @@
                 }
                 else
                 {
-                   
-                    
+                    NSLog(@"all del");
                 }
             }
         }
@@ -125,19 +101,12 @@
         {
             NSLog(@"some bad or nothing");
         }
-        UIImageView *view=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"checkedd.png"]];
-        view.frame = CGRectMake(258,5,58,58);  
-        [self.tableView addSubview:view];
-        [_tableView performSelector:@selector(reloadData) withObject:nil afterDelay:3];
-        [view performSelector:@selector(removeFromSuperview) withObject:nil afterDelay:3];
         
-    }
-    
-    
-    
-    
-    
+        UIImageView *view=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"checkedd.png"]];
+        view.frame = CGRectMake(258,4,58,58);  
+        [self.tableView addSubview:view];
+        [view performSelector:@selector(removeFromSuperview) withObject:nil afterDelay:1];
+        }
 }
-
 
 @end

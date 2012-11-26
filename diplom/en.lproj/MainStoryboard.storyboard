@@ -260,19 +260,19 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem title="Отмена" id="Y7g-eL-61X">
+                                    <barButtonItem title="Закрыть" id="Y7g-eL-61X">
                                         <connections>
                                             <action selector="closeButton:" destination="Kfl-mi-Sps" id="Qlg-lA-wCO"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="m4O-Sm-bVi">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="m4O-Sm-bVi">
                                 <rect key="frame" x="0.0" y="44" width="320" height="416"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="settingsCell" textLabel="lfn-IB-nwW" style="IBUITableViewCellStyleDefault" id="sJe-a5-kC4">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="settingsCell" textLabel="lfn-IB-nwW" style="IBUITableViewCellStyleDefault" id="sJe-a5-kC4">
                                         <rect key="frame" x="0.0" y="46" width="320" height="46"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -1063,6 +1063,52 @@
         <image name="settingss.png" width="90" height="60"/>
         <image name="waste.png" width="52" height="52"/>
     </resources>
+    <classes>
+        <class className="AutorisationController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AutorisationController.h"/>
+        </class>
+        <class className="UITableViewControllerForVkPhotos" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITableViewControllerForVkPhotos.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="UITableViewVkAlbumsController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITableViewVkAlbumsController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="UIViewControllerFacebookAlbums" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIViewControllerFacebookAlbums.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="UIViewControllerFacebookPhotos" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIViewControllerFacebookPhotos.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="UIViewSettingsController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIViewSettingsController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="diplomViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/diplomViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="barButtonBrush" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="countLayers" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="horizontalScroll" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="mainImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="parametersButtonScroll" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="slider" candidateClass="UISlider"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

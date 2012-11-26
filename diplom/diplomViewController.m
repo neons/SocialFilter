@@ -45,11 +45,7 @@
     [super didReceiveMemoryWarning];
 }
 
-- (void)setImageForEdit:(UIImage *)ImageForEdit;
-{
-     _imageFromPicker=ImageForEdit;
-    
-}
+
 
 -(void) scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {

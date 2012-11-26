@@ -19,6 +19,5 @@
 
 @property (strong, nonatomic) UIImage *imageFromPicker;
 
--(void)setImageForEdit:(UIImage *)ImageForEdit;
 @end
 

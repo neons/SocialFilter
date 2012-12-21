@@ -607,8 +607,8 @@
 
 - (IBAction)managePhotosArray:(UIBarButtonItem *)sender
 {
-    _slider.hidden=YES;
-    _parametersButtonScroll.hidden = YES;
+    //_slider.hidden=YES;
+    //_parametersButtonScroll.hidden = YES;
     switch (sender.tag) {
         case 1:
         

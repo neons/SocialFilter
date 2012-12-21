@@ -87,7 +87,8 @@
         NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:data];
         _staticImageDictionary = [unarchiver decodeObjectForKey: @"static"];
         [unarchiver finishDecoding];
-        NSLog(@"static %i", [_staticImageDictionary count]);
+         
+       // NSLog(@"static %i", [_staticImageDictionary count]);
         self.cropSize = CGSizeMake(320, 320);
         
         _vkontakte = [Vkontakte sharedInstance];
@@ -289,17 +290,19 @@
 {
     UITapGestureRecognizer *gesture = (UITapGestureRecognizer *) sender;
     NSString *photoUrl=[[_dictionaryWithArrayofPhoto objectForKey:[NSString stringWithFormat:@"PhotoInSection%iInRow%i",gesture.view.tag/10,gesture.view.tag%10]]objectForKey:@"src_xbig"];
-    NSData *photoData = [NSData dataWithContentsOfURL:[NSURL URLWithString:photoUrl]];
+    if (photoUrl)
+    {
+        NSData *photoData = [NSData dataWithContentsOfURL:[NSURL URLWithString:photoUrl]];
     
         if (_needCache) 
             [self saveCache];
-    
     
     GKImageCropViewController *cropController = [[GKImageCropViewController alloc] init];
     cropController.sourceImage = [UIImage imageWithData:photoData];
     cropController.cropSize = self.cropSize;
     cropController.delegate = self;
     [self.navigationController pushViewController:cropController animated:YES];
+    }
 }
 
 
@@ -353,45 +356,6 @@
 }
 
 
-/*
- // Override to support conditional editing of the table view.
- - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
- {
- // Return NO if you do not want the specified item to be editable.
- return YES;
- }
- */
-
-/*
- // Override to support editing the table view.
- - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
- {
- if (editingStyle == UITableViewCellEditingStyleDelete) {
- // Delete the row from the data source
- [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
- }   
- else if (editingStyle == UITableViewCellEditingStyleInsert) {
- // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
- }   
- }
- */
-
-/*
- // Override to support rearranging the table view.
- - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
- {
- }
- */
-
-/*
- // Override to support conditional rearranging of the table view.
- - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
- {
- // Return NO if you do not want the item to be re-orderable.
- return YES;
- }
- */
-
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -418,7 +382,7 @@
 
 -(void)saveCache
 {
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
         _filePath = [DOCUMENTS stringByAppendingPathComponent:_aid];
         NSMutableData *data = [[NSMutableData alloc]init];
         NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc]initForWritingWithMutableData:data];

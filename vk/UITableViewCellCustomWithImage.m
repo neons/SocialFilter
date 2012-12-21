@@ -18,8 +18,6 @@
 +(UITableViewCellCustomWithImage*) cell
 {
     NSArray *objects=[[NSBundle mainBundle] loadNibNamed:@"Cell" owner:nil options:nil];
-    
-    NSLog(@"create cell");
     return [objects objectAtIndex:0];
 }
 
@@ -36,8 +34,6 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
 
 @end

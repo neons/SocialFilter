@@ -237,10 +237,12 @@ NSString * const vkRedirectUrl = @"http://oauth.vk.com/blank.html";
     if (self) 
     {
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+       
         if ([defaults objectForKey:@"VKAccessTokenKey"] 
             && [defaults objectForKey:@"VKExpirationDateKey"]
-            && [defaults objectForKey:@"VKUserID"]
-            && [defaults objectForKey:@"VKUserEmail"]) 
+            && [defaults objectForKey:@"VKUserID"]) 
+            
+            //&& [defaults objectForKey:@"VKUserEmail"]
         {
             accessToken = [defaults objectForKey:@"VKAccessTokenKey"];
             expirationDate = [defaults objectForKey:@"VKExpirationDateKey"];
@@ -364,7 +366,6 @@ NSString * const vkRedirectUrl = @"http://oauth.vk.com/blank.html";
     [requestString appendFormat:@"%@?", @"photos.getAll"];
     [requestString appendFormat:@"uid=%@&", userId];
     [requestString appendFormat:@"access_token=%@", accessToken];
-    NSLog(@"requestString getUserAlbums %@",requestString);
 	NSURL *url = [NSURL URLWithString:requestString];
 	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
 	
@@ -429,7 +430,6 @@ NSString * const vkRedirectUrl = @"http://oauth.vk.com/blank.html";
     [requestString appendFormat:@"need_covers=%@&",need_covers];
    
     [requestString appendFormat:@"access_token=%@", accessToken];
-    NSLog(@"request %@",requestString);
 	NSURL *url = [NSURL URLWithString:requestString];
 	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
 	
@@ -501,7 +501,6 @@ NSString * const vkRedirectUrl = @"http://oauth.vk.com/blank.html";
     [requestString appendFormat:@"uid=%@&", userId];
     [requestString appendFormat:@"aid=%@&",albumsAid];
     [requestString appendFormat:@"access_token=%@", accessToken];
-    NSLog(@"request %@",requestString);
 	NSURL *url = [NSURL URLWithString:requestString];
 	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
 	NSData *response = [NSURLConnection sendSynchronousRequest:request 
@@ -909,6 +908,7 @@ NSString * const vkRedirectUrl = @"http://oauth.vk.com/blank.html";
                               userEmail:(NSString *)_email
 
 {
+    NSLog(@"save email %@", _email);
     accessToken = _accessToken;
     userId = _userId;
     expirationDate = _expDate;

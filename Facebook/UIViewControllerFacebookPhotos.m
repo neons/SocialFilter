@@ -21,7 +21,6 @@
 
 -(void)saveCache;
 -(void)pickImageForEdit :(id) sender;
--(void) createTable;
 @end
 
 @implementation UIViewControllerFacebookPhotos
@@ -113,25 +112,20 @@
         [unarchiver finishDecoding];
         dispatch_sync(dispatch_get_main_queue(), ^{
             
-            
+            diplomAppDelegate *delegate = (diplomAppDelegate *)[[UIApplication sharedApplication] delegate];
+            NSString *string=[NSString stringWithFormat:@"%@/photos?limit=1000",_albumsId];
+            [[delegate facebook] requestWithGraphPath:string andDelegate:self];
         });
     });
-        self.cropSize = CGSizeMake(320, 320);
-    [self createTable];
-
-}
-
--(void) createTable
-{
     _hud = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
     [self.tableView addSubview:_hud];
 	_hud.dimBackground = YES;
     [_hud show:YES];
+        self.cropSize = CGSizeMake(320, 320);
 
-    diplomAppDelegate *delegate = (diplomAppDelegate *)[[UIApplication sharedApplication] delegate];
-    NSString *string=[NSString stringWithFormat:@"%@/photos?limit=1000",_albumsId];
-    [[delegate facebook] requestWithGraphPath:string andDelegate:self];
 }
+
+
 - (NSArray*)imageNamed:(NSArray*)arrayWithurl inIndexPaths:(NSIndexPath *)indexPath
 {
     NSMutableArray *finalArray=[[NSMutableArray alloc]init];
@@ -153,7 +147,7 @@
     if ([urlForDownload count]>=1) {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             
-            
+          // NSLog(@"download image");
             if (_staticImageDictionary == nil)
             {
                 _staticImageDictionary = [[NSMutableDictionary alloc] init];
@@ -284,8 +278,10 @@
 {
     UITapGestureRecognizer *gesture = (UITapGestureRecognizer *) sender;
     NSString *photoUrl=[[[[_dictionaryWitSortPhotos objectForKey:[NSString stringWithFormat:@"PhotoInSection%iInRow%i",gesture.view.tag/10,gesture.view.tag%10]]objectForKey:@"images"]objectAtIndex:1]objectForKey:@"source"];
-    NSLog(@"urlphoto %@",photoUrl);
-    NSData *photoData = [NSData dataWithContentsOfURL:[NSURL URLWithString:photoUrl]];
+    if (photoUrl)
+    {
+        NSLog(@"urlphoto %@",photoUrl);
+        NSData *photoData = [NSData dataWithContentsOfURL:[NSURL URLWithString:photoUrl]];
     
     if (_needCache) 
         [self saveCache];
@@ -296,6 +292,7 @@
     cropController.cropSize = self.cropSize;
     cropController.delegate = self;
     [self.navigationController pushViewController:cropController animated:YES];
+    }
 }
 
 - (void)viewDidUnload
@@ -308,7 +305,7 @@
 
 -(void)saveCache
 {
-     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
         _filePath = [DOCUMENTS stringByAppendingPathComponent:_albumsId];
         NSMutableData *data = [[NSMutableData alloc]init];
         NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc]initForWritingWithMutableData:data];

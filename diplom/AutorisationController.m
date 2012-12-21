@@ -81,8 +81,7 @@
                                                                  bundle: nil];    
         
         
-        diplomViewController *controller = (diplomViewController*)[mainStoryboard 
-                                                                   instantiateViewControllerWithIdentifier: @"filterController"];
+        diplomViewController *controller = (diplomViewController*)[mainStoryboard                                instantiateViewControllerWithIdentifier: @"filterController"];
         controller.imageFromPicker = [info objectForKey:UIImagePickerControllerEditedImage];
         [picker dismissModalViewControllerAnimated:NO];
 

@@ -74,7 +74,6 @@ static NSString* kAppId = @"478610048829176";
         }
         // Check if the authorization callback will work
         BOOL bCanOpenUrl = [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString: url]];
-        NSLog(@"canopen %d ,sheme %d",bCanOpenUrl, bSchemeInPlist);
         if (!bSchemeInPlist || !bCanOpenUrl) {
             UIAlertView *alertView = [[UIAlertView alloc]
                                       initWithTitle:@"Setup Error"

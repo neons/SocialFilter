@@ -99,7 +99,6 @@
 }
 
 - (void)storeAuthData:(NSString *)accessToken expiresAt:(NSDate *)expiresAt {
-    NSLog(@"save token");
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:accessToken forKey:@"FBAccessTokenKey"];
     [defaults setObject:expiresAt forKey:@"FBExpirationDateKey"];
@@ -145,7 +144,6 @@
     NSLog(@"did not login");
 }
 -(void)fbDidExtendToken:(NSString *)accessToken expiresAt:(NSDate *)expiresAt {
-    NSLog(@"token extended");
     [self storeAuthData:accessToken expiresAt:expiresAt];
 }
 - (void)fbDidLogout {

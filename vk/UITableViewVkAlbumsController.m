@@ -58,7 +58,6 @@
 {
     [super viewDidLoad];
     [self createTable];
-
 }
 
 -(void)createTable
@@ -124,7 +123,6 @@
             if (imageNamed) 
             {
                 [_staticImageDictionary setObject:retImage forKey:imageNamed];
-                
             }
         }               
     }

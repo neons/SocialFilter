@@ -615,14 +615,30 @@
             if ((_mainImage.image != _nonFilterImage) & !([_mainImage.image isEqual: [_arrayWhithPhoto lastObject]]))
             {
                 [_arrayWhithPhoto addObject: _mainImage.image];
+                UIImageView *imageForAnimation = [[UIImageView alloc] initWithFrame:_mainImage.frame];
+                [self.view addSubview:imageForAnimation];
+                imageForAnimation.image = _mainImage.image;
+                [UIView beginAnimations:nil context:nil];
+                [UIView setAnimationDuration:0.5];
+                [UIView setAnimationCurve:UIViewAnimationCurveLinear];
+                [UIView setAnimationBeginsFromCurrentState:YES];
+                imageForAnimation.frame = CGRectMake(30, self.view.frame.size.height*0.9, 20, 20);
+                imageForAnimation.alpha = 0.0f;
+                [UIView commitAnimations];
+                imageForAnimation=nil;
+                _countLayers.text =[NSString stringWithFormat:@"%i", [ _arrayWhithPhoto count]];
             }
-            _countLayers.text =[NSString stringWithFormat:@"%i", [ _arrayWhithPhoto count]];
-            break;
             
+            break;
+         
         case 2:
-        
+        {
+            
+            UIImageView *imageForAnimation = [[UIImageView alloc] initWithFrame:_mainImage.frame];
+             [self.view addSubview:imageForAnimation];
             if ([_arrayWhithPhoto count] == 1)
                 [_mainImage setImage:_nonFilterImage];
+            
             else if ([[_mainImage image] isEqual:[_arrayWhithPhoto lastObject]])
             {
                 [_arrayWhithPhoto removeLastObject];
@@ -631,11 +647,11 @@
             else
             {
                 [_mainImage setImage:[_arrayWhithPhoto lastObject]];
-
             }
             _countLayers.text =[NSString stringWithFormat:@"%i", [ _arrayWhithPhoto count]];
+        }
             break;
-      
+        
         default:
             break;
     }

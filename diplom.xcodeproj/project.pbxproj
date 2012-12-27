@@ -98,6 +98,8 @@
 		84BC8B5B1623612800FF428F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BC8B5A1623612800FF428F /* AVFoundation.framework */; };
 		84BC8B5D1623613A00FF428F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BC8B5C1623613A00FF428F /* QuartzCore.framework */; };
 		84CC8DB716557894001FE0D5 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84CC8DB616557894001FE0D5 /* MessageUI.framework */; };
+		84D07F6F168CA71F009C5B53 /* CircleBlur.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D07F6E168CA71F009C5B53 /* CircleBlur.m */; };
+		84D07F71168CA817009C5B53 /* blur.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D07F70168CA817009C5B53 /* blur.png */; };
 		84E19755166029CD00A47A20 /* UIViewControllerFacebookAlbums.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E19754166029CD00A47A20 /* UIViewControllerFacebookAlbums.m */; };
 		84E3E1A516307303008C9446 /* AutorisationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E3E1A316307303008C9446 /* AutorisationController.m */; };
 		84E6F1711661577100403C0A /* UIViewControllerFacebookPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E6F1701661577000403C0A /* UIViewControllerFacebookPhotos.m */; };
@@ -256,6 +258,9 @@
 		84BC8B5A1623612800FF428F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		84BC8B5C1623613A00FF428F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		84CC8DB616557894001FE0D5 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		84D07F6D168CA71F009C5B53 /* CircleBlur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CircleBlur.h; path = filters/CircleBlur.h; sourceTree = "<group>"; };
+		84D07F6E168CA71F009C5B53 /* CircleBlur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CircleBlur.m; path = filters/CircleBlur.m; sourceTree = "<group>"; };
+		84D07F70168CA817009C5B53 /* blur.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blur.png; sourceTree = "<group>"; };
 		84E19753166029CD00A47A20 /* UIViewControllerFacebookAlbums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIViewControllerFacebookAlbums.h; path = Facebook/UIViewControllerFacebookAlbums.h; sourceTree = "<group>"; };
 		84E19754166029CD00A47A20 /* UIViewControllerFacebookAlbums.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIViewControllerFacebookAlbums.m; path = Facebook/UIViewControllerFacebookAlbums.m; sourceTree = "<group>"; };
 		84E1981816605F7800A47A20 /* FBConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBConnect.h; path = ../../../Documents/FacebookSDK/FacebookSDK.framework/Versions/A/DeprecatedHeaders/FBConnect.h; sourceTree = "<group>"; };
@@ -305,6 +310,7 @@
 				84AA0BFA165ACD6400D45358 /* PLCameraSheetButton@2x.png */,
 				84AA0BFB165ACD6400D45358 /* PLCameraSheetButtonPressed@2x.png */,
 				84AA0BFC165ACD6400D45358 /* PLCameraSheetDoneButton@2x.png */,
+				84D07F70168CA817009C5B53 /* blur.png */,
 				84AA0BFD165ACD6400D45358 /* PLCameraSheetDoneButtonPressed@2x.png */,
 				84AA0BFE165ACD6400D45358 /* settingss.png */,
 				84AA0BFF165ACD6400D45358 /* tree.png */,
@@ -430,7 +436,7 @@
 		84AE9558162340B60036BF8D = {
 			isa = PBXGroup;
 			children = (
-				84AAC80F165963EB00B563E9 /* Filters Roman Truba */,
+				84D07F66168C9FB3009C5B53 /* filters */,
 				849D70FD164865D00052980B /* crop controller */,
 				84E1D5DC163C8FFA0082AC9F /* Facebook */,
 				8400F8E1163360EB00D766B9 /* img */,
@@ -496,6 +502,16 @@
 				84AE9575162340B60036BF8D /* diplom-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		84D07F66168C9FB3009C5B53 /* filters */ = {
+			isa = PBXGroup;
+			children = (
+				84D07F6D168CA71F009C5B53 /* CircleBlur.h */,
+				84D07F6E168CA71F009C5B53 /* CircleBlur.m */,
+				84AAC80F165963EB00B563E9 /* Filters Roman Truba */,
+			);
+			name = filters;
 			sourceTree = "<group>";
 		};
 		84E1D5DC163C8FFA0082AC9F /* Facebook */ = {
@@ -645,6 +661,7 @@
 				84AA0C46165ACDA100D45358 /* 23.JPG in Resources */,
 				84AA0C47165ACDA100D45358 /* 24.JPG in Resources */,
 				84AA0CDA165AD90F00D45358 /* icon.png in Resources */,
+				84D07F71168CA817009C5B53 /* blur.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -692,6 +709,7 @@
 				84AA0C5C165ACE3B00D45358 /* VkontakteViewController.m in Sources */,
 				84E19755166029CD00A47A20 /* UIViewControllerFacebookAlbums.m in Sources */,
 				84E6F1711661577100403C0A /* UIViewControllerFacebookPhotos.m in Sources */,
+				84D07F6F168CA71F009C5B53 /* CircleBlur.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

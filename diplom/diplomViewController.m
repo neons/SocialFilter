@@ -19,6 +19,7 @@
 @property (strong, nonatomic) IBOutlet UIScrollView *parametersButtonScroll;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *barButtonBrush;
 @property (strong, nonatomic) IBOutlet UILabel *countLayers;
+@property (strong, nonatomic) IBOutlet CircleBlur *circleBlurView;
 
 
 
@@ -35,9 +36,11 @@
 @synthesize parametersButtonScroll = _parametersButtonScroll;
 @synthesize barButtonBrush = _barButtonBrush;
 @synthesize countLayers = _countLayers;
+@synthesize circleBlurView = _circleBlurView;
 @synthesize imageFromPicker=_imageFromPicker;
 @synthesize currentFilterTag=_currentFilterTag;
 @synthesize arrayWhithPhoto=_arrayWhithPhoto;
+
 
 
 - (void)didReceiveMemoryWarning
@@ -45,7 +48,29 @@
     [super didReceiveMemoryWarning];
 }
 
+-(void)blurIt:(CircleBlur *)sender
+{
+    UIImage *quickFilteredImage;
+    GPUImageGaussianSelectiveBlurFilter *stillImageFilter = [[GPUImageGaussianSelectiveBlurFilter alloc] init];
+   
+    stillImageFilter.excludeCircleRadius = sender.radius/320;
+    stillImageFilter.excludeBlurSize = 0.05;
+    CGPoint center = sender.center;
+    center.x=(center.x/3.2)/100;
+    center.y=(center.y/3.2)/100;
+   stillImageFilter.excludeCirclePoint = center;
+    quickFilteredImage = [stillImageFilter imageByFilteringImage:[_arrayWhithPhoto lastObject]];
+    [_mainImage setImage:quickFilteredImage];
 
+}
+- (IBAction)blurButton:(id)sender
+{
+    _slider.hidden=YES;
+    _parametersButtonScroll.hidden = YES;
+    if (_circleBlurView.hidden)
+    [self blurIt:_circleBlurView];
+    _circleBlurView.hidden = !_circleBlurView.hidden;
+}
 
 -(void) scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
@@ -107,7 +132,7 @@
                 _hud = nil;
                 
             }];}
-            break;
+           break;
         case 1:
         {
             if ([MFMailComposeViewController canSendMail] == true) 
@@ -189,17 +214,14 @@
 
                                        }];
             }
-
         }
-            
-            
             break;
  
         default:
             
             break;
     }
-}
+;}
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
@@ -224,8 +246,11 @@
     _vkontakte.delegate = self;
     _parametersButtonScroll.hidden = YES;
     _slider.hidden=YES;
-   
-    
+    _circleBlurView.delegate = self;
+    [self.circleBlurView addGestureRecognizer:[[UIPinchGestureRecognizer alloc] initWithTarget:self.circleBlurView action:@selector(pinch:)]];
+    [self.circleBlurView addGestureRecognizer:[[UIPanGestureRecognizer alloc] initWithTarget:self.circleBlurView action:@selector(pan:)]];
+    [[self.circleBlurView.gestureRecognizers lastObject]setMaximumNumberOfTouches:2];
+    _circleBlurView.center = CGPointMake(160, 160);
     if (_imageFromPicker)
     {
         [_mainImage setImage:_imageFromPicker];
@@ -233,7 +258,7 @@
         _arrayWhithPhoto=[[NSMutableArray alloc] initWithObjects:_imageFromPicker, nil];
     }
     else
-    NSLog(@"hmm epic fail");       
+    NSLog(@"fail");       
 }
 
 
@@ -246,6 +271,7 @@
     [self setParametersButtonScroll:nil];
     [self setBarButtonBrush:nil];
     [self setCountLayers:nil];
+    [self setCircleBlurView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -254,7 +280,6 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
-    
     [super viewWillAppear:animated];
 }
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -266,9 +291,7 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [[[self navigationController] view] setFrame:[[UIScreen mainScreen] bounds]];
-
 	[[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationNone];
-
 	[super viewWillDisappear:animated];
 }
 
@@ -482,7 +505,8 @@
 
 - (IBAction)parametersBarButton:(id)sender
 {
-    _parametersButtonScroll.hidden =    !(_parametersButtonScroll.hidden );
+    _parametersButtonScroll.hidden = !_parametersButtonScroll.hidden;
+    _circleBlurView.hidden = YES;
 }
 
 -(IBAction) changePhotoParameters:(UIButton *)sender
@@ -634,7 +658,8 @@
         case 2:
         {
             
-            
+            _circleBlurView.hidden = YES;
+
 
             if ([_arrayWhithPhoto count] == 1)
                 [_mainImage setImage:_nonFilterImage];
@@ -754,10 +779,6 @@
 {
     
 }
-
-
-
-
 
 - (void)request:(FBRequest *)request didFailWithError:(NSError *)error {
     NSLog(@"%@", [error localizedDescription]);

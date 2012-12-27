@@ -14,8 +14,9 @@
 #import "StandardFilters.h"
 #import "diplomAppDelegate.h"
 #import "FBConnect.h"
+#import "CircleBlur.h"
 
-@interface diplomViewController : UIViewController < UINavigationControllerDelegate,UIAlertViewDelegate, VkontakteViewControllerDelegate,VkontakteDelegate, MBProgressHUDDelegate, UIGestureRecognizerDelegate,UIActionSheetDelegate, MFMailComposeViewControllerDelegate,UIScrollViewDelegate>
+@interface diplomViewController : UIViewController < UINavigationControllerDelegate,UIAlertViewDelegate, VkontakteViewControllerDelegate,VkontakteDelegate, MBProgressHUDDelegate, UIGestureRecognizerDelegate,UIActionSheetDelegate, MFMailComposeViewControllerDelegate,UIScrollViewDelegate, circleBlurProtocol>
 
 @property (strong, nonatomic) UIImage *imageFromPicker;
 

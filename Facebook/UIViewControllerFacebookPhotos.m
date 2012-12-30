@@ -248,9 +248,7 @@
     UITapGestureRecognizer *tapped2 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pickImageForEdit:)];
     UITapGestureRecognizer *tapped3 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pickImageForEdit:)];
     UITapGestureRecognizer *tapped4 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pickImageForEdit:)];
-    
-    int n;
-    n = indexPath.row*10+cell.firstImage.tag;
+  
     
     cell.firstImage.tag = 1;
     cell.secondImage.tag=2;

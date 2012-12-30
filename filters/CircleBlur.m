@@ -7,6 +7,9 @@
 //
 
 #import "CircleBlur.h"
+@interface CircleBlur()
+@property (nonatomic) BOOL color;
+@end
 
 @implementation CircleBlur
 
@@ -14,6 +17,7 @@
 @synthesize center=_center;
 @synthesize radius=_radius;
 @synthesize delegate=_delegate;
+@synthesize color = _color;
 
 -(void) setup
 {
@@ -68,6 +72,12 @@
 {
     UIGraphicsPushContext(context);
     CGContextBeginPath(context);
+    
+    if(_color)
+        [[UIColor whiteColor]setStroke];
+    else
+        [[UIColor clearColor]setStroke];
+    
     CGContextAddArc(context, p.x, p.y, radius, 0, 2*M_PI, YES); 
     CGContextStrokePath(context);
     UIGraphicsPopContext();
@@ -80,7 +90,6 @@
     else if (self.radius<10)
         _radius=10;
     CGContextSetLineWidth(context, 1.0);
-    [[UIColor whiteColor]setStroke];
     [self drawCircleAtPoint:self.center withRadius:self.radius inContext:context];
     CGContextStrokePath(context);
 }
@@ -91,9 +100,12 @@
     {
         self.scale = gesture.scale;
         gesture.scale=1;
+        _color=YES;
     }
     if (gesture.state == UIGestureRecognizerStateEnded)
     {
+        _color=NO;
+        [self setNeedsDisplay];
         [self.delegate blurIt:self];
     }
 }
@@ -115,12 +127,14 @@
             newCenter.y = 320;
         else if (newCenter.y <0)
             newCenter.y = 0;
-        
+        _color=YES;
         self.center = newCenter;
         [gesture setTranslation:CGPointZero inView:self];
     }
     if (gesture.state == UIGestureRecognizerStateEnded)
     {
+        self.color = NO;
+        [self setNeedsDisplay];
         [self.delegate blurIt:self];
     }
 }

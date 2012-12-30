@@ -42,8 +42,9 @@
     
 }
 
-- (IBAction)getAlbumsTestMethod:(id)sender
+- (IBAction)getAlbumsTestMethod:(UIBarButtonItem *)sender
 {
+    sender.enabled = NO;
     _hud = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
     [self.tableView addSubview:_hud];
 	_hud.dimBackground = YES;
@@ -162,7 +163,6 @@
     [_hud hide:YES];
     [_hud removeFromSuperview];
     _hud = nil;
-    
 }
 - (void)request:(FBRequest *)request didReceiveResponse:(NSURLResponse *)response {
     NSLog(@"received response");

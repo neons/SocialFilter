@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "FBConnect.h"
+#import "IGConnect.h"
 #import "UIViewControllerFacebookAlbums.h"
 
 @class UIViewControllerFacebookAlbums;
@@ -20,5 +21,7 @@
 @property (strong, nonatomic) UIWindow *window;
 @property (nonatomic, retain)  UIViewControllerFacebookAlbums *facebookController;
 @property (nonatomic, strong) Facebook *facebook;
+@property (strong, nonatomic) Instagram *instagram;
+
 
 @end

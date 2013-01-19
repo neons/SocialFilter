@@ -15,6 +15,7 @@
  */
 
 #import <Foundation/Foundation.h>
+#import "CoreLocation/CoreLocation.h"
 #import "VkontakteViewController.h"
 
 extern NSString * const vkAppId;
@@ -45,7 +46,7 @@ extern NSString * const vkRedirectUrl;
 - (void)postMessageToWall:(NSString *)message link:(NSURL *)url;
 - (void)postImageToWall:(UIImage *)image;
 - (void)postImageToWall:(UIImage *)image text:(NSString *)message;
-- (void)postImageToWall:(UIImage *)image text:(NSString *)message link:(NSURL *)url;
+- (void)postImageToWall:(UIImage *)image text:(NSString *)message link:(NSURL *)url location:(CLLocationCoordinate2D)location;
 -(void) getUserAlbums;
 -(void) getUserAlbumsCount;
 -(void) getUserAlbumsPhoto:(NSString *)albumsAid;

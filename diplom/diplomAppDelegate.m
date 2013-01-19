@@ -7,6 +7,8 @@
 //
 
 #import "diplomAppDelegate.h"
+#define APP_ID @"18dfa27b99a44a14bc741aee591a01f8"
+//               fd725621c5e44198a5b8ad3f7a0ffa09
 static NSString* kAppId = @"478610048829176";
 
 
@@ -15,6 +17,7 @@ static NSString* kAppId = @"478610048829176";
 @synthesize window = _window;
 @synthesize facebookController=_facebookController;
 @synthesize facebook=_facebook;
+@synthesize instagram = _instagram;
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -22,7 +25,8 @@ static NSString* kAppId = @"478610048829176";
     _facebookController = [[UIViewControllerFacebookAlbums alloc] init];
    
     _facebook = [[Facebook alloc] initWithAppId:kAppId andDelegate:_facebookController];
-    
+   _instagram = [[Instagram alloc] initWithClientId:APP_ID
+                                                delegate:nil];
     // Check and retrieve authorization information
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if ([defaults objectForKey:@"FBAccessTokenKey"] && [defaults objectForKey:@"FBExpirationDateKey"]) {
@@ -118,14 +122,23 @@ static NSString* kAppId = @"478610048829176";
      */
 }
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
-{
-    return [self.facebook handleOpenURL:url];
+{    
+    NSString *stringUrl = [url absoluteString];
+    if ([stringUrl rangeOfString:@"ig18dfa27b99a44a14bc741aee591a01f8://"].location == NSNotFound)
+        return [self.facebook handleOpenURL:url];
+    else
+        return [self.instagram handleOpenURL:url]; 
+        
+   
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
-
-    return [self.facebook handleOpenURL:url];
+    NSString *stringUrl = [url absoluteString];
+    if ([stringUrl rangeOfString:@"ig18dfa27b99a44a14bc741aee591a01f8://"].location == NSNotFound)
+        return [self.facebook handleOpenURL:url];
+    else
+        return [self.instagram handleOpenURL:url]; 
 }
 
 

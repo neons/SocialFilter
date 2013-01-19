@@ -809,7 +809,7 @@ NSString * const vkRedirectUrl = @"http://oauth.vk.com/blank.html";
     }
 }
 
-- (void)postImageToWall:(UIImage *)image text:(NSString *)message link:(NSURL *)url
+- (void)postImageToWall:(UIImage *)image text:(NSString *)message link:(NSURL *)url location:(CLLocationCoordinate2D)location
 {
     if (![self isAuthorized]) return;
     
@@ -843,6 +843,7 @@ NSString * const vkRedirectUrl = @"http://oauth.vk.com/blank.html";
     
     NSString *postToWallLink;
     
+    
     if (url) 
     {
         postToWallLink = [NSString stringWithFormat:@"https://api.vk.com/method/wall.post?owner_id=%@&access_token=%@&message=%@&attachments=%@,%@", 
@@ -860,7 +861,11 @@ NSString * const vkRedirectUrl = @"http://oauth.vk.com/blank.html";
                           [self URLEncodedString:message], 
                           photoId];
     }
-    
+    if (location.latitude || location.longitude)
+    { 
+        NSString *locationString = [NSString stringWithFormat:@"&long=%f&lat=%f",location.longitude, location.latitude];
+       postToWallLink = [postToWallLink stringByAppendingString:locationString];
+    }
     NSDictionary *postToWallDict = [self sendRequest:postToWallLink withCaptcha:NO];
     NSString *errorMsg = [[postToWallDict  objectForKey:@"error"] objectForKey:@"error_msg"];
     if(errorMsg) 
@@ -897,7 +902,7 @@ NSString * const vkRedirectUrl = @"http://oauth.vk.com/blank.html";
 
 - (void)postImageToWall:(UIImage *)image text:(NSString *)message
 {
-    [self postImageToWall:image text:message link:nil];
+    [self postImageToWall:image text:message link:nil location:CLLocationCoordinate2DMake(0, 0)];
 }
 
 #pragma mark - VkontakteViewControllerDelegate

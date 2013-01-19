@@ -71,7 +71,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="-1973" y="641"/>
+            <point key="canvasLocation" x="-1977" y="981"/>
         </scene>
         <scene sceneID="WYA-0N-31Y">
             <objects>
@@ -122,7 +122,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="-1583" y="641"/>
+            <point key="canvasLocation" x="-1587" y="981"/>
         </scene>
         <scene sceneID="JjB-Wl-w9q">
             <objects>
@@ -195,7 +195,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="-2002" y="-558"/>
+            <point key="canvasLocation" x="-2006" y="-218"/>
         </scene>
         <scene sceneID="9wS-Rw-o5w">
             <objects>
@@ -246,7 +246,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="-1587" y="-557"/>
+            <point key="canvasLocation" x="-1591" y="-217"/>
         </scene>
         <scene sceneID="5qI-Ty-oV7">
             <objects>
@@ -306,7 +306,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="-1997" y="68"/>
+            <point key="canvasLocation" x="-2001" y="408"/>
         </scene>
         <scene sceneID="T1b-04-wN8">
             <objects>
@@ -368,13 +368,16 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal">
+                                <state key="normal" title="Instagram">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="lJh-py-Iu8" kind="push" id="gRv-aP-7kb"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="1Bt-1F-7CX">
                                 <rect key="frame" x="57" y="155" width="206" height="40"/>
@@ -1013,6 +1016,7 @@
                         <outlet property="mainImage" destination="wH9-sl-MXX" id="7OQ-gl-yej"/>
                         <outlet property="parametersButtonScroll" destination="jXs-qI-7nl" id="J9V-2K-MW3"/>
                         <outlet property="slider" destination="mDD-0r-fI7" id="4JN-ij-ZJc"/>
+                        <segue destination="eFf-eR-QR1" kind="push" identifier="ShareSegue" id="NBA-BT-HBc"/>
                     </connections>
                 </viewController>
                 <tapGestureRecognizer id="NKt-o1-LWz">
@@ -1021,7 +1025,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-1429" y="28"/>
+            <point key="canvasLocation" x="-1553" y="416"/>
         </scene>
         <scene sceneID="Xlc-Y8-MXp">
             <objects>
@@ -1043,6 +1047,194 @@
                 </navigationController>
             </objects>
             <point key="canvasLocation" x="-3115" y="260"/>
+        </scene>
+        <scene sceneID="snP-SY-qmD">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qXK-YX-nQu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="ShareController" id="eFf-eR-QR1" customClass="ShareViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hiD-tr-Tck">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="f9i-r9-X9p">
+                                <rect key="frame" x="20" y="60" width="280" height="110"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="nnI-Pg-qRH">
+                                        <rect key="frame" x="7" y="0.0" width="100" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Текст сообщения" id="fd2-sy-FMU">
+                                        <rect key="frame" x="125" y="6" width="155" height="104"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                        <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="eFf-eR-QR1" id="Gec-2V-kmy"/>
+                                        </connections>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Геопозиция" lineBreakMode="tailTruncation" minimumFontSize="10" id="bRU-eo-NcK">
+                                <rect key="frame" x="31" y="181" width="94" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="8Qt-c9-WSC">
+                                <rect key="frame" x="221" y="178" width="79" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="manageLocation:" destination="eFf-eR-QR1" eventType="valueChanged" id="DOA-0S-jrY"/>
+                                </connections>
+                            </switch>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="YU9-dE-78T">
+                                <rect key="frame" x="20" y="213" width="280" height="169"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="eFf-eR-QR1" id="pmY-KO-GbU"/>
+                                </connections>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Cxm-OL-J1G">
+                                <rect key="frame" x="20" y="390" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="vkoff.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="disabled" image="vkoff.png"/>
+                                <state key="selected" image="vkOn.png"/>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="vkButton:" destination="eFf-eR-QR1" eventType="touchUpInside" id="G2P-uf-8eB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Ioz-wI-LaU">
+                                <rect key="frame" x="82" y="390" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="fbOff.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="disabled" image="fbOff.png"/>
+                                <state key="selected" image="fbOn.png"/>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fbButton:" destination="eFf-eR-QR1" eventType="touchUpInside" id="4N4-fu-PKV"/>
+                                </connections>
+                            </button>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackOpaque" id="HlR-TR-ra6">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Назад" id="awy-gl-Ftv">
+                                        <connections>
+                                            <action selector="backButton:" destination="eFf-eR-QR1" id="AqQ-53-52c"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="GCj-1Q-ba3"/>
+                                    <barButtonItem title="Отправить" id="yIA-So-JFr">
+                                        <connections>
+                                            <action selector="sendButton:" destination="eFf-eR-QR1" id="Xy1-iP-lYh"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="hgA-kt-Ua5"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
+                    <connections>
+                        <outlet property="fbShare" destination="Ioz-wI-LaU" id="3VG-fR-aHK"/>
+                        <outlet property="imagePreview" destination="nnI-Pg-qRH" id="6hU-LW-owq"/>
+                        <outlet property="map" destination="YU9-dE-78T" id="j4l-69-aY3"/>
+                        <outlet property="testlabel" destination="bRU-eo-NcK" id="pxV-hX-of8"/>
+                        <outlet property="textView" destination="fd2-sy-FMU" id="Bqx-7M-UPg"/>
+                        <outlet property="viewWithImgTxt" destination="f9i-r9-X9p" id="mrY-FT-FVe"/>
+                        <outlet property="vkShare" destination="Cxm-OL-J1G" id="sS7-3G-jA0"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-1147" y="416"/>
+        </scene>
+        <scene sceneID="G6S-uI-NQ8">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kNc-Qh-Xj0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="lJh-py-Iu8" customClass="InstagramPhotosViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1eL-Hk-qAP">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="rEY-Kb-bKv">
+                                <rect key="frame" x="0.0" y="44" width="320" height="416"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="igCall" textLabel="GkX-ST-H7h" detailTextLabel="hIK-cx-IEh" style="IBUITableViewCellStyleSubtitle" id="QDb-bk-gee">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GkX-ST-H7h">
+                                                    <rect key="frame" x="10" y="4" width="31" height="19"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hIK-cx-IEh">
+                                                    <rect key="frame" x="10" y="23" width="34" height="16"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="lJh-py-Iu8" id="M6L-Cz-Fvg"/>
+                                    <outlet property="delegate" destination="lJh-py-Iu8" id="tN3-fC-QFB"/>
+                                </connections>
+                            </tableView>
+                            <navigationBar contentMode="scaleToFill" barStyle="blackOpaque" id="TVT-y2-FD6">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Фотографии" id="HGR-jX-zb1">
+                                        <barButtonItem key="leftBarButtonItem" title="Назад" id="vth-VM-1RM">
+                                            <connections>
+                                                <action selector="backButton:" destination="lJh-py-Iu8" id="Prs-6G-GdZ"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="zpJ-E4-Kok"/>
+                    <connections>
+                        <outlet property="tableView" destination="rEY-Kb-bKv" id="ywB-o9-jRj"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-2038" y="-818"/>
         </scene>
     </scenes>
     <resources>
@@ -1073,7 +1265,11 @@
         <image name="Camera@2x.png" width="148" height="78"/>
         <image name="blur.png" width="86" height="86"/>
         <image name="database.png" width="52" height="52"/>
+        <image name="fbOff.png" width="189" height="181"/>
+        <image name="fbOn.png" width="189" height="181"/>
         <image name="settingss.png" width="90" height="60"/>
+        <image name="vkOn.png" width="189" height="181"/>
+        <image name="vkoff.png" width="189" height="181"/>
         <image name="waste.png" width="52" height="52"/>
     </resources>
     <classes>
@@ -1084,6 +1280,24 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CircleBlur.h"/>
             <relationships>
                 <relationship kind="outlet" name="delegate"/>
+            </relationships>
+        </class>
+        <class className="InstagramPhotosViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/InstagramPhotosViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="ShareViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ShareViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="fbShare" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="imagePreview" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="map" candidateClass="MKMapView"/>
+                <relationship kind="outlet" name="testlabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="textView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="viewWithImgTxt" candidateClass="UIView"/>
+                <relationship kind="outlet" name="vkShare" candidateClass="UIButton"/>
             </relationships>
         </class>
         <class className="UITableViewControllerForVkPhotos" superclassName="UIViewController">

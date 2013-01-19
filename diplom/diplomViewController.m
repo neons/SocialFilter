@@ -121,14 +121,13 @@
                                                           delegate:self 
                                                  cancelButtonTitle:@"Cancel" 
                                             destructiveButtonTitle:nil 
-                                                 otherButtonTitles:@"Save Photo", @"Email",@"share in VK",@"share in FB",nil];
+                                                 otherButtonTitles:@"Save Photo", @"Email",@"share in VK",@"share in FB",@"Мега пост",nil];
     actSheet.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
     [actSheet showInView:self.view];
 }
 
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex 
 {
-    NSLog(@"action");
 
     switch (buttonIndex) {
         case 0:{
@@ -230,11 +229,26 @@
         }
             break;
  
+        case 4:
+            
+            [self performSegueWithIdentifier:@"ShareSegue" sender:self];
+            
+            break;
+            
         default:
             
             break;
     }
-;}
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(diplomViewController *)sender
+{
+    if ([[segue identifier] isEqualToString:@"ShareSegue"])
+    {
+        ShareViewController *destViewController = segue.destinationViewController;
+        destViewController.imageForPreview = _mainImage.image;      
+    }
+}
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
@@ -439,21 +453,13 @@
             [spinner startAnimating];
             [sender addSubview:spinner];
             sender.enabled = NO;
-
-            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
                 
                 GPUImageKuwaharaFilter *stillImageFilter = [[GPUImageKuwaharaFilter alloc] init];
-                UIImage *quickFilteredImage = [stillImageFilter imageByFilteringImage:imageForFiltering];
-                
-                dispatch_sync(dispatch_get_main_queue(), ^{
+                quickFilteredImage = [stillImageFilter imageByFilteringImage:imageForFiltering];
                     
-                    [spinner removeFromSuperview];
-                    [sender setTitle:@"kuwahara" forState:UIControlStateNormal];
-                    sender.enabled = YES;
-                    [_mainImage setImage:quickFilteredImage];
-                    
-                });
-            });
+            [spinner removeFromSuperview];
+            [sender setTitle:@"kuwahara" forState:UIControlStateNormal];
+            sender.enabled = YES;
         }
             break;
             
@@ -507,7 +513,6 @@
     
     
     if (_circleBlurView.hidden){
-        if (sender.tag !=22)
             [_mainImage setImage:quickFilteredImage];
     }
     else{

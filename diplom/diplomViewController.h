@@ -15,6 +15,7 @@
 #import "diplomAppDelegate.h"
 #import "FBConnect.h"
 #import "CircleBlur.h"
+#import "ShareViewController.h"
 
 @interface diplomViewController : UIViewController < UINavigationControllerDelegate,UIAlertViewDelegate, VkontakteViewControllerDelegate,VkontakteDelegate, MBProgressHUDDelegate, UIGestureRecognizerDelegate,UIActionSheetDelegate, MFMailComposeViewControllerDelegate,UIScrollViewDelegate, circleBlurProtocol>
 

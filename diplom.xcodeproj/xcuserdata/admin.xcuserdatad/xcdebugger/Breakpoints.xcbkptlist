@@ -4,17 +4,17 @@
    version = "1.0">
    <FileBreakpoints>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "vk/Vkontakte.m"
-         timestampString = "377781856.862293"
+         timestampString = "379384131.053251"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "204"
-         endingLineNumber = "204"
-         landmarkName = "-URLEncodedString:"
+         startingLineNumber = "864"
+         endingLineNumber = "864"
+         landmarkName = "-postImageToWall:text:link:location:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

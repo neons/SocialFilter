@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		842EDC3216AB2CBB00DF8B8E /* fbOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 842EDC3016AB2CBB00DF8B8E /* fbOff.png */; };
 		842EDC3316AB2CBB00DF8B8E /* fbOn.png in Resources */ = {isa = PBXBuildFile; fileRef = 842EDC3116AB2CBB00DF8B8E /* fbOn.png */; };
+		843E53D216AEFF4000436550 /* libGPUImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 843E53CD16AEFECD00436550 /* libGPUImage.a */; };
 		84471D2216A718A100A942C7 /* InstagramPhotosVIewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84471D2116A718A100A942C7 /* InstagramPhotosVIewController.m */; };
 		84471D4C16A71FA800A942C7 /* IGRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 84471D3B16A71FA800A942C7 /* IGRequest.m */; };
 		84471D4D16A71FA800A942C7 /* Instagram.m in Sources */ = {isa = PBXBuildFile; fileRef = 84471D3D16A71FA800A942C7 /* Instagram.m */; };
@@ -18,7 +19,6 @@
 		84471D5116A71FA800A942C7 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 84471D4716A71FA800A942C7 /* SBJsonBase.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		84471D5216A71FA800A942C7 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 84471D4916A71FA800A942C7 /* SBJsonParser.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		84471D5316A71FA800A942C7 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 84471D4B16A71FA800A942C7 /* SBJsonWriter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		8473B3E2163A02BC006832A9 /* libGPUImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8473B3D01639FB4E006832A9 /* libGPUImage.a */; };
 		848AC1D616431261007B8A17 /* Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848AC1D516431261007B8A17 /* Cell.xib */; };
 		849BF4C4169CD8BE002E2E81 /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849BF4C3169CD8BE002E2E81 /* ShareViewController.m */; };
 		849BF4C6169CD9C9002E2E81 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849BF4C5169CD9C9002E2E81 /* MapKit.framework */; };
@@ -122,23 +122,23 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		8473B3CF1639FB4E006832A9 /* PBXContainerItemProxy */ = {
+		843E53CC16AEFECD00436550 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 8473B3C61639FB4D006832A9 /* GPUImage.xcodeproj */;
+			containerPortal = 843E53B916AEFECD00436550 /* GPUImage.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = BCF1A33414DDB1EC00852800;
 			remoteInfo = GPUImage;
 		};
-		8473B3D11639FB4E006832A9 /* PBXContainerItemProxy */ = {
+		843E53CE16AEFECD00436550 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 8473B3C61639FB4D006832A9 /* GPUImage.xcodeproj */;
+			containerPortal = 843E53B916AEFECD00436550 /* GPUImage.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = BCF1A34414DDB1EC00852800;
 			remoteInfo = GPUImageTests;
 		};
-		8473B3E0163A023C006832A9 /* PBXContainerItemProxy */ = {
+		843E53D016AEFF1400436550 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 8473B3C61639FB4D006832A9 /* GPUImage.xcodeproj */;
+			containerPortal = 843E53B916AEFECD00436550 /* GPUImage.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = BCF1A33314DDB1EC00852800;
 			remoteInfo = GPUImage;
@@ -148,6 +148,7 @@
 /* Begin PBXFileReference section */
 		842EDC3016AB2CBB00DF8B8E /* fbOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fbOff.png; path = images/fbOff.png; sourceTree = "<group>"; };
 		842EDC3116AB2CBB00DF8B8E /* fbOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fbOn.png; path = images/fbOn.png; sourceTree = "<group>"; };
+		843E53B916AEFECD00436550 /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = "BradLarson-GPUImage-a984bcb/framework/GPUImage.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		84471D1F16A717F600A942C7 /* IGConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IGConnect.h; path = "instagram-ios-sdk/IGConnect.h"; sourceTree = "<group>"; };
 		84471D2016A718A100A942C7 /* InstagramPhotosVIewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InstagramPhotosVIewController.h; path = instagram/InstagramPhotosVIewController.h; sourceTree = "<group>"; };
 		84471D2116A718A100A942C7 /* InstagramPhotosVIewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InstagramPhotosVIewController.m; path = instagram/InstagramPhotosVIewController.m; sourceTree = "<group>"; };
@@ -169,7 +170,6 @@
 		84471D4916A71FA800A942C7 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
 		84471D4A16A71FA800A942C7 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		84471D4B16A71FA800A942C7 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
-		8473B3C61639FB4D006832A9 /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = "../../../BradLarson-GPUImage-a984bcb/framework/GPUImage.xcodeproj"; sourceTree = "<group>"; };
 		848AC1D516431261007B8A17 /* Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Cell.xib; sourceTree = "<group>"; };
 		849BF4C2169CD8BE002E2E81 /* ShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareViewController.h; sourceTree = "<group>"; };
 		849BF4C3169CD8BE002E2E81 /* ShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareViewController.m; sourceTree = "<group>"; };
@@ -320,11 +320,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				843E53D216AEFF4000436550 /* libGPUImage.a in Frameworks */,
 				849BF4C8169CD9D5002E2E81 /* CoreLocation.framework in Frameworks */,
 				849BF4C6169CD9C9002E2E81 /* MapKit.framework in Frameworks */,
 				84CC8DB716557894001FE0D5 /* MessageUI.framework in Frameworks */,
 				84BC8B5D1623613A00FF428F /* QuartzCore.framework in Frameworks */,
-				8473B3E2163A02BC006832A9 /* libGPUImage.a in Frameworks */,
 				84A897BA1630B6A200F22D9E /* AssetsLibrary.framework in Frameworks */,
 				84BC8B5B1623612800FF428F /* AVFoundation.framework in Frameworks */,
 				84BC8B591623612200FF428F /* OpenGLES.framework in Frameworks */,
@@ -401,6 +401,15 @@
 			name = preview;
 			sourceTree = "<group>";
 		};
+		843E53BA16AEFECD00436550 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				843E53CD16AEFECD00436550 /* libGPUImage.a */,
+				843E53CF16AEFECD00436550 /* GPUImageTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		84471D1E16A717B600A942C7 /* instagram */ = {
 			isa = PBXGroup;
 			children = (
@@ -443,15 +452,6 @@
 				84471D4B16A71FA800A942C7 /* SBJsonWriter.m */,
 			);
 			path = JSON;
-			sourceTree = "<group>";
-		};
-		8473B3C71639FB4D006832A9 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				8473B3D01639FB4E006832A9 /* libGPUImage.a */,
-				8473B3D21639FB4E006832A9 /* GPUImageTests.octest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		848CF8E9163DCDF6008C6669 /* default */ = {
@@ -576,7 +576,7 @@
 		84AE956D162340B60036BF8D /* diplom */ = {
 			isa = PBXGroup;
 			children = (
-				8473B3C61639FB4D006832A9 /* GPUImage.xcodeproj */,
+				843E53B916AEFECD00436550 /* GPUImage.xcodeproj */,
 				849BF4C2169CD8BE002E2E81 /* ShareViewController.h */,
 				849BF4C3169CD8BE002E2E81 /* ShareViewController.m */,
 				84AE9576162340B70036BF8D /* diplomAppDelegate.h */,
@@ -656,7 +656,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				8473B3E1163A023C006832A9 /* PBXTargetDependency */,
+				843E53D116AEFF1400436550 /* PBXTargetDependency */,
 			);
 			name = diplom;
 			productName = diplom;
@@ -683,8 +683,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 8473B3C71639FB4D006832A9 /* Products */;
-					ProjectRef = 8473B3C61639FB4D006832A9 /* GPUImage.xcodeproj */;
+					ProductGroup = 843E53BA16AEFECD00436550 /* Products */;
+					ProjectRef = 843E53B916AEFECD00436550 /* GPUImage.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -695,18 +695,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		8473B3D01639FB4E006832A9 /* libGPUImage.a */ = {
+		843E53CD16AEFECD00436550 /* libGPUImage.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libGPUImage.a;
-			remoteRef = 8473B3CF1639FB4E006832A9 /* PBXContainerItemProxy */;
+			remoteRef = 843E53CC16AEFECD00436550 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		8473B3D21639FB4E006832A9 /* GPUImageTests.octest */ = {
+		843E53CF16AEFECD00436550 /* GPUImageTests.octest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = GPUImageTests.octest;
-			remoteRef = 8473B3D11639FB4E006832A9 /* PBXContainerItemProxy */;
+			remoteRef = 843E53CE16AEFECD00436550 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -830,10 +830,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		8473B3E1163A023C006832A9 /* PBXTargetDependency */ = {
+		843E53D116AEFF1400436550 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = GPUImage;
-			targetProxy = 8473B3E0163A023C006832A9 /* PBXContainerItemProxy */;
+			targetProxy = 843E53D016AEFF1400436550 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -917,12 +917,13 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "diplom/diplom-Prefix.pch";
-				HEADER_SEARCH_PATHS = "/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework";
+				HEADER_SEARCH_PATHS = "/Users/admin/Desktop/project/diplom/BradLarson-GPUImage-a984bcb/framework/**";
 				INFOPLIST_FILE = "diplom/diplom-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = "-lsqlite3.0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				"USER_HEADER_SEARCH_PATHS[arch=*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -938,12 +939,13 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "diplom/diplom-Prefix.pch";
-				HEADER_SEARCH_PATHS = "/Users/admin/Desktop/BradLarson-GPUImage-a984bcb/framework";
+				HEADER_SEARCH_PATHS = "/Users/admin/Desktop/project/diplom/BradLarson-GPUImage-a984bcb/framework/**";
 				INFOPLIST_FILE = "diplom/diplom-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = "-lsqlite3.0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				"USER_HEADER_SEARCH_PATHS[arch=*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

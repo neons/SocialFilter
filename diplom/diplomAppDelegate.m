@@ -7,8 +7,8 @@
 //
 
 #import "diplomAppDelegate.h"
+
 #define APP_ID @"18dfa27b99a44a14bc741aee591a01f8"
-//               fd725621c5e44198a5b8ad3f7a0ffa09
 static NSString* kAppId = @"478610048829176";
 
 

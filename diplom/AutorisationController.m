@@ -119,14 +119,17 @@
      [super viewDidUnload];   
 }
 
-
+-(void) viewWillDisappear:(BOOL)animated
+{   
+    [self.navigationController setNavigationBarHidden:NO animated:YES];    
+    [super viewWillDisappear:animated];
+}
 
 
 -(void) viewWillAppear:(BOOL)animated
-{
-    [self.navigationController setNavigationBarHidden:YES animated:animated];
+{    
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
     [super viewWillAppear:animated];
-
 }
 
 

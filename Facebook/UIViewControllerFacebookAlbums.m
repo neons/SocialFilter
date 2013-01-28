@@ -35,12 +35,7 @@
     return self;
 }
 
-- (IBAction)backButton:(id)sender
-{
 
-     [[self navigationController] popViewControllerAnimated:YES];
-    
-}
 
 - (IBAction)getAlbumsTestMethod:(UIBarButtonItem *)sender
 {

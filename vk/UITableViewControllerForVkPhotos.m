@@ -64,6 +64,19 @@
 
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
+-(void)viewWillDisappear:(BOOL)animated
+{
+    if (_needCache) 
+        [self saveCache];
+    [super viewWillDisappear:animated];
+}
+
+-(void) viewWillAppear:(BOOL)animated
+{
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    [super viewWillAppear:animated];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -87,16 +100,11 @@
         NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:data];
         _staticImageDictionary = [unarchiver decodeObjectForKey: @"static"];
         [unarchiver finishDecoding];
-         
-       // NSLog(@"static %i", [_staticImageDictionary count]);
         self.cropSize = CGSizeMake(320, 320);
-        
         _vkontakte = [Vkontakte sharedInstance];
         _vkontakte.delegate = self;
         if (![_vkontakte isAuthorized]) 
-        {
             [_vkontakte authenticate];
-        }
         [_vkontakte getUserAlbumsPhoto:_aid];      
          dispatch_sync(dispatch_get_main_queue(), ^{
              [_tableView reloadData];
@@ -257,8 +265,7 @@
     UITapGestureRecognizer *tapped2 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pickImageForEdit:)];
     UITapGestureRecognizer *tapped3 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pickImageForEdit:)];
     UITapGestureRecognizer *tapped4 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pickImageForEdit:)];
-    
-    
+        
     cell.firstImage.tag = 1;
     cell.secondImage.tag=2;
     cell.thirdImage.tag=3;
@@ -291,9 +298,6 @@
     if (photoUrl)
     {
         NSData *photoData = [NSData dataWithContentsOfURL:[NSURL URLWithString:photoUrl]];
-    
-        if (_needCache) 
-            [self saveCache];
     
     GKImageCropViewController *cropController = [[GKImageCropViewController alloc] init];
     cropController.sourceImage = [UIImage imageWithData:photoData];
@@ -370,28 +374,19 @@
     //[[self navigationController] popViewControllerAnimated:YES];
 }
 
-- (IBAction)backButton:(id)sender
-{
-    [[self navigationController] popViewControllerAnimated:YES];
-    if (_needCache) 
-        [self saveCache];
-
-}
-
 -(void)saveCache
 {
+    _needCache = NO;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
         _filePath = [DOCUMENTS stringByAppendingPathComponent:_aid];
         NSMutableData *data = [[NSMutableData alloc]init];
         NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc]initForWritingWithMutableData:data];
         [archiver encodeObject:_staticImageDictionary forKey: @"static"];
         [archiver finishEncoding];
-        NSLog(@"first file %@",_filePath);
         [data writeToFile:_filePath atomically:YES];        dispatch_sync(dispatch_get_main_queue(), ^{
             NSLog(@"successful save");         
         });
     });
-    
 }
 
 @end

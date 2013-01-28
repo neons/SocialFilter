@@ -43,14 +43,6 @@
     }
     return self;
 }
-- (IBAction)backButton:(id)sender 
-{
-    if (_needCache)
-        [self saveCache];
-    [[self navigationController] popViewControllerAnimated:YES];
-}
-
-
 
 - (void)request:(FBRequest *)request didLoad:(id)result
 {
@@ -92,9 +84,18 @@
 
 -(void) viewWillAppear:(BOOL)animated
 {
-    [self.navigationController setNavigationBarHidden:YES animated:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
     [super viewWillAppear:animated];
     
+}
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    if (_needCache)
+    {
+        _needCache = NO;
+        [self saveCache];
+    }
 }
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
@@ -281,8 +282,7 @@
         NSLog(@"urlphoto %@",photoUrl);
         NSData *photoData = [NSData dataWithContentsOfURL:[NSURL URLWithString:photoUrl]];
     
-    if (_needCache) 
-        [self saveCache];
+   
     
     
     GKImageCropViewController *cropController = [[GKImageCropViewController alloc] init];

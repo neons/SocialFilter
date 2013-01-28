@@ -47,9 +47,7 @@
     }
     return self;
 }
-- (IBAction)backButton:(id)sender {
-    [[self navigationController] popViewControllerAnimated:YES];
-}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -70,6 +68,13 @@
 
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+    [super viewWillDisappear:animated];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -161,6 +166,20 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+}
+
+
+- (void)vkontakteDidFailedWithError:(NSError *)error
+{
+    
+}
+- (void)showVkontakteAuthController:(UIViewController *)controller
+{
+    
+}
+- (void)vkontakteAuthControllerDidCancelled
+{
+    
 }
 
 @end

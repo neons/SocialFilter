@@ -7,6 +7,7 @@
 //
 
 #import "UIViewSettingsController.h"
+
 #define DOCUMENTS [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]
 
 @interface UIViewSettingsController()
@@ -70,18 +71,19 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];}
-    
+    cell.accessoryType = UITableViewCellAccessoryNone;
     cell.textLabel.text = [_arrayWithSettings objectAtIndex:indexPath.row];
     return cell;
 }
 
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row==0) {
+    if (indexPath.row == 0) {
         NSFileManager *fileMgr = [[NSFileManager alloc] init];
         NSError *error = nil;
         NSArray *directoryContents = [fileMgr contentsOfDirectoryAtPath:DOCUMENTS error:&error];
-        
+        [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
         if ((error == nil)&([directoryContents count]>=1)) 
         {
             for (NSString *path in directoryContents) {
@@ -101,12 +103,9 @@
         {
             NSLog(@"some bad or nothing");
         }
-        
-        UIImageView *view=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"checkedd.png"]];
-        view.frame = CGRectMake(258,4,58,58);  
-        [self.tableView addSubview:view];
-        [view performSelector:@selector(removeFromSuperview) withObject:nil afterDelay:1];
-        }
+    }
 }
+
+
 
 @end

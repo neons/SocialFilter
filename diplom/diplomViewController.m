@@ -307,7 +307,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
+    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
     [super viewWillAppear:animated];
 }
 
@@ -316,6 +316,7 @@
 {
     [[[self navigationController] view] setFrame:[[UIScreen mainScreen] bounds]];
 	[[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationNone];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
 	[super viewWillDisappear:animated];
 }
 
@@ -670,6 +671,7 @@
         
             if ((_mainImage.image != _nonFilterImage) & !([_mainImage.image isEqual: [_arrayWhithPhoto lastObject]]))
             {
+                _circleBlurView.hidden = YES;
                 [_arrayWhithPhoto addObject: _mainImage.image];
                 UIImageView *imageForAnimation = [[UIImageView alloc] initWithFrame:_mainImage.frame];
                 [self.view addSubview:imageForAnimation];

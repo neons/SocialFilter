@@ -42,9 +42,7 @@
     }
     return self;
 }
-- (IBAction)backButton:(id)sender {
-     [[self navigationController] popViewControllerAnimated:YES];
-}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -189,6 +187,9 @@
 
 - (void)viewWillDisappear:(BOOL)animated
 {
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+    if (_needCache) 
+        [self saveCache];
     [super viewWillDisappear:animated];
 }
 
@@ -275,6 +276,7 @@
 
 -(void)saveCache
 {
+    _needCache = NO;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
         _filePath = [DOCUMENTS stringByAppendingPathComponent:@"instagram"];
         NSMutableData *data = [[NSMutableData alloc]init];
@@ -299,8 +301,6 @@
         NSLog(@"urlphoto %@",photoUrl);
         NSData *photoData = [NSData dataWithContentsOfURL:[NSURL URLWithString:photoUrl]];
         
-        if (_needCache) 
-            [self saveCache];
         UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard"
                                                                  bundle: nil];    
         
@@ -444,7 +444,7 @@
 -(void)igSessionInvalidated {
     NSLog(@"Instagram session was invalidated");
     [self igDidLogout];
-    [self backButton:nil];
+    [[self navigationController] popViewControllerAnimated:YES];
 }
 
 

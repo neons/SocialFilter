@@ -293,6 +293,7 @@
 		84AE957A162340B70036BF8D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		84AE957C162340B70036BF8D /* diplomViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = diplomViewController.h; sourceTree = "<group>"; };
 		84AE957D162340B70036BF8D /* diplomViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = diplomViewController.m; sourceTree = "<group>"; };
+		84B02BCF16B2EC1900930A04 /* FBConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBConnect.h; path = FacebookSDK.framework/Versions/A/DeprecatedHeaders/FBConnect.h; sourceTree = "<group>"; };
 		84B4F357163CA40900FE770C /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		84B4F359163CA41200FE770C /* FacebookSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FacebookSDKResources.bundle; sourceTree = "<group>"; };
 		84B72B071654540200586008 /* UIViewSettingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewSettingsController.h; sourceTree = "<group>"; };
@@ -308,7 +309,6 @@
 		84D07F6E168CA71F009C5B53 /* CircleBlur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CircleBlur.m; path = filters/CircleBlur.m; sourceTree = "<group>"; };
 		84E19753166029CD00A47A20 /* UIViewControllerFacebookAlbums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIViewControllerFacebookAlbums.h; path = Facebook/UIViewControllerFacebookAlbums.h; sourceTree = "<group>"; };
 		84E19754166029CD00A47A20 /* UIViewControllerFacebookAlbums.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIViewControllerFacebookAlbums.m; path = Facebook/UIViewControllerFacebookAlbums.m; sourceTree = "<group>"; };
-		84E1981816605F7800A47A20 /* FBConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBConnect.h; path = ../../../Documents/FacebookSDK/FacebookSDK.framework/Versions/A/DeprecatedHeaders/FBConnect.h; sourceTree = "<group>"; };
 		84E3E1A216307303008C9446 /* AutorisationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutorisationController.h; sourceTree = "<group>"; };
 		84E3E1A316307303008C9446 /* AutorisationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutorisationController.m; sourceTree = "<group>"; };
 		84E6F16F1661577000403C0A /* UIViewControllerFacebookPhotos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIViewControllerFacebookPhotos.h; path = Facebook/UIViewControllerFacebookPhotos.h; sourceTree = "<group>"; };
@@ -554,9 +554,9 @@
 		84AE9566162340B60036BF8D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				84B02BCF16B2EC1900930A04 /* FBConnect.h */,
 				849BF4C7169CD9D5002E2E81 /* CoreLocation.framework */,
 				849BF4C5169CD9C9002E2E81 /* MapKit.framework */,
-				84E1981816605F7800A47A20 /* FBConnect.h */,
 				84CC8DB616557894001FE0D5 /* MessageUI.framework */,
 				84B4F359163CA41200FE770C /* FacebookSDKResources.bundle */,
 				84B4F357163CA40900FE770C /* FacebookSDK.framework */,

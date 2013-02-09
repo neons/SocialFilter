@@ -14,25 +14,15 @@ static NSString* kAppId = @"478610048829176";
 
 @implementation diplomAppDelegate
 
-@synthesize window = _window;
-@synthesize facebookController=_facebookController;
-@synthesize facebook=_facebook;
-@synthesize instagram = _instagram;
+
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    _facebookController = [[UIViewControllerFacebookAlbums alloc] init];
    
-    _facebook = [[Facebook alloc] initWithAppId:kAppId andDelegate:_facebookController];
    _instagram = [[Instagram alloc] initWithClientId:APP_ID
                                                 delegate:nil];
     // Check and retrieve authorization information
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    if ([defaults objectForKey:@"FBAccessTokenKey"] && [defaults objectForKey:@"FBExpirationDateKey"]) {
-        _facebook.accessToken = [defaults objectForKey:@"FBAccessTokenKey"];
-        _facebook.expirationDate = [defaults objectForKey:@"FBExpirationDateKey"];
-    }
    
     
     // Initialize API data (for views, etc.)
@@ -125,10 +115,10 @@ static NSString* kAppId = @"478610048829176";
 {    
     NSString *stringUrl = [url absoluteString];
     if ([stringUrl rangeOfString:@"ig18dfa27b99a44a14bc741aee591a01f8://"].location == NSNotFound)
-        return [self.facebook handleOpenURL:url];
+        return [FBSession.activeSession handleOpenURL:url];
     else
         return [self.instagram handleOpenURL:url]; 
-        
+    
    
 }
 
@@ -136,7 +126,7 @@ static NSString* kAppId = @"478610048829176";
 {
     NSString *stringUrl = [url absoluteString];
     if ([stringUrl rangeOfString:@"ig18dfa27b99a44a14bc741aee591a01f8://"].location == NSNotFound)
-        return [self.facebook handleOpenURL:url];
+        return [FBSession.activeSession handleOpenURL:url];
     else
         return [self.instagram handleOpenURL:url]; 
 }
@@ -151,7 +141,6 @@ static NSString* kAppId = @"478610048829176";
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
-    [[self facebook] extendAccessTokenIfNeeded];
 
     /*
      Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.

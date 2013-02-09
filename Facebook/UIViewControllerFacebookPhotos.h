@@ -13,7 +13,7 @@
 #import "GKImageCropViewController.h"
 #define DOCUMENTS [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]
 
-@interface UIViewControllerFacebookPhotos : UIViewController <FBRequestDelegate, UITableViewDataSource, UITableViewDelegate,UINavigationControllerDelegate,GKImageCropControllerDelegate,MBProgressHUDDelegate>
+@interface UIViewControllerFacebookPhotos : UIViewController <UITableViewDataSource, UITableViewDelegate,UINavigationControllerDelegate,GKImageCropControllerDelegate,MBProgressHUDDelegate>
 
 @property (strong, nonatomic) NSString *albumsId;
 @end

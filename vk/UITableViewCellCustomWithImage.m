@@ -9,10 +9,7 @@
 #import "UITableViewCellCustomWithImage.h"
 
 @implementation UITableViewCellCustomWithImage
-@synthesize firstImage=_firstImage;
-@synthesize secondImage=_secondImage;
-@synthesize thirdImage=_thirdImage;
-@synthesize fourthImage=_fourthImage;
+
 
 
 +(UITableViewCellCustomWithImage*) cell

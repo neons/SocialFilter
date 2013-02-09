@@ -25,15 +25,6 @@
 
 @implementation UIViewControllerFacebookPhotos
 
-@synthesize tableView=_tableView;
-@synthesize albumsId=_albumsId;
-@synthesize dictionaryWitSortPhotos=_dictionaryWitSortPhotos;
-@synthesize needCache=_needCache;
-@synthesize defaultImage=_defaultImage;
-@synthesize staticImageDictionary=_staticImageDictionary;
-@synthesize filePath=_filePath;
-@synthesize cropSize;
-@synthesize hud=_hud;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -115,7 +106,7 @@
             
             diplomAppDelegate *delegate = (diplomAppDelegate *)[[UIApplication sharedApplication] delegate];
             NSString *string=[NSString stringWithFormat:@"%@/photos?limit=1000",_albumsId];
-            [[delegate facebook] requestWithGraphPath:string andDelegate:self];
+         //   [[delegate facebook] requestWithGraphPath:string andDelegate:self];
         });
     });
     _hud = [[MBProgressHUD alloc] initWithView:self.navigationController.view];

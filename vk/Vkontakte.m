@@ -172,7 +172,8 @@
     NSMutableData *body = [NSMutableData data];
     
     [body appendData:[[NSString stringWithFormat:@"--%@\r\n",stringBoundary] dataUsingEncoding:NSUTF8StringEncoding]];
-    [body appendData:[[NSString stringWithString:@"Content-Disposition: form-data; name=\"photo\"; filename=\"photo.jpg\"\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[@"Content-Disposition: form-data; name=\"photo\"; filename=\"photo.jpg\"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+    //[body appendData:[[NSString stringWithString:@"Content-Disposition: form-data; name=\"photo\"; filename=\"photo.jpg\"\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
     [body appendData:[@"Content-Type: image/jpg\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
     [body appendData:imageData];        
     [body appendData:[[NSString stringWithFormat:@"%@",endItemBoundary] dataUsingEncoding:NSUTF8StringEncoding]];
@@ -624,13 +625,13 @@ NSString * const vkRedirectUrl = @"http://oauth.vk.com/blank.html";
            NSString *size = [NSString stringWithFormat:@"%i",[lolarray count]];
                NSString *aid = key;
                NSString *title = [[NSString alloc] init];
-               if (key==@"profile") {
+               if ([key isEqual:@"profile"]) {
                    title=@"Фотографии с моей страницы"; 
                }
-               else if (key==@"wall"){
+               else if ([key isEqual:@"wall"]){
                    title=@"Фотографии на моей стене"; 
                }
-               else if (key==@"saved"){
+               else if ([key isEqual:@"saved"]){
                    title=@"Сохранненные фотографии";
                }
                

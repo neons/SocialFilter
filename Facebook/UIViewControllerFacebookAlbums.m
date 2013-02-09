@@ -21,10 +21,7 @@
 
 @implementation UIViewControllerFacebookAlbums
 
-@synthesize tableView=_tableView;
-@synthesize arrayofAlbums=_arrayofAlbums;
-@synthesize hud=_hud;
-@synthesize staticImageDictionary=_staticImageDictionary;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -46,7 +43,7 @@
     [_hud show:YES];
     diplomAppDelegate *delegate = (diplomAppDelegate *)[[UIApplication sharedApplication] delegate];
     
-    [[delegate facebook] requestWithGraphPath:@"me/albums?fields=count,photos.fields(picture),description,name" andDelegate:self];  
+   // [[delegate facebook] requestWithGraphPath:@"me/albums?fields=count,photos.fields(picture),description,name" andDelegate:self];
 }
 - (void)didReceiveMemoryWarning
 {
@@ -72,7 +69,7 @@
 {
     
     diplomAppDelegate *delegate = (diplomAppDelegate *)[[UIApplication sharedApplication] delegate];
-    if (![[delegate facebook] isSessionValid]) 
+  /*  if (![[delegate facebook] isSessionValid])
     {
         NSArray * permissions = [[NSArray alloc] initWithObjects:@"offline_access",@"publish_stream",@"user_photos", nil];
         [[delegate facebook] authorize:permissions];
@@ -91,7 +88,7 @@
         NSLog(@"valid");
         diplomAppDelegate *delegate = (diplomAppDelegate *)[[UIApplication sharedApplication] delegate];
         [[delegate facebook] requestWithGraphPath:@"me/albums?fields=count,photos.fields(picture),description,name" andDelegate:self];  
-    }
+    }*/
 }
 
 - (void)storeAuthData:(NSString *)accessToken expiresAt:(NSDate *)expiresAt {
@@ -133,7 +130,7 @@
 - (void)fbDidLogin {
     diplomAppDelegate *delegate = (diplomAppDelegate *)[[UIApplication sharedApplication] delegate];
 
-    [self storeAuthData:[[delegate facebook] accessToken] expiresAt:[[delegate facebook] expirationDate]];
+  //  [self storeAuthData:[[delegate facebook] accessToken] expiresAt:[[delegate facebook] expirationDate]];
 
 }
 -(void)fbDidNotLogin:(BOOL)cancelled {
@@ -192,7 +189,7 @@
 - (void)showLoggedOut {
     
     diplomAppDelegate *delegate = (diplomAppDelegate *)[[UIApplication sharedApplication] delegate];
-    [[delegate facebook] requestWithGraphPath:@"me/permissions" andDelegate:self];
+    //[[delegate facebook] requestWithGraphPath:@"me/permissions" andDelegate:self];
     
 }
 

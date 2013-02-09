@@ -26,13 +26,7 @@
 
 
 @implementation InstagramPhotosViewController
-@synthesize tableView=_tableView;
-@synthesize dictionaryWitSortPhotos=_dictionaryWitSortPhotos;
-@synthesize needCache=_needCache;
-@synthesize defaultImage=_defaultImage;
-@synthesize staticImageDictionary=_staticImageDictionary;
-@synthesize filePath=_filePath;
-@synthesize hud=_hud;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

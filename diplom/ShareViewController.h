@@ -10,7 +10,7 @@
 #import "MapKit/MapKit.h"
 #import "CoreLocation/CoreLocation.h"
 #import "QuartzCore/QuartzCore.h"
-#import "FBConnect.h"
+#import "diplomAppDelegate.h"
 #import <AssetsLibrary/AssetsLibrary.h>
 #import <MessageUI/MessageUI.h>
 #import "Vkontakte.h"

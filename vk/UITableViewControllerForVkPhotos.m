@@ -24,16 +24,7 @@
 @end
 
 @implementation UITableViewControllerForVkPhotos
-@synthesize dictionaryWithArrayofPhoto=_dictionaryWithArrayofPhoto;
-@synthesize vkontakte=_vkontakte;
-@synthesize aid=_aid;
-@synthesize staticImageDictionary=_staticImageDictionary;
-@synthesize needCache=_needCache;
-@synthesize filePath=_filePath;
-@synthesize cropSize;
-@synthesize hud=_hud;
-@synthesize tableView = _tableView;
-@synthesize defaultImage=_defaultImage;
+
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

@@ -19,11 +19,6 @@
 
 @implementation UITableViewVkAlbumsController
 
-@synthesize dictionaryOfAlbums=_dictionaryOfAlbums;
-@synthesize vkontakte=_vkontakte;
-@synthesize tableView=_tableView;
-@synthesize staticImageDictionary=_staticImageDictionary;
-@synthesize hud=_hud;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

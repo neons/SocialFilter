@@ -7,11 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FBConnect.h"
 #import "diplomAppDelegate.h"
 #import "UIViewControllerFacebookPhotos.h"
 
-@interface UIViewControllerFacebookAlbums : UIViewController <UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate , FBRequestDelegate , FBSessionDelegate>
+@interface UIViewControllerFacebookAlbums : UIViewController <UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 

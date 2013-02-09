@@ -15,7 +15,7 @@
 
 @end
 @implementation AutorisationController 
-@synthesize picker=_picker;
+
  
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

@@ -27,17 +27,6 @@
 
 @implementation ShareViewController
 
-@synthesize testlabel = _testlabel;
-@synthesize locationManager=_locationManager;
-@synthesize map = _map;
-@synthesize textView = _textView;
-@synthesize viewWithImgTxt = _viewWithImgTxt;
-@synthesize imagePreview = _imagePreview;
-@synthesize currentLocation=_currentLocation;
-@synthesize imageForPreview=_imageForPreview;
-@synthesize vkontakte=_vkontakte;
-@synthesize fbShare = _fbShare;
-@synthesize vkShare = _vkShare;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

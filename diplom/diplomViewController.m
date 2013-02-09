@@ -28,21 +28,6 @@
 
 @implementation diplomViewController
 
-@synthesize hud=_hud;
-@synthesize slider=_slider;
-@synthesize mainImage=_mainImage;
-@synthesize vkontakte=_vkontakte;
-@synthesize nonFilterImage=_nonFilterImage;
-@synthesize horizontalScroll=_horizontalScroll;
-@synthesize parametersButtonScroll = _parametersButtonScroll;
-@synthesize barButtonBrush = _barButtonBrush;
-@synthesize countLayers = _countLayers;
-@synthesize circleBlurView = _circleBlurView;
-@synthesize imageFromPicker=_imageFromPicker;
-@synthesize currentFilterTag=_currentFilterTag;
-@synthesize arrayWhithPhoto=_arrayWhithPhoto;
-@synthesize mainImageWithoutBlur = _mainImageWithoutBlur;
-
 
 - (void)didReceiveMemoryWarning
 {
@@ -195,9 +180,8 @@
         }
             break;
         case 3:
-        {    NSLog(@"share");
 
-            diplomAppDelegate *delegate = (diplomAppDelegate *)[[UIApplication sharedApplication] delegate];
+                                                                /*delegate];
             if (![[delegate facebook] isSessionValid]) 
             {
                 UIAlertView * message = [[UIAlertView alloc] initWithTitle:@"Временное" message:@"Для отправки нажмите |share in FB| повторно" delegate:nil cancelButtonTitle:@"ок" otherButtonTitles:nil];
@@ -227,7 +211,8 @@
                                        }];
                 
             }
-        }
+        }*/
+                                                                
             break;
  
         case 4:

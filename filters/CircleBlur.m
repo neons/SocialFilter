@@ -17,7 +17,7 @@
 @synthesize center=_center;
 @synthesize radius=_radius;
 @synthesize delegate=_delegate;
-@synthesize color = _color;
+@synthesize color =_color;
 
 -(void) setup
 {

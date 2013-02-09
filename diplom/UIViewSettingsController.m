@@ -18,8 +18,7 @@
 
 @implementation UIViewSettingsController
 
-@synthesize tableView=_tableView;
-@synthesize arrayWithSettings=_arrayWithSettings;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

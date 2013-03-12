@@ -13,7 +13,7 @@
 
 @property (nonatomic, strong) NSArray *arrayofAlbums;
 @property (nonatomic, strong ) NSMutableDictionary * staticImageDictionary;
-@property (strong, nonatomic)     MBProgressHUD *hud;
+@property (strong, nonatomic)  MBProgressHUD *hud;
 
 -(void)createTable;
 
@@ -34,17 +34,7 @@
 
 
 
-- (IBAction)getAlbumsTestMethod:(UIBarButtonItem *)sender
-{
-    sender.enabled = NO;
-    _hud = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
-    [self.tableView addSubview:_hud];
-	_hud.dimBackground = YES;
-    [_hud show:YES];
-    diplomAppDelegate *delegate = (diplomAppDelegate *)[[UIApplication sharedApplication] delegate];
-    
-   // [[delegate facebook] requestWithGraphPath:@"me/albums?fields=count,photos.fields(picture),description,name" andDelegate:self];
-}
+
 - (void)didReceiveMemoryWarning
 {
     // Releases the view if it doesn't have a superview.
@@ -61,42 +51,75 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
-    [super viewDidLoad];    
+    [super viewDidLoad];
     [self createTable];
     
 }
+- (void)sessionStateChanged:(FBSession *)session
+                      state:(FBSessionState) state
+                      error:(NSError *)error
+{
+    switch (state) {
+        case FBSessionStateOpen: {
+            [FBRequestConnection startWithGraphPath:@"me/albums?fields=count,photos.fields(picture),description,name" completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+                _arrayofAlbums=[result objectForKey:@"data"];
+                [_tableView reloadData];
+                [_hud hide:YES];
+                [_hud removeFromSuperview];
+                _hud = nil;
+            }];
+        }
+            break;
+        case FBSessionStateClosed:
+        case FBSessionStateClosedLoginFailed:
+         
+            
+            [FBSession.activeSession closeAndClearTokenInformation];
+            
+            break;
+        default:
+            break;
+    }
+    
+    if (error) {
+        UIAlertView *alertView = [[UIAlertView alloc]
+                                  initWithTitle:@"Error"
+                                  message:error.localizedDescription
+                                  delegate:nil
+                                  cancelButtonTitle:@"OK"
+                                  otherButtonTitles:nil];
+        [alertView show];
+    }
+}
+
 -(void) createTable
 {
+    _hud = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+    [self.tableView addSubview:_hud];
+	_hud.dimBackground = YES;
+    _hud.labelText = @"Загрузка";
+    [_hud show:YES];
     
-    diplomAppDelegate *delegate = (diplomAppDelegate *)[[UIApplication sharedApplication] delegate];
-  /*  if (![[delegate facebook] isSessionValid])
+    if (FBSession.activeSession.isOpen) {
+        [FBRequestConnection startWithGraphPath:@"me/albums?fields=count,photos.fields(picture),description,name" completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+            _arrayofAlbums=[result objectForKey:@"data"];
+            [_tableView reloadData];
+            [_hud hide:YES];
+            [_hud removeFromSuperview];
+            _hud = nil;
+            
+        }];
+    }
+    else
     {
-        NSArray * permissions = [[NSArray alloc] initWithObjects:@"offline_access",@"publish_stream",@"user_photos", nil];
-        [[delegate facebook] authorize:permissions];
-        NSLog(@"not valid");
-        
-    } 
-    
-    else 
-        
-    {
-        _hud = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
-        [self.tableView addSubview:_hud];
-        _hud.dimBackground = YES;
-        [_hud show:YES];
-
-        NSLog(@"valid");
-        diplomAppDelegate *delegate = (diplomAppDelegate *)[[UIApplication sharedApplication] delegate];
-        [[delegate facebook] requestWithGraphPath:@"me/albums?fields=count,photos.fields(picture),description,name" andDelegate:self];  
-    }*/
+         NSArray * permissions = [[NSArray alloc] initWithObjects:@"offline_access",@"publish_stream",@"user_photos", nil];
+               [FBSession openActiveSessionWithPublishPermissions:permissions defaultAudience:FBSessionDefaultAudienceEveryone allowLoginUI:YES completionHandler:^(FBSession *session, FBSessionState status, NSError *error) {
+            [self sessionStateChanged:session state:status error:error];
+        }];
+    }
 }
 
-- (void)storeAuthData:(NSString *)accessToken expiresAt:(NSDate *)expiresAt {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:accessToken forKey:@"FBAccessTokenKey"];
-    [defaults setObject:expiresAt forKey:@"FBExpirationDateKey"];
-    [defaults synchronize];
-}
+
 - (UIImage*)imageNamed:(NSString*)imageNamed cache:(BOOL)cache
 {
     UIImage* retImage = [_staticImageDictionary objectForKey:imageNamed];
@@ -121,81 +144,18 @@
 - (void)viewDidUnload
 {
     [self setTableView:nil];
-    
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }
 
-- (void)fbDidLogin {
-    diplomAppDelegate *delegate = (diplomAppDelegate *)[[UIApplication sharedApplication] delegate];
 
-  //  [self storeAuthData:[[delegate facebook] accessToken] expiresAt:[[delegate facebook] expirationDate]];
 
-}
--(void)fbDidNotLogin:(BOOL)cancelled {
-    NSLog(@"did not login");
-}
--(void)fbDidExtendToken:(NSString *)accessToken expiresAt:(NSDate *)expiresAt {
-    [self storeAuthData:accessToken expiresAt:expiresAt];
-}
-- (void)fbDidLogout {
-    NSLog(@"did logout");
-    // Remove saved authorization information if it exists and it is
-    // ok to clear it (logout, session invalid, app unauthorized)
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults removeObjectForKey:@"FBAccessTokenKey"];
-    [defaults removeObjectForKey:@"FBExpirationDateKey"];
-    [defaults synchronize];
-    
-}
-- (void)request:(FBRequest *)request didLoad:(id)result {
-    _arrayofAlbums=[result objectForKey:@"data"];
-    [_tableView reloadData];
-    [_hud hide:YES];
-    [_hud removeFromSuperview];
-    _hud = nil;
-}
-- (void)request:(FBRequest *)request didReceiveResponse:(NSURLResponse *)response {
-    NSLog(@"received response");
 
-}
-- (void)fbSessionInvalidated {
-    
-    UIAlertView *alertView = [[UIAlertView alloc]
-                              initWithTitle:@"Auth Exception"
-                              message:@"Your session has expired."
-                              delegate:nil
-                              cancelButtonTitle:@"OK"
-                              otherButtonTitles:nil,
-                              nil];
-    [alertView show];
-    [self fbDidLogout];
-}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [_arrayofAlbums count];
 }
-
-- (void)request:(FBRequest *)request didFailWithError:(NSError *)error {
-    NSLog(@"%@", [error localizedDescription]);
-    NSLog(@"Err details: %@", [error description]);
-}
-
-
-
-
-
-- (void)showLoggedOut {
-    
-    diplomAppDelegate *delegate = (diplomAppDelegate *)[[UIApplication sharedApplication] delegate];
-    //[[delegate facebook] requestWithGraphPath:@"me/permissions" andDelegate:self];
-    
-}
-
-
-
-
 
 
 

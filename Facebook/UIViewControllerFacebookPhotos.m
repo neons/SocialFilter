@@ -38,27 +38,7 @@
 - (void)request:(FBRequest *)request didLoad:(id)result
 {
    
-    NSArray *array =[result objectForKey:@"data"];
-
     
-    _dictionaryWitSortPhotos=[[NSMutableDictionary alloc]init];
-    
-    int numberRow=1;
-    int numberSection=0;
-    int index=0;
-    
-    while ([_dictionaryWitSortPhotos count]<([array count])) {
-        [_dictionaryWitSortPhotos setObject:[array objectAtIndex:index++] forKey:[NSString stringWithFormat:@"PhotoInSection%iInRow%i",numberSection, numberRow++]];
-        if ((numberRow%5)==0) {
-            numberSection++;
-            numberRow=1;
-        }
-        
-    }
-    [_tableView reloadData];
-    [_hud hide:YES];
-    [_hud removeFromSuperview];
-    _hud = nil;
 }
 
 - (void)didReceiveMemoryWarning
@@ -95,7 +75,13 @@
     [super viewDidLoad];
     _defaultImage= [UIImage alloc];
     _defaultImage =[UIImage imageNamed:@"tree.png"];
+    _hud = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+    [self.tableView addSubview:_hud];
+	_hud.dimBackground = YES;
+    _hud.labelText =@"Загрузка";
+    [_hud show:YES];
     
+    self.cropSize = CGSizeMake(320, 320);
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         _filePath = [DOCUMENTS stringByAppendingPathComponent:_albumsId];
         NSMutableData *data = [[NSMutableData alloc]initWithContentsOfFile:_filePath];
@@ -103,17 +89,35 @@
         _staticImageDictionary = [unarchiver decodeObjectForKey: @"static"];
         [unarchiver finishDecoding];
         dispatch_sync(dispatch_get_main_queue(), ^{
-            
-            diplomAppDelegate *delegate = (diplomAppDelegate *)[[UIApplication sharedApplication] delegate];
-            NSString *string=[NSString stringWithFormat:@"%@/photos?limit=1000",_albumsId];
-         //   [[delegate facebook] requestWithGraphPath:string andDelegate:self];
+            if (FBSession.activeSession.isOpen) {
+
+            NSString *path=[NSString stringWithFormat:@"%@/photos?limit=1000",_albumsId];
+             [FBRequestConnection startWithGraphPath:path completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+                 NSArray *array =[result objectForKey:@"data"];
+                 
+                 
+                 _dictionaryWitSortPhotos=[[NSMutableDictionary alloc]init];
+                 
+                 int numberRow=1;
+                 int numberSection=0;
+                 int index=0;
+                 
+                 while ([_dictionaryWitSortPhotos count]<([array count])) {
+                     [_dictionaryWitSortPhotos setObject:[array objectAtIndex:index++] forKey:[NSString stringWithFormat:@"PhotoInSection%iInRow%i",numberSection, numberRow++]];
+                     if ((numberRow%5)==0) {
+                         numberSection++;
+                         numberRow=1;
+                     }
+                     
+                 }
+                 [_tableView reloadData];
+                 [_hud hide:YES];
+                 [_hud removeFromSuperview];
+                 _hud = nil;
+             }];}
         });
     });
-    _hud = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
-    [self.tableView addSubview:_hud];
-	_hud.dimBackground = YES;
-    [_hud show:YES];
-        self.cropSize = CGSizeMake(320, 320);
+    
 
 }
 
@@ -139,7 +143,6 @@
     if ([urlForDownload count]>=1) {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             
-          // NSLog(@"download image");
             if (_staticImageDictionary == nil)
             {
                 _staticImageDictionary = [[NSMutableDictionary alloc] init];
@@ -272,10 +275,7 @@
     {
         NSLog(@"urlphoto %@",photoUrl);
         NSData *photoData = [NSData dataWithContentsOfURL:[NSURL URLWithString:photoUrl]];
-    
-   
-    
-    
+
     GKImageCropViewController *cropController = [[GKImageCropViewController alloc] init];
     cropController.sourceImage = [UIImage imageWithData:photoData];
     cropController.cropSize = self.cropSize;

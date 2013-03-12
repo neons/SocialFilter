@@ -15,7 +15,7 @@
 #import <MessageUI/MessageUI.h>
 #import "Vkontakte.h"
 
-@interface ShareViewController : UIViewController <UINavigationControllerDelegate, CLLocationManagerDelegate, MKMapViewDelegate, UITextViewDelegate, VkontakteViewControllerDelegate,VkontakteDelegate,MBProgressHUDDelegate, MFMailComposeViewControllerDelegate>
+@interface ShareViewController : UIViewController <UINavigationControllerDelegate, CLLocationManagerDelegate, MKMapViewDelegate, UITextViewDelegate, VkontakteViewControllerDelegate,VkontakteDelegate,MBProgressHUDDelegate, MFMailComposeViewControllerDelegate,UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) UIImage *imageForPreview;
 

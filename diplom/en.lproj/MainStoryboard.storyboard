@@ -1,13 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="10K549" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="eRu-tx-g8F">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="eRu-tx-g8F">
     <dependencies>
-        <development defaultVersion="4200" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="933"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
+        <!--Table View Vk Albums Controller - Альбомы-->
         <scene sceneID="xSe-7x-ek2">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fsM-zW-o02" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="VD8-cs-Zdn" customClass="UITableViewVkAlbumsController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ob5-Jn-4pf">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
@@ -60,12 +59,13 @@
                         <outlet property="tableView" destination="zvw-kJ-OYd" id="M8a-Fr-cGD"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fsM-zW-o02" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1977" y="981"/>
         </scene>
+        <!--Table View Controller For Vk Photos - Фотографии-->
         <scene sceneID="WYA-0N-31Y">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZTG-vn-uQr" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="vkPhotoController" id="P7N-r7-2kn" customClass="UITableViewControllerForVkPhotos" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5hL-1b-m21">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
@@ -102,12 +102,13 @@
                         <outlet property="tableView" destination="6xi-AG-7vt" id="yND-Sh-SRi"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZTG-vn-uQr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1587" y="981"/>
         </scene>
+        <!--View Controller Facebook Albums - Альбомы-->
         <scene sceneID="JjB-Wl-w9q">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YJ8-El-USd" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="aCO-TV-d0H" customClass="UIViewControllerFacebookAlbums" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="524-A2-1dN">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
@@ -154,11 +155,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="Альбомы" id="5pv-9L-FV9">
                         <barButtonItem key="backBarButtonItem" title="Альбомы" id="3d7-tD-Rj3"/>
-                        <barButtonItem key="rightBarButtonItem" title="get" id="fHW-ms-vA0">
-                            <connections>
-                                <action selector="getAlbumsTestMethod:" destination="aCO-TV-d0H" id="ANF-CJ-ExU"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
                     <connections>
@@ -166,12 +162,13 @@
                         <segue destination="d7e-3Q-nPc" kind="push" identifier="fbPhoto" id="m5T-Fk-6aw"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YJ8-El-USd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2006" y="-218"/>
         </scene>
+        <!--View Controller Facebook Photos - Фотографии-->
         <scene sceneID="9wS-Rw-o5w">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oma-ZV-Cw7" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="FacebookPhotos" id="d7e-3Q-nPc" customClass="UIViewControllerFacebookPhotos" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eEq-ye-5uF">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
@@ -208,12 +205,13 @@
                         <outlet property="tableView" destination="p9e-dH-zt0" id="FfQ-Pp-Wgf"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oma-ZV-Cw7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1591" y="-217"/>
         </scene>
+        <!--View Settings Controller-->
         <scene sceneID="5qI-Ty-oV7">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="crS-Kw-Erc" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Kfl-mi-Sps" customClass="UIViewSettingsController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Kia-IQ-s20">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
@@ -270,12 +268,13 @@
                         <outlet property="tableView" destination="m4O-Sm-bVi" id="qaw-Dp-oyg"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="crS-Kw-Erc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1986" y="391"/>
+            <point key="canvasLocation" x="-2156" y="373"/>
         </scene>
+        <!--Autorisation Controller - Autorisation-->
         <scene sceneID="T1b-04-wN8">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3Ft-dx-Hlf" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController title="Autorisation" id="lgE-Zh-Qpm" customClass="AutorisationController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="C3T-fg-BS1">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
@@ -399,12 +398,13 @@
                         <segue destination="2" kind="push" identifier="PhotoEditorSegue" id="3k8-yh-uZS"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Ft-dx-Hlf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2605" y="235"/>
         </scene>
+        <!--Diplom View Controller-->
         <scene sceneID="5">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="filterController" id="2" customClass="diplomViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CCQ-l6-dna">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
@@ -879,11 +879,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <button opaque="NO" alpha="0.50000000000000011" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="mgq-8B-zdh">
-                                        <rect key="frame" x="9" y="10" width="62" height="50"/>
+                                        <rect key="frame" x="9" y="9" width="62" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                                        <state key="normal" title="exposure">
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
+                                        <state key="normal" title="экспозиция">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -915,7 +915,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                                        <state key="normal" title="contrast">
+                                        <state key="normal" title="контраст">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -947,7 +947,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                                        <state key="normal" title="gamma">
+                                        <state key="normal" title="гамма">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -988,6 +988,7 @@
                         <segue destination="eFf-eR-QR1" kind="push" identifier="ShareSegue" id="NBA-BT-HBc"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="NKt-o1-LWz">
                     <connections>
                         <outlet property="delegate" destination="2" id="yhd-hf-2wD"/>
@@ -996,9 +997,9 @@
             </objects>
             <point key="canvasLocation" x="-1553" y="416"/>
         </scene>
+        <!--Navigation Controller-->
         <scene sceneID="Xlc-Y8-MXp">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6ra-Nx-1rJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController wantsFullScreenLayout="YES" navigationBarHidden="YES" id="eRu-tx-g8F" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" barStyle="blackOpaque" id="O2B-27-Pg5">
@@ -1014,12 +1015,13 @@
                         <segue destination="lgE-Zh-Qpm" kind="relationship" relationship="rootViewController" id="H9m-vk-h5G"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6ra-Nx-1rJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3115" y="260"/>
         </scene>
+        <!--Share View Controller-->
         <scene sceneID="snP-SY-qmD">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qXK-YX-nQu" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="ShareController" id="eFf-eR-QR1" customClass="ShareViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hiD-tr-Tck">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
@@ -1050,7 +1052,7 @@
                                 <rect key="frame" x="31" y="134" width="94" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="8Qt-c9-WSC">
@@ -1060,6 +1062,35 @@
                                     <action selector="manageLocation:" destination="eFf-eR-QR1" eventType="valueChanged" id="DOA-0S-jrY"/>
                                 </connections>
                             </switch>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="20" sectionHeaderHeight="22" sectionFooterHeight="22" id="4eA-Tg-TLA">
+                                <rect key="frame" x="22" y="338" width="276" height="0.0"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DefaultCell" textLabel="nBs-jK-evd" style="IBUITableViewCellStyleDefault" id="CcW-rP-Pc8">
+                                        <rect key="frame" x="0.0" y="22" width="276" height="20"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="276" height="19"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nBs-jK-evd">
+                                                    <rect key="frame" x="10" y="0.0" width="258" height="19"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="eFf-eR-QR1" id="wfe-yk-ycs"/>
+                                    <outlet property="delegate" destination="eFf-eR-QR1" id="52e-Hl-mdL"/>
+                                </connections>
+                            </tableView>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="YU9-dE-78T">
                                 <rect key="frame" x="20" y="169" width="280" height="169"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -1102,7 +1133,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="hgA-kt-Ua5">
                         <barButtonItem key="rightBarButtonItem" title="Отправить" style="done" id="yIA-So-JFr">
@@ -1117,18 +1148,20 @@
                         <outlet property="fbShare" destination="Ioz-wI-LaU" id="3VG-fR-aHK"/>
                         <outlet property="imagePreview" destination="nnI-Pg-qRH" id="6hU-LW-owq"/>
                         <outlet property="map" destination="YU9-dE-78T" id="j4l-69-aY3"/>
+                        <outlet property="tableViewForFbPlaces" destination="4eA-Tg-TLA" id="DDF-U5-vca"/>
                         <outlet property="testlabel" destination="bRU-eo-NcK" id="pxV-hX-of8"/>
                         <outlet property="textView" destination="fd2-sy-FMU" id="Bqx-7M-UPg"/>
                         <outlet property="viewWithImgTxt" destination="f9i-r9-X9p" id="mrY-FT-FVe"/>
                         <outlet property="vkShare" destination="Cxm-OL-J1G" id="sS7-3G-jA0"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qXK-YX-nQu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1147" y="416"/>
         </scene>
+        <!--Instagram Photos View Controller - Фотографии-->
         <scene sceneID="G6S-uI-NQ8">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kNc-Qh-Xj0" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="lJh-py-Iu8" customClass="InstagramPhotosViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1eL-Hk-qAP">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
@@ -1181,6 +1214,7 @@
                         <outlet property="tableView" destination="rEY-Kb-bKv" id="ywB-o9-jRj"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kNc-Qh-Xj0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2038" y="-818"/>
         </scene>
@@ -1213,11 +1247,11 @@
         <image name="Camera@2x.png" width="148" height="78"/>
         <image name="blur.png" width="86" height="86"/>
         <image name="database.png" width="52" height="52"/>
-        <image name="fbOff.png" width="189" height="181"/>
-        <image name="fbOn.png" width="189" height="181"/>
+        <image name="fbOff.png" width="250" height="250"/>
+        <image name="fbOn.png" width="250" height="250"/>
         <image name="settingss.png" width="90" height="60"/>
-        <image name="vkOn.png" width="189" height="181"/>
-        <image name="vkoff.png" width="189" height="181"/>
+        <image name="vkOn.png" width="250" height="250"/>
+        <image name="vkoff.png" width="250" height="250"/>
         <image name="waste.png" width="52" height="52"/>
     </resources>
     <classes>
@@ -1242,6 +1276,7 @@
                 <relationship kind="outlet" name="fbShare" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="imagePreview" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="map" candidateClass="MKMapView"/>
+                <relationship kind="outlet" name="tableViewForFbPlaces" candidateClass="UITableView"/>
                 <relationship kind="outlet" name="testlabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="textView" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="viewWithImgTxt" candidateClass="UIView"/>

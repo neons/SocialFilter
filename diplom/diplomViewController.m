@@ -49,8 +49,7 @@
 }
 - (IBAction)blurButton:(id)sender
 {
-  //  _slider.hidden=YES;
-  //  _parametersButtonScroll.hidden = YES;
+
     
     if (_circleBlurView.hidden){ //blur on
         if ( _parametersButtonScroll.hidden)
@@ -82,22 +81,6 @@
 }
 
 
--(void) saveMyImage
-{
-    _hud = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
-    [self.navigationController.view addSubview:_hud];
-	_hud.dimBackground = YES;
-    _hud.delegate = self;
-    [_hud show:YES];
-
-    ALAssetsLibrary *photo=[[ALAssetsLibrary alloc]init];
-    [photo writeImageToSavedPhotosAlbum:[[_mainImage image]CGImage] orientation:ALAssetOrientationUp completionBlock:^(NSURL *assetURL, NSError *error) {
-        [_hud hide:YES];
-        [_hud removeFromSuperview];
-        _hud = nil;
-        
-    }];
-}
 - (IBAction)actionButton:(id)sender 
 {
     _slider.hidden=YES;
@@ -111,25 +94,85 @@
     [actSheet showInView:self.view];
 }
 
+-(void) showHud: (BOOL)boolean withTitle:(NSString *)title erorr:(NSError *)erorr
+{
+    if (boolean)
+    {
+        _hud = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+        [self.navigationController.view addSubview:_hud];
+        _hud.dimBackground = YES;
+        _hud.delegate = self;
+        _hud.labelText = title;
+        [_hud show:YES];
+    }
+    
+    else
+        
+    {
+        _hud.mode = MBProgressHUDModeAnnularDeterminate;
+        if (erorr)
+            _hud.labelText = erorr.localizedDescription;
+        else
+            _hud.labelText = @"Успешно";
+        
+        double delayInSeconds = 2.0;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            [_hud hide:YES];
+            [_hud removeFromSuperview];
+            _hud = nil;
+        });
+        
+    }
+}
+- (void)sessionStateChanged:(FBSession *)session
+                      state:(FBSessionState) state
+                      error:(NSError *)error
+{
+    switch (state) {
+        case FBSessionStateOpen: {
+            [self showHud:YES withTitle:@"Отправка" erorr:nil];
+           [ FBRequestConnection startForUploadPhoto:_mainImage.image completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+                [self showHud:NO withTitle:nil erorr:error];
+                
+            }];
+        }
+            break;
+        case FBSessionStateClosed:
+        case FBSessionStateClosedLoginFailed:
+            
+            [FBSession.activeSession closeAndClearTokenInformation];
+            
+            break;
+        default:
+            break;
+    }
+    
+    if (error) {
+        UIAlertView *alertView = [[UIAlertView alloc]
+                                  initWithTitle:@"Error"
+                                  message:error.localizedDescription
+                                  delegate:nil
+                                  cancelButtonTitle:@"OK"
+                                  otherButtonTitles:nil];
+        [alertView show];
+    }
+}
+
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex 
 {
 
     switch (buttonIndex) {
         case 0:{
-            _hud = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
-            [self.navigationController.view addSubview:_hud];
-            _hud.dimBackground = YES;
-            _hud.delegate = self;
-            [_hud show:YES];
+            [self showHud:YES withTitle:@"Сохранение" erorr:nil];
+
             
             ALAssetsLibrary *photo=[[ALAssetsLibrary alloc]init];
             [photo writeImageToSavedPhotosAlbum:[[_mainImage image]CGImage] orientation:ALAssetOrientationUp completionBlock:^(NSURL *assetURL, NSError *error) {
-                [_hud hide:YES];
-                [_hud removeFromSuperview];
-                _hud = nil;
-                
+                [self showHud:NO withTitle:nil erorr:error];
             }];}
            break;
+            
         case 1:
         {
             if ([MFMailComposeViewController canSendMail] == true) 
@@ -158,60 +201,39 @@
                 [_vkontakte authenticate];
             }
             
-             _hud = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
-             [self.navigationController.view addSubview:_hud];
-             _hud.dimBackground = YES;
-             _hud.delegate = self;
-             [_hud show:YES];
-             
+            [self showHud:YES withTitle:@"Отправка" erorr:nil];
+
+            
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
                 
                 [_vkontakte postImageToWall:[_mainImage image]];
                 
                 dispatch_sync(dispatch_get_main_queue(), ^{
-                    
-                     [_hud hide:YES];
-                     [_hud removeFromSuperview];
-                     _hud = nil;
-                     
-                    
+                    [self showHud:NO withTitle:nil erorr:nil];
                 });
             });
         }
             break;
         case 3:
-
-                                                                /*delegate];
-            if (![[delegate facebook] isSessionValid]) 
-            {
-                UIAlertView * message = [[UIAlertView alloc] initWithTitle:@"Временное" message:@"Для отправки нажмите |share in FB| повторно" delegate:nil cancelButtonTitle:@"ок" otherButtonTitles:nil];
-                [message show];
-                NSArray * permissions = [[NSArray alloc] initWithObjects:@"offline_access",@"publish_stream",@"user_photos",  nil];
-                [[delegate facebook] authorize:permissions];
-                NSLog(@"not valid");
-                
-            } 
             
-            else 
-                
-            {
-                
-                _hud = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
-                [self.navigationController.view addSubview:_hud];
-                _hud.dimBackground = YES;
-                [_hud show:YES];
-                
-                NSLog(@"valid");
-                FBSession.activeSession  = delegate.facebook.session;            
-                [FBRequestConnection startForUploadPhoto:_mainImage.image 
-                                       completionHandler:^(FBRequestConnection *connection, id result, NSError *error) { [_hud hide:YES];
-                                           [_hud removeFromSuperview];
-                                           _hud = nil;
+            if (FBSession.activeSession.isOpen) {
+                [self showHud:YES withTitle:@"Отправка" erorr:nil];
 
-                                       }];
-                
+                [FBRequestConnection startForUploadPhoto:_mainImage.image completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+                    [self showHud:NO withTitle:nil erorr:error];
+
+                }];
+
             }
-        }*/
+            else
+            {
+                NSArray * permissions = [[NSArray alloc] initWithObjects:@"offline_access",@"publish_stream",@"user_photos", nil];
+                [FBSession openActiveSessionWithPublishPermissions:permissions defaultAudience:FBSessionDefaultAudienceEveryone allowLoginUI:YES completionHandler:^(FBSession *session, FBSessionState status, NSError *error) {
+                    [self sessionStateChanged:session state:status error:error];
+                }];
+            }
+
+                        
                                                                 
             break;
  
@@ -236,18 +258,7 @@
     }
 }
 
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
-    if([title isEqualToString:@"YES"])
-    {
-        [self saveMyImage];
-    }
-    else if([title isEqualToString:@"NOOOOO!!!1"])
-    {
-        
-    }
-}
+
 
 #pragma mark - View lifecycle
 
@@ -773,21 +784,14 @@
 {
     [self dismissModalViewControllerAnimated:YES];
     // [sharedVkButton sendActionsForControlEvents:UIControlEventTouchUpInside];
-    _hud = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
-    [self.navigationController.view addSubview:_hud];
-    _hud.dimBackground = YES;
-    _hud.delegate = self;
-    [_hud show:YES];
+    [self showHud:YES withTitle:@"Отправка" erorr:nil];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
         
         [_vkontakte postImageToWall:[_mainImage image]];
         
         dispatch_sync(dispatch_get_main_queue(), ^{
             
-            [_hud hide:YES];
-            [_hud removeFromSuperview];
-            _hud = nil;
-            
+            [self showHud:NO withTitle:nil erorr:nil];
             
         });
     });
@@ -799,10 +803,6 @@
     
 }
 
-- (void)request:(FBRequest *)request didFailWithError:(NSError *)error {
-    NSLog(@"%@", [error localizedDescription]);
-    NSLog(@"Err details: %@", [error description]);
-}
 
 
 

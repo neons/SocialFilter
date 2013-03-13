@@ -270,7 +270,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="crS-Kw-Erc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2156" y="373"/>
+            <point key="canvasLocation" x="-1986" y="343"/>
         </scene>
         <!--Autorisation Controller - Autorisation-->
         <scene sceneID="T1b-04-wN8">
@@ -340,7 +340,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="lJh-py-Iu8" kind="push" id="gRv-aP-7kb"/>
+                                    <segue destination="lJh-py-Iu8" kind="push" identifier="InstagramPhotosSegue" id="gRv-aP-7kb"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="1Bt-1F-7CX">
@@ -369,7 +369,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="aCO-TV-d0H" kind="push" id="3RP-Iq-b21"/>
+                                    <segue destination="aCO-TV-d0H" kind="push" identifier="FacebookAlbumsSegue" id="3RP-Iq-b21"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="IfJ-hX-jUC">
@@ -384,7 +384,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Kfl-mi-Sps" kind="modal" modalTransitionStyle="crossDissolve" id="u73-eM-JZc"/>
+                                    <segue destination="Kfl-mi-Sps" kind="modal" identifier="settingsSegue" modalTransitionStyle="crossDissolve" id="u73-eM-JZc"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1132,6 +1132,18 @@
                                     <action selector="fbButton:" destination="eFf-eR-QR1" eventType="touchUpInside" id="4N4-fu-PKV"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="GBI-Bz-Dgu">
+                                <rect key="frame" x="198" y="346" width="100" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Карта"/>
+                                    <segment title="Гибрид"/>
+                                </segments>
+                                <color key="tintColor" red="0.46711531929347827" green="0.46711531929347827" blue="0.46711531929347827" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="changeMapType:" destination="eFf-eR-QR1" eventType="valueChanged" id="qP1-uC-fPz"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                     </view>
@@ -1254,78 +1266,6 @@
         <image name="vkoff.png" width="250" height="250"/>
         <image name="waste.png" width="52" height="52"/>
     </resources>
-    <classes>
-        <class className="AutorisationController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AutorisationController.h"/>
-        </class>
-        <class className="CircleBlur" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CircleBlur.h"/>
-            <relationships>
-                <relationship kind="outlet" name="delegate"/>
-            </relationships>
-        </class>
-        <class className="InstagramPhotosViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/InstagramPhotosViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="ShareViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ShareViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="fbShare" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="imagePreview" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="map" candidateClass="MKMapView"/>
-                <relationship kind="outlet" name="tableViewForFbPlaces" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="testlabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="textView" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="viewWithImgTxt" candidateClass="UIView"/>
-                <relationship kind="outlet" name="vkShare" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="UITableViewControllerForVkPhotos" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITableViewControllerForVkPhotos.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="UITableViewVkAlbumsController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITableViewVkAlbumsController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="UIViewControllerFacebookAlbums" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIViewControllerFacebookAlbums.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="UIViewControllerFacebookPhotos" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIViewControllerFacebookPhotos.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="UIViewSettingsController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIViewSettingsController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="diplomViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/diplomViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="barButtonBrush" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="circleBlurView" candidateClass="CircleBlur"/>
-                <relationship kind="outlet" name="countLayers" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="horizontalScroll" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="mainImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="parametersButtonScroll" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="slider" candidateClass="UISlider"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

@@ -184,13 +184,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    diplomAppDelegate *delegate = [UIApplication sharedApplication].delegate;
+    if (delegate.internet)
+    {
     NSDictionary *currentDictionary=[[NSDictionary alloc]init];
     
     currentDictionary = [_dictionaryOfAlbums objectForKey:[NSString stringWithFormat:@"Album%i",indexPath.row+1]];
@@ -204,7 +200,16 @@
                                                                instantiateViewControllerWithIdentifier: @"vkPhotoController"];
     controller.aid = aid;
     [self.navigationController pushViewController:controller animated:YES];
-    
+    }
+    else
+    {
+        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Ошибка"
+                                                            message:@"Отсутствует интернет подключение"
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"Ok"
+                                                  otherButtonTitles:nil];
+        [alertView show];
+    }
 }
 
 

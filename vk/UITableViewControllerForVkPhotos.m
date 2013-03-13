@@ -284,6 +284,9 @@
 
 -(void)pickImageForEdit :(id) sender
 {
+    diplomAppDelegate *delegate = [UIApplication sharedApplication].delegate;
+    if (delegate.internet)
+    {
     UITapGestureRecognizer *gesture = (UITapGestureRecognizer *) sender;
     NSString *photoUrl=[[_dictionaryWithArrayofPhoto objectForKey:[NSString stringWithFormat:@"PhotoInSection%iInRow%i",gesture.view.tag/10,gesture.view.tag%10]]objectForKey:@"src_xbig"];
     if (photoUrl)
@@ -295,6 +298,16 @@
     cropController.cropSize = self.cropSize;
     cropController.delegate = self;
     [self.navigationController pushViewController:cropController animated:YES];
+    }
+    }
+    else
+    {
+        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Ошибка"
+                                                            message:@"Отсутствует интернет подключение"
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"Ok"
+                                                  otherButtonTitles:nil];
+        [alertView show];
     }
 }
 

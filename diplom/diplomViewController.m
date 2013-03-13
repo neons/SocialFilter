@@ -159,7 +159,63 @@
     }
 }
 
--(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex 
+-(void) checkInternet:(NSInteger) socialNumber
+{
+    diplomAppDelegate *delegate = [UIApplication sharedApplication].delegate;
+
+    if (delegate.internet) {
+        if (socialNumber==2) {
+            if (![_vkontakte isAuthorized])
+            {
+                [_vkontakte authenticate];
+            }
+            
+            [self showHud:YES withTitle:@"Отправка" erorr:nil];
+            
+            
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+                
+                [_vkontakte postImageToWall:[_mainImage image]];
+                
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    [self showHud:NO withTitle:nil erorr:nil];
+                });
+            });
+        }
+        else
+        {
+            if (FBSession.activeSession.isOpen) {
+                [self showHud:YES withTitle:@"Отправка" erorr:nil];
+                
+                [FBRequestConnection startForUploadPhoto:_mainImage.image completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+                    [self showHud:NO withTitle:nil erorr:error];
+                    
+                }];
+                
+            }
+            else
+            {
+                NSArray * permissions = [[NSArray alloc] initWithObjects:@"offline_access",@"publish_stream",@"user_photos", nil];
+                [FBSession openActiveSessionWithPublishPermissions:permissions defaultAudience:FBSessionDefaultAudienceEveryone allowLoginUI:YES completionHandler:^(FBSession *session, FBSessionState status, NSError *error) {
+                    [self sessionStateChanged:session state:status error:error];
+                }];
+            }
+
+        }
+    }
+    else
+    {
+        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Ошибка"
+                                                            message:@"Отсутствует интернет подключение"
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"Ok"
+                                                  otherButtonTitles:nil];
+        [alertView show];
+
+    }
+}
+
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
 
     switch (buttonIndex) {
@@ -196,44 +252,17 @@
             break;
         case 2:
         {
-            if (![_vkontakte isAuthorized]) 
-            {
-                [_vkontakte authenticate];
-            }
             
-            [self showHud:YES withTitle:@"Отправка" erorr:nil];
-
+            [self checkInternet:2];
             
-            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-                
-                [_vkontakte postImageToWall:[_mainImage image]];
-                
-                dispatch_sync(dispatch_get_main_queue(), ^{
-                    [self showHud:NO withTitle:nil erorr:nil];
-                });
-            });
+           
         }
             break;
         case 3:
             
-            if (FBSession.activeSession.isOpen) {
-                [self showHud:YES withTitle:@"Отправка" erorr:nil];
+            [self checkInternet:3];
 
-                [FBRequestConnection startForUploadPhoto:_mainImage.image completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
-                    [self showHud:NO withTitle:nil erorr:error];
-
-                }];
-
-            }
-            else
-            {
-                NSArray * permissions = [[NSArray alloc] initWithObjects:@"offline_access",@"publish_stream",@"user_photos", nil];
-                [FBSession openActiveSessionWithPublishPermissions:permissions defaultAudience:FBSessionDefaultAudienceEveryone allowLoginUI:YES completionHandler:^(FBSession *session, FBSessionState status, NSError *error) {
-                    [self sessionStateChanged:session state:status error:error];
-                }];
-            }
-
-                        
+            
                                                                 
             break;
  
@@ -310,9 +339,8 @@
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-    [[[self navigationController] view] setFrame:[[UIScreen mainScreen] bounds]];
-	[[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationNone];
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
+ //   [[[self navigationController] view] setFrame:[[UIScreen mainScreen] bounds]];
+	[[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
 	[super viewWillDisappear:animated];
 }
 

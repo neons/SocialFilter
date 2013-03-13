@@ -10,6 +10,7 @@
 #import <FacebookSDK/FacebookSDK.h>
 #import "IGConnect.h"
 #import "UIViewControllerFacebookAlbums.h"
+#import "Reachability.h"
 
 @class UIViewControllerFacebookAlbums;
 
@@ -19,6 +20,7 @@
 @property (strong, nonatomic) UIWindow *window;
 @property (nonatomic, retain)  UIViewControllerFacebookAlbums *facebookController;
 @property (strong, nonatomic) Instagram *instagram;
+@property (nonatomic) BOOL internet;
 
 
 @end

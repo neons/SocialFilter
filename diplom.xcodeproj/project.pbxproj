@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		33541D1F16F10CCA0089321E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33541D1E16F10CC90089321E /* SystemConfiguration.framework */; };
+		33541D2116F113610089321E /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 33541D1B16F10AEF0089321E /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		33598DE316C56FE9002545BA /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33598DE216C56FE9002545BA /* FacebookSDK.framework */; };
 		33598DE516C57026002545BA /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 33598DE416C57026002545BA /* Default-568h@2x.png */; };
 		33598DE716C57423002545BA /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33598DE616C57423002545BA /* Accounts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -150,6 +152,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		33541D1A16F10AEF0089321E /* Reachability.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		33541D1B16F10AEF0089321E /* Reachability.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		33541D1E16F10CC90089321E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		33598DE216C56FE9002545BA /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		33598DE416C57026002545BA /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		33598DE616C57423002545BA /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
@@ -327,6 +332,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33541D1F16F10CCA0089321E /* SystemConfiguration.framework in Frameworks */,
 				33598DE916C5742F002545BA /* AdSupport.framework in Frameworks */,
 				33598DE716C57423002545BA /* Accounts.framework in Frameworks */,
 				843E53D216AEFF4000436550 /* libGPUImage.a in Frameworks */,
@@ -564,6 +570,7 @@
 		84AE9566162340B60036BF8D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				33541D1E16F10CC90089321E /* SystemConfiguration.framework */,
 				33598DE816C5742F002545BA /* AdSupport.framework */,
 				33598DE616C57423002545BA /* Accounts.framework */,
 				33598DEA16C57483002545BA /* FacebookSDKResources.bundle */,
@@ -608,6 +615,8 @@
 		84AE956E162340B60036BF8D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				33541D1A16F10AEF0089321E /* Reachability.h */,
+				33541D1B16F10AEF0089321E /* Reachability.m */,
 				84AE956F162340B60036BF8D /* diplom-Info.plist */,
 				84AE9570162340B60036BF8D /* InfoPlist.strings */,
 				84AE9573162340B60036BF8D /* main.m */,
@@ -790,6 +799,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33541D2116F113610089321E /* Reachability.m in Sources */,
 				84AE9574162340B60036BF8D /* main.m in Sources */,
 				84AE9578162340B70036BF8D /* diplomAppDelegate.m in Sources */,
 				84AE957E162340B70036BF8D /* diplomViewController.m in Sources */,

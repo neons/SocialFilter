@@ -58,6 +58,9 @@
     appDelegate.instagram.accessToken = [[NSUserDefaults standardUserDefaults] objectForKey:@"accessToken"];
     appDelegate.instagram.sessionDelegate = self;
     
+    
+
+    
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         _filePath = [DOCUMENTS stringByAppendingPathComponent:@"instagram"];
         NSMutableData *data = [[NSMutableData alloc]initWithContentsOfFile:_filePath];
@@ -287,24 +290,37 @@
 
 -(void)pickImageForEdit :(id) sender
 {
+    diplomAppDelegate *delegate = [UIApplication sharedApplication].delegate;
+    if (delegate.internet)
+        {
     UITapGestureRecognizer *gesture = (UITapGestureRecognizer *) sender;
     NSString *photoUrl=[[[[_dictionaryWitSortPhotos objectForKey:[NSString stringWithFormat:@"PhotoInSection%iInRow%i",gesture.view.tag/10,gesture.view.tag%10]]objectForKey:@"images"]objectForKey:@"standard_resolution"] objectForKey:@"url"];
     
-    if (photoUrl)
-    {
-        NSLog(@"urlphoto %@",photoUrl);
-        NSData *photoData = [NSData dataWithContentsOfURL:[NSURL URLWithString:photoUrl]];
+            if (photoUrl)
+        {
+            NSLog(@"urlphoto %@",photoUrl);
+            NSData *photoData = [NSData dataWithContentsOfURL:[NSURL URLWithString:photoUrl]];
         
-        UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard"
+            UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard"
                                                                  bundle: nil];    
         
         
-        diplomViewController *controller = (diplomViewController*)[mainStoryboard 
+            diplomViewController *controller = (diplomViewController*)[mainStoryboard 
                                                                    instantiateViewControllerWithIdentifier: @"filterController"];
-        controller.imageFromPicker = [UIImage imageWithData:photoData];
-        [self.navigationController pushViewController:controller animated:YES]; 
+            controller.imageFromPicker = [UIImage imageWithData:photoData];
+            [self.navigationController pushViewController:controller animated:YES]; 
 
        
+        }
+    }
+    else
+    {
+        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Ошибка"
+                                                            message:@"Отсутствует интернет подключение"
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"Ok"
+                                                  otherButtonTitles:nil];
+        [alertView show];
     }
 }
 

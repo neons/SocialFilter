@@ -11,21 +11,12 @@
 
 @interface AutorisationController()
 
-@property (strong, nonatomic)     UIImagePickerController * picker;
+@property (strong, nonatomic) UIImagePickerController * picker;
 
 @end
-@implementation AutorisationController 
 
- 
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-    }
-    return self;
-}
-
+@implementation AutorisationController
 
 - (IBAction)cameraActionButton:(id)sender
 {
@@ -104,7 +95,16 @@
     
 }
 
-
+-(BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender{
+    
+    if ([identifier isEqual:@"settingsSegue"])
+        return YES;
+    
+    diplomAppDelegate *delegate = [UIApplication sharedApplication].delegate;
+    return delegate.internet;
+        
+    
+}
 
 #pragma mark - View lifecycle
 
@@ -112,6 +112,7 @@
 {
     [super viewDidLoad];    
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackTranslucent];
+    
 }
 
 - (void)viewDidUnload

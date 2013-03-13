@@ -52,6 +52,12 @@
     [super viewWillDisappear:animated];
 }
 
+-(void) viewWillAppear:(BOOL)animated
+{
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    [super viewWillAppear:animated];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -102,6 +108,8 @@
 -(void)sendImageToSocialNetworks
 {
     [_textView resignFirstResponder];
+    diplomAppDelegate *delegate = [UIApplication sharedApplication].delegate;
+    if (delegate.internet){
     [self showHud:YES erorr:nil];
     if (_vkShare.selected)
     {
@@ -126,6 +134,16 @@
     }
     else
         [self showHud:NO erorr:nil];
+    }
+    else
+    {
+        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Ошибка"
+                                                            message:@"Отсутствует интернет подключение"
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"Ok"
+                                                  otherButtonTitles:nil];
+        [alertView show];
+    }
 }
 
 -(void)textViewDidBeginEditing:(UITextView *)textView
@@ -306,6 +324,14 @@
       
     
     return cell;
+}
+- (IBAction)changeMapType:(UISegmentedControl *)sender {
+    if (sender.selectedSegmentIndex == 0) {
+        _map.mapType = MKMapTypeStandard;
+    }
+     else if (sender.selectedSegmentIndex == 1) {
+        _map.mapType = MKMapTypeHybrid;
+    }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

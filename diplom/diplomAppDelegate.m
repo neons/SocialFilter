@@ -9,7 +9,11 @@
 #import "diplomAppDelegate.h"
 
 #define APP_ID @"18dfa27b99a44a14bc741aee591a01f8"
+@interface diplomAppDelegate()
 
+@property (strong, nonatomic) Reachability  *internetReachability;
+
+@end
 
 @implementation diplomAppDelegate
 
@@ -19,6 +23,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
    
+    _internetReachability = [Reachability reachabilityForInternetConnection];
+[[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(reachabilityChanged:) name: kReachabilityChangedNotification object: nil];
+    [_internetReachability startNotifier];
+    [self reachabilityChanged:nil];
    _instagram = [[Instagram alloc] initWithClientId:APP_ID
                                                 delegate:nil];
     if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded) {
@@ -41,6 +49,24 @@
 }
 
 
+
+
+- (void) reachabilityChanged: (NSNotification* )note
+{
+    NetworkStatus netStatus = _internetReachability.currentReachabilityStatus;
+    
+    switch (netStatus) {
+        case NotReachable:
+            _internet = NO;
+             break;
+        case ReachableViaWiFi:
+            _internet = YES;
+            break;
+        case ReachableViaWWAN:
+            _internet = YES;
+            break;
+    }
+}
 
 
 - (void)applicationWillResignActive:(UIApplication *)application

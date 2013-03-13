@@ -200,15 +200,28 @@
 // Customize the appearance of table view cells.
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *albumsId = [[_arrayofAlbums objectAtIndex:indexPath.row] objectForKey:@"id"];
-    NSLog(@"albumsId %@",albumsId);
-    
-    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard"
-                                                             bundle: nil];    
-    UIViewControllerFacebookPhotos *controller = (UIViewControllerFacebookPhotos*)[mainStoryboard 
+    diplomAppDelegate *delegate = [UIApplication sharedApplication].delegate;
+    if (delegate.internet) {
+        NSString *albumsId = [[_arrayofAlbums objectAtIndex:indexPath.row] objectForKey:@"id"];
+        NSLog(@"albumsId %@",albumsId);
+        
+        UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard"
+                                                                 bundle: nil];
+        UIViewControllerFacebookPhotos *controller = (UIViewControllerFacebookPhotos*)[mainStoryboard
                                                                                        instantiateViewControllerWithIdentifier: @"FacebookPhotos"];
-    controller.albumsId = albumsId;
-    [self.navigationController pushViewController:controller animated:YES];
+        controller.albumsId = albumsId;
+        [self.navigationController pushViewController:controller animated:YES];
+
+    }
+    else
+    {
+        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Ошибка"
+                                                            message:@"Отсутствует интернет подключение"
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"Ok"
+                                                  otherButtonTitles:nil];
+        [alertView show];
+    }
     
  
 }

@@ -172,10 +172,12 @@
     // e.g. self.myOutlet = nil;
 }
 
-- (void)viewWillAppear:(BOOL)animated
+-(void) viewWillAppear:(BOOL)animated
 {
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
     [super viewWillAppear:animated];
 }
+
 
 - (void)viewDidAppear:(BOOL)animated
 {

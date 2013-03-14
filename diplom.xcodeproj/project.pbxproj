@@ -17,8 +17,8 @@
 		33598DED16C57483002545BA /* FBUserSettingsViewResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 33598DEB16C57483002545BA /* FBUserSettingsViewResources.bundle */; };
 		3399784216F2429400CC0A5D /* UINavigationItem+JTRevealSidebarV2.m in Sources */ = {isa = PBXBuildFile; fileRef = 3399783F16F2429400CC0A5D /* UINavigationItem+JTRevealSidebarV2.m */; };
 		3399784316F2429400CC0A5D /* UIViewController+JTRevealSidebarV2.m in Sources */ = {isa = PBXBuildFile; fileRef = 3399784116F2429400CC0A5D /* UIViewController+JTRevealSidebarV2.m */; };
-		3399784716F24D8400CC0A5D /* ButtonMenu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3399784616F24D8400CC0A5D /* ButtonMenu@2x.png */; };
-		3399784916F24EE200CC0A5D /* ButtonMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = 3399784816F24EE200CC0A5D /* ButtonMenu.png */; };
+		3399784E16F284AF00CC0A5D /* ButtonMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = 3399784C16F284AF00CC0A5D /* ButtonMenu.png */; };
+		3399784F16F284AF00CC0A5D /* ButtonMenu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3399784D16F284AF00CC0A5D /* ButtonMenu@2x.png */; };
 		842EDC3216AB2CBB00DF8B8E /* fbOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 842EDC3016AB2CBB00DF8B8E /* fbOff.png */; };
 		842EDC3316AB2CBB00DF8B8E /* fbOn.png in Resources */ = {isa = PBXBuildFile; fileRef = 842EDC3116AB2CBB00DF8B8E /* fbOn.png */; };
 		843E53D216AEFF4000436550 /* libGPUImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 843E53CD16AEFECD00436550 /* libGPUImage.a */; };
@@ -170,8 +170,8 @@
 		3399783F16F2429400CC0A5D /* UINavigationItem+JTRevealSidebarV2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationItem+JTRevealSidebarV2.m"; sourceTree = "<group>"; };
 		3399784016F2429400CC0A5D /* UIViewController+JTRevealSidebarV2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JTRevealSidebarV2.h"; sourceTree = "<group>"; };
 		3399784116F2429400CC0A5D /* UIViewController+JTRevealSidebarV2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JTRevealSidebarV2.m"; sourceTree = "<group>"; };
-		3399784616F24D8400CC0A5D /* ButtonMenu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ButtonMenu@2x.png"; sourceTree = "<group>"; };
-		3399784816F24EE200CC0A5D /* ButtonMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonMenu.png; sourceTree = "<group>"; };
+		3399784C16F284AF00CC0A5D /* ButtonMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ButtonMenu.png; path = images/ButtonMenu.png; sourceTree = "<group>"; };
+		3399784D16F284AF00CC0A5D /* ButtonMenu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ButtonMenu@2x.png"; path = "images/ButtonMenu@2x.png"; sourceTree = "<group>"; };
 		842EDC3016AB2CBB00DF8B8E /* fbOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fbOff.png; path = images/fbOff.png; sourceTree = "<group>"; };
 		842EDC3116AB2CBB00DF8B8E /* fbOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fbOn.png; path = images/fbOn.png; sourceTree = "<group>"; };
 		843E53B916AEFECD00436550 /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = "BradLarson-GPUImage-a984bcb/framework/GPUImage.xcodeproj"; sourceTree = SOURCE_ROOT; };
@@ -381,10 +381,10 @@
 		8400F8E1163360EB00D766B9 /* img */ = {
 			isa = PBXGroup;
 			children = (
-				3399784816F24EE200CC0A5D /* ButtonMenu.png */,
-				3399784616F24D8400CC0A5D /* ButtonMenu@2x.png */,
 				842D49E91659A58A00BC3F7C /* preview */,
 				33598DE416C57026002545BA /* Default-568h@2x.png */,
+				3399784C16F284AF00CC0A5D /* ButtonMenu.png */,
+				3399784D16F284AF00CC0A5D /* ButtonMenu@2x.png */,
 				84AA0CD9165AD90F00D45358 /* icon.png */,
 				84AA0BF1165ACD6400D45358 /* Camera@2x.png */,
 				84AA0BF2165ACD6400D45358 /* checkedd.png */,
@@ -815,8 +815,8 @@
 				33598DE516C57026002545BA /* Default-568h@2x.png in Resources */,
 				33598DEC16C57483002545BA /* FacebookSDKResources.bundle in Resources */,
 				33598DED16C57483002545BA /* FBUserSettingsViewResources.bundle in Resources */,
-				3399784716F24D8400CC0A5D /* ButtonMenu@2x.png in Resources */,
-				3399784916F24EE200CC0A5D /* ButtonMenu.png in Resources */,
+				3399784E16F284AF00CC0A5D /* ButtonMenu.png in Resources */,
+				3399784F16F284AF00CC0A5D /* ButtonMenu@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

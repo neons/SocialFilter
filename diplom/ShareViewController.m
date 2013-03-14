@@ -65,7 +65,7 @@
     _locationManager = [[CLLocationManager alloc] init];
     _locationManager.delegate = self;
     _locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    _locationManager.distanceFilter = 10.0;
+    _locationManager.distanceFilter = 30.0;
     _currentLocation = CLLocationCoordinate2DMake(0, 0);
 }
 - (IBAction)sendButton:(id)sender {
@@ -166,6 +166,17 @@
     if (_map.showsUserLocation)
         _currentLocation = CLLocationCoordinate2DMake(0, 0);
     _map.showsUserLocation=!_map.showsUserLocation;
+    if (_fbShare.selected && _map.showsUserLocation)
+    {
+        double delayInSeconds = 4.0;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            [self showTableViewWithFbPlaces];
+            
+        });
+        
+    }
+
    
 }
 
@@ -173,17 +184,7 @@
 { 
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(userLocation.location.coordinate, 250, 250);
     [_map setRegion:region animated:YES];
-    if (_fbShare.selected && _map.showsUserLocation)
-    {
-        double delayInSeconds = 2.0;
-        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-            [self showTableViewWithFbPlaces];
-
-        });
-        
-    }
-   // _testlabel.text = [NSString stringWithFormat:@"%f : %f", userLocation.location.coordinate.latitude, userLocation.location.coordinate.longitude];
+       // _testlabel.text = [NSString stringWithFormat:@"%f : %f", userLocation.location.coordinate.latitude, userLocation.location.coordinate.longitude];
     _currentLocation = userLocation.location.coordinate;
 }
 - (IBAction)vkButton:(UIButton *)sender 

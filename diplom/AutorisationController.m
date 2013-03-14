@@ -101,7 +101,18 @@
         return YES;
     
     diplomAppDelegate *delegate = [UIApplication sharedApplication].delegate;
-    return delegate.internet;
+     if (delegate.internet)
+        return YES;
+    else
+    {
+        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Ошибка"
+                                                            message:@"Отсутствует интернет подключение"
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"Ok"
+                                                  otherButtonTitles:nil];
+        [alertView show];
+        return NO;
+    }
         
     
 }

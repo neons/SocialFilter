@@ -16,7 +16,11 @@
 #import "CircleBlur.h"
 #import "ShareViewController.h"
 
-@interface diplomViewController : UIViewController < UINavigationControllerDelegate,UIAlertViewDelegate, VkontakteViewControllerDelegate,VkontakteDelegate, MBProgressHUDDelegate, UIGestureRecognizerDelegate,UIActionSheetDelegate, MFMailComposeViewControllerDelegate,UIScrollViewDelegate, circleBlurProtocol>
+#import "UIViewController+JTRevealSidebarV2.h"
+#import "UINavigationItem+JTRevealSidebarV2.h"
+#import "JTRevealSidebarV2Delegate.h"
+
+@interface diplomViewController : UIViewController < UINavigationControllerDelegate,UIAlertViewDelegate, VkontakteViewControllerDelegate,VkontakteDelegate, MBProgressHUDDelegate, UIGestureRecognizerDelegate,UIActionSheetDelegate, MFMailComposeViewControllerDelegate,UIScrollViewDelegate, circleBlurProtocol, JTRevealSidebarV2Delegate, UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) UIImage *imageFromPicker;
 

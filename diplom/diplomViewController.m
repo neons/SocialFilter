@@ -18,11 +18,11 @@
 @property (strong, nonatomic) UIImage *nonFilterImage;
 @property (weak, nonatomic) IBOutlet UIImageView *mainImage;
 @property (weak, nonatomic) IBOutlet UIScrollView *horizontalScroll;
-@property (strong, nonatomic) IBOutlet UIScrollView *parametersButtonScroll;
-@property (strong, nonatomic) IBOutlet UIBarButtonItem *barButtonBrush;
 @property (strong, nonatomic) IBOutlet UILabel *countLayers;
 @property (strong, nonatomic) IBOutlet CircleBlur *circleBlurView;
 @property (strong, nonatomic) UIImage * mainImageWithoutBlur;
+@property (strong, nonatomic) NSArray *arrayWithTitleForTable;
+@property (nonatomic, strong) UITableView *rightSidebarView;
 
 @end
 
@@ -52,7 +52,7 @@
 
     
     if (_circleBlurView.hidden){ //blur on
-        if ( _parametersButtonScroll.hidden)
+        if ( _slider.hidden)
         {
         _mainImageWithoutBlur = _mainImage.image;
         }
@@ -72,7 +72,7 @@
 -(void) scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
     _slider.hidden = YES;
-    _parametersButtonScroll.hidden = YES;
+   // _parametersButtonScroll.hidden = YES;
 }
 
 - (IBAction)buttonback:(id)sender 
@@ -84,7 +84,7 @@
 - (IBAction)actionButton:(id)sender 
 {
     _slider.hidden=YES;
-    _parametersButtonScroll.hidden = YES;
+   // _parametersButtonScroll.hidden = YES;
     UIActionSheet *actSheet = [[UIActionSheet alloc] initWithTitle:nil
                                                           delegate:self 
                                                  cancelButtonTitle:@"Cancel" 
@@ -289,18 +289,26 @@
 
 
 
+
 #pragma mark - View lifecycle
+- (void)tapOnImage {
+    self.slider.hidden = YES;
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.navigationItem.revealSidebarDelegate = self;
+    _arrayWithTitleForTable = @[@"Экспозиция",@"Яркость",@"Контраст",@"Насыщенность",@"Гамма"];
     _horizontalScroll.contentSize=CGSizeMake(3545, 74);
      _vkontakte = [Vkontakte sharedInstance];
     _vkontakte.delegate = self;
-    _parametersButtonScroll.hidden = YES;
     _slider.hidden=YES;
     _circleBlurView.delegate = self;
     [self.circleBlurView addGestureRecognizer:[[UIPinchGestureRecognizer alloc] initWithTarget:self.circleBlurView action:@selector(pinch:)]];
+    
+    [self.mainImage addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapOnImage)]];
     [self.circleBlurView addGestureRecognizer:[[UIPanGestureRecognizer alloc] initWithTarget:self.circleBlurView action:@selector(pan:)]];
     [[self.circleBlurView.gestureRecognizers lastObject]setMaximumNumberOfTouches:2];
     _circleBlurView.center = CGPointMake(160, 160);
@@ -313,6 +321,64 @@
     else
     NSLog(@"fail");       
 }
+- (IBAction)sideBarButton:(UIBarButtonItem *)sender {
+    [self.navigationController toggleRevealState:JTRevealedStateRight];
+}
+
+
+- (UIView *)viewForRightSidebar {
+   
+    CGRect viewFrame = self.navigationController.applicationViewFrame;
+    UITableView *view = self.rightSidebarView;
+    if ( ! view) {
+        view = self.rightSidebarView = [[UITableView alloc] initWithFrame:CGRectZero];
+        view.backgroundColor = [UIColor blackColor];
+        view.separatorColor = [UIColor blackColor];
+        view.dataSource = self;
+        view.delegate   = self;
+    }
+    view.frame = CGRectMake(self.navigationController.view.frame.size.width - 270, viewFrame.origin.y, 270, viewFrame.size.height);
+    view.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleHeight;
+    return view;
+}
+#pragma mark UITableViewDatasource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [_arrayWithTitleForTable count];
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *cellIdentifier = @"CellIdentifier";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if ( ! cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    }
+    cell.textLabel.text = [_arrayWithTitleForTable objectAtIndex:indexPath.row];
+    cell.textLabel.textColor=[UIColor whiteColor];
+    
+
+    return cell;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    if (tableView == self.rightSidebarView) {
+        return @"Дополнительно";
+    }
+    return nil;
+}
+
+#pragma mark UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self.navigationController setRevealedState:JTRevealedStateNo];
+    if (tableView == self.rightSidebarView) {
+        [self changePhotoParameters:indexPath.row+1];
+    }
+}
 
 
 - (void)viewDidUnload
@@ -321,8 +387,7 @@
     [self setMainImage:nil];
     [self setHorizontalScroll:nil];
     [self setSlider:nil];
-    [self setParametersButtonScroll:nil];
-    [self setBarButtonBrush:nil];
+   // [self setParametersButtonScroll:nil];
     [self setCountLayers:nil];
     [self setCircleBlurView:nil];
     [super viewDidUnload];
@@ -354,7 +419,7 @@
 -(IBAction) addFilterToCurrentImage:(UIButton *)sender
 {
     _slider.hidden=YES;
-    _parametersButtonScroll.hidden = YES;
+  //  _parametersButtonScroll.hidden = YES;
     UIImage *quickFilteredImage;
     UIImage *imageForFiltering = [_arrayWhithPhoto lastObject];
 
@@ -548,15 +613,15 @@
     }
 
 }
-
+/*
 - (IBAction)parametersBarButton:(id)sender
 {
     _parametersButtonScroll.hidden = !_parametersButtonScroll.hidden;
     self.slider.hidden =!self.slider.hidden;
     
 }
-
--(IBAction) changePhotoParameters:(UIButton *)sender
+*/
+-(IBAction) changePhotoParameters:(NSInteger)sender
 {
    
     
@@ -568,7 +633,7 @@
         [self blurIt:self.circleBlurView];
     }
     
-    switch (sender.tag)
+    switch (sender)
     {
         case 1:
         
@@ -616,7 +681,7 @@
             _slider.hidden=YES;
             break;
     }
-    _currentFilterTag=sender.tag;
+    _currentFilterTag=sender;
     _slider.hidden = NO;    
 }
 - (IBAction)showSliderWithParameters:(id)sender

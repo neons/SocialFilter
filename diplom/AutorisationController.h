@@ -13,8 +13,4 @@
 
 @interface AutorisationController : UIViewController <UIImagePickerControllerDelegate,UINavigationControllerDelegate, GKImageCropControllerDelegate>
 
-
-
-
-
 @end

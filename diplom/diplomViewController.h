@@ -15,7 +15,6 @@
 #import "diplomAppDelegate.h"
 #import "CircleBlur.h"
 #import "ShareViewController.h"
-
 #import "UIViewController+JTRevealSidebarV2.h"
 #import "UINavigationItem+JTRevealSidebarV2.h"
 #import "JTRevealSidebarV2Delegate.h"

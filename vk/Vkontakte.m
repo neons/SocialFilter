@@ -914,7 +914,7 @@ NSString * const vkRedirectUrl = @"http://oauth.vk.com/blank.html";
                               userEmail:(NSString *)_email
 
 {
-    NSLog(@"save email %@", _email);
+    NSLog(@"vk save email %@", _email);
     accessToken = _accessToken;
     userId = _userId;
     expirationDate = _expDate;

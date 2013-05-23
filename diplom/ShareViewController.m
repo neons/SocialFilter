@@ -25,41 +25,25 @@
 @property (strong,nonatomic) NSArray *fbPlaces;
 @property (strong, nonatomic) MBProgressHUD *hud;
 
-
 -(void)sendImageToSocialNetworks;
 
 @end
 
 @implementation ShareViewController
 
-
-
-
-- (void)didReceiveMemoryWarning
-{
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
-}
-
 #pragma mark - View lifecycle
 
-
--(void)viewWillDisappear:(BOOL)animated
-{
+-(void)viewWillDisappear:(BOOL)animated{
     [self.navigationController setNavigationBarHidden:YES animated:YES];
     [super viewWillDisappear:animated];
 }
 
--(void) viewWillAppear:(BOOL)animated
-{
+-(void) viewWillAppear:(BOOL)animated{
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     [super viewWillAppear:animated];
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad{
     [super viewDidLoad];
     _imagePreview.image = _imageForPreview;
     _locationManager = [[CLLocationManager alloc] init];
@@ -72,10 +56,8 @@
     [self sendImageToSocialNetworks];
 }
 
--(void) showHud: (BOOL)boolean erorr:(NSError *)erorr
-{
-    if (boolean)
-    {
+-(void) showHud:(BOOL)boolean erorr:(NSError *)erorr{
+    if (boolean){
         _hud = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
         [self.navigationController.view addSubview:_hud];
         _hud.dimBackground = YES;
@@ -83,10 +65,7 @@
         _hud.labelText = @"Отправка";
         [_hud show:YES];
     }
-    
-    else
-        
-    {
+    else{
         _hud.mode = MBProgressHUDModeAnnularDeterminate;
         if (erorr)
             _hud.labelText = erorr.localizedDescription;
@@ -105,22 +84,19 @@
 }
 
 
--(void)sendImageToSocialNetworks
-{
+-(void)sendImageToSocialNetworks{
     [_textView resignFirstResponder];
     diplomAppDelegate *delegate = [UIApplication sharedApplication].delegate;
     if (delegate.internet){
     [self showHud:YES erorr:nil];
-    if (_vkShare.selected)
-    {
+    if (_vkShare.selected){
         if ([_textView.text isEqualToString:@"Текст сообщения"])
             [_vkontakte postImageToWall:_imageForPreview text:@"" link:nil location:_currentLocation];
         else
             [_vkontakte postImageToWall:_imageForPreview text:_textView.text link:nil location:_currentLocation];
     }
-    if (_fbShare.selected)
-    {
-        NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
+    if (_fbShare.selected){
+        NSMutableDictionary *parameters = [NSMutableDictionary new];
         if (_map.showsUserLocation)
             [parameters setObject:_idFbPlace forKey:@"place"];
         if (![_textView.text isEqual:@""] && ![_textView.text isEqualToString:@"Текст сообщения"])
@@ -128,15 +104,13 @@
         [parameters setObject:_imageForPreview forKey:@"source"];
         
             [FBRequestConnection startWithGraphPath:@"me/photos" parameters:parameters HTTPMethod:@"POST" completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
-
                 [self showHud:NO erorr:error];
             }];
     }
     else
         [self showHud:NO erorr:nil];
     }
-    else
-    {
+    else{
         UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Ошибка"
                                                             message:@"Отсутствует интернет подключение"
                                                            delegate:nil
@@ -146,8 +120,7 @@
     }
 }
 
--(void)textViewDidBeginEditing:(UITextView *)textView
-{
+-(void)textViewDidBeginEditing:(UITextView *)textView{
     if ([_textView.text isEqualToString:@"Текст сообщения"])
         _textView.text = @"";
 }
@@ -157,66 +130,50 @@
         [textView resignFirstResponder];
         return NO;
     }
-   
     return YES;
 }
  
-- (IBAction)manageLocation:(UISwitch *)sender
-{
+- (IBAction)manageLocation:(UISwitch *)sender{
     if (_map.showsUserLocation)
         _currentLocation = CLLocationCoordinate2DMake(0, 0);
     _map.showsUserLocation=!_map.showsUserLocation;
-    if (_fbShare.selected && _map.showsUserLocation)
-    {
+    if (_fbShare.selected && _map.showsUserLocation){
         double delayInSeconds = 4.0;
         dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
         dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
             [self showTableViewWithFbPlaces];
-            
         });
-        
     }
-
-   
 }
 
--(void) mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
-{ 
+-(void) mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation{
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(userLocation.location.coordinate, 250, 250);
     [_map setRegion:region animated:YES];
-       // _testlabel.text = [NSString stringWithFormat:@"%f : %f", userLocation.location.coordinate.latitude, userLocation.location.coordinate.longitude];
     _currentLocation = userLocation.location.coordinate;
 }
-- (IBAction)vkButton:(UIButton *)sender 
-{
+- (IBAction)vkButton:(UIButton *)sender {
 
-    if (!sender.selected)  
-    {
+    if (!sender.selected)  {
         _vkontakte = [Vkontakte sharedInstance];
         _vkontakte.delegate = self;
-        if (![_vkontakte isAuthorized]) 
-        {
+        if (![_vkontakte isAuthorized]) {
             [_vkontakte authenticate];
-        }
-        else
-        {
+        }else{
             sender.selected = !sender.selected;
         }
         
     }
-    else
-    {
+    else{
         sender.selected = !sender.selected;
     }
-            
 }
 
--(void) showTableViewWithFbPlaces
-{
+-(void) showTableViewWithFbPlaces{
     if (FBSession.activeSession.isOpen) {
     [FBRequestConnection startForPlacesSearchAtCoordinate:_currentLocation radiusInMeters:1000 resultsLimit:15 searchText:nil completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
         if(!error){
-            _fbPlaces = [[NSArray alloc] initWithArray:[result objectForKey:@"data"]];                     [UIView beginAnimations:nil context:nil];
+            _fbPlaces = [[NSArray alloc] initWithArray:[result objectForKey:@"data"]];
+            [UIView beginAnimations:nil context:nil];
             _map.hidden = YES;
             [UIView setAnimationDuration:0.4];
             [UIView setAnimationCurve:UIViewAnimationCurveLinear];
@@ -227,57 +184,37 @@
             [_tableViewForFbPlaces reloadData];
         }
     }];}
-    else
-    {
+    else{
         NSArray * permissions = [[NSArray alloc] initWithObjects:@"offline_access",@"publish_stream",@"user_photos", nil];
         [FBSession openActiveSessionWithPublishPermissions:permissions defaultAudience:FBSessionDefaultAudienceEveryone allowLoginUI:YES completionHandler:^(FBSession *session, FBSessionState status, NSError *error) {
             [self sessionStateChanged:session state:status error:error];
         }];
-
     }
-
 }
 
-- (IBAction)fbButton:(UIButton *)sender
-{
+- (IBAction)fbButton:(UIButton *)sender{
     sender.selected = !sender.selected;
     if (FBSession.activeSession.isOpen) {
-        if (_map.showsUserLocation && sender.selected)
-        {
+        if (_map.showsUserLocation && sender.selected){
             [self showTableViewWithFbPlaces];
         }
     }
-    else     {
+    else {
         NSArray * permissions = [[NSArray alloc] initWithObjects:@"offline_access",@"publish_stream",@"user_photos", nil];
         [FBSession openActiveSessionWithPublishPermissions:permissions defaultAudience:FBSessionDefaultAudienceEveryone allowLoginUI:YES completionHandler:^(FBSession *session, FBSessionState status, NSError *error) {
             [self sessionStateChanged:session state:status error:error];
         }];
     }
-
 }
 
--(void)mapView:(MKMapView *)mapView didFailToLocateUserWithError:(NSError *)error
-{
+-(void)mapView:(MKMapView *)mapView didFailToLocateUserWithError:(NSError *)error{
     UIAlertView *view = [[UIAlertView alloc] initWithTitle:@"Ошибка" message:@"Невозможно определить местоположение" delegate:nil cancelButtonTitle:@"Отмена" otherButtonTitles: nil];
     [view show];
 }
 
-- (void)viewDidUnload
-{
-    [self setViewWithImgTxt:nil];
-    [self setImagePreview:nil];
-    [self setFbShare:nil];
-    [self setVkShare:nil];
-    [self setTableViewForFbPlaces:nil];
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-}
-
 - (void)sessionStateChanged:(FBSession *)session
                       state:(FBSessionState) state
-                      error:(NSError *)error
-{
+                      error:(NSError *)error{
     switch (state) {
         case FBSessionStateOpen: {
             if (_map.showsUserLocation)
@@ -308,19 +245,17 @@
 }
 
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return [_fbPlaces count];
 }
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     static NSString *CellIdentifier = @"DefaultCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];}
   
-    cell.textLabel.text = [[_fbPlaces objectAtIndex:indexPath.row] objectForKey:@"name"];
+    cell.textLabel.text =_fbPlaces[indexPath.row][@"name"];
     
       
     
@@ -335,9 +270,8 @@
     }
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    _idFbPlace = [[_fbPlaces objectAtIndex:indexPath.row] objectForKey:@"id"];
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    _idFbPlace = _fbPlaces[indexPath.row][@"id"];
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationDuration:0.2];
     [UIView setAnimationCurve:UIViewAnimationCurveLinear];
@@ -347,21 +281,14 @@
     [UIView commitAnimations];
     _map.hidden = NO;
     NSLog(@"%@", _idFbPlace);
-    
-
 }
 
-- (void)vkontakteDidFailedWithError:(NSError *)error
-{
-    
+- (void)vkontakteDidFailedWithError:(NSError *)error{
+    NSLog(@"vkontakte did failed with error %@",[error localizedDescription]);
 }
-- (void)showVkontakteAuthController:(UIViewController *)controller
-{
-    
+- (void)showVkontakteAuthController:(UIViewController *)controller{
 }
-- (void)vkontakteAuthControllerDidCancelled
-{
-    
+- (void)vkontakteAuthControllerDidCancelled{
 }
 
 @end

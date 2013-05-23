@@ -8,78 +8,42 @@
 
 #import "UITableViewControllerForVkPhotos.h"
 @interface UITableViewControllerForVkPhotos()
-@property  BOOL  needCache;
+@property (nonatomic) BOOL  needCache;
 @property (nonatomic, strong ) NSString * filePath;
-@property (strong, nonatomic)  MBProgressHUD *hud;
+@property (strong, nonatomic) MBProgressHUD *hud;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) UIImage *defaultImage;
 @property (strong, nonatomic) NSMutableDictionary * staticImageDictionary;
-@property (nonatomic, assign) CGSize cropSize;
+@property (nonatomic) CGSize cropSize;
 @property (strong,nonatomic) NSDictionary *dictionaryWithArrayofPhoto;
 @property (strong, nonatomic) Vkontakte *vkontakte;
 
 -(void)saveCache;
--(void) createTable;
 
 @end
 
 @implementation UITableViewControllerForVkPhotos
 
-
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
-- (void)didReceiveMemoryWarning
-{
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
-}
-
 #pragma mark - View lifecycle
 
-/*
-// Implement loadView to create a view hierarchy programmatically, without using a nib.
-- (void)loadView
-{
-}
-*/
-
-
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
--(void)viewWillDisappear:(BOOL)animated
-{
+-(void)viewWillDisappear:(BOOL)animated{
     if (_needCache) 
         [self saveCache];
     [super viewWillDisappear:animated];
 }
 
--(void) viewWillAppear:(BOOL)animated
-{
+-(void) viewWillAppear:(BOOL)animated{
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     [super viewWillAppear:animated];
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad{
     [super viewDidLoad];
-    _defaultImage= [UIImage alloc];
     _defaultImage =[UIImage imageNamed:@"tree.png"];
     [self createTable];
-    
-    
 }
 
--(void) createTable
-{
+-(void) createTable{
     _hud = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
     [self.tableView addSubview:_hud];
 	_hud.dimBackground = YES;
@@ -107,42 +71,25 @@
     });
 }
 
-- (void)viewDidUnload
-{
-    [self setTableView:nil];
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-}
-
-
-
-
-- (void)vkontakteDidFinishGettinAlbumsPhoto:(NSDictionary *)info;
-{
+- (void)vkontakteDidFinishGettinAlbumsPhoto:(NSDictionary *)info;{
     _dictionaryWithArrayofPhoto = info;
 }
 
 
-- (UIImage*)imageNamed:(NSString*)imageNamed cache:(BOOL)cache inIndexPath:(NSIndexPath *)indexPath 
-{
-    UIImage* retImage = [_staticImageDictionary objectForKey:imageNamed];
+- (UIImage*)imageNamed:(NSString*)imageNamed cache:(BOOL)cache inIndexPath:(NSIndexPath *)indexPath {
+    UIImage* retImage = _staticImageDictionary[imageNamed];
 
-    if ((retImage == nil)&(imageNamed!=nil))
-    {
+    if ((retImage == nil)&(imageNamed!=nil)){
         retImage=_defaultImage;
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             
             UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:imageNamed]]];
             
-            if (cache)
-            {
-                if (_staticImageDictionary == nil)
-                {
+            if (cache){
+                if (_staticImageDictionary == nil){
                     _staticImageDictionary = [[NSMutableDictionary alloc] init];
                 }
-                if (imageNamed) 
-                {
+                if (imageNamed) {
                     _needCache = YES;
                     [_staticImageDictionary setObject:image forKey:imageNamed];
                 }
@@ -152,44 +99,31 @@
                 [_tableView reloadRowsAtIndexPaths:arrayOfIndex withRowAnimation:UITableViewRowAnimationNone];
             });
         });
-                      
     }
     return retImage;
 }
 
-
-
-
-
 #pragma mark - Table view data source
 
-
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if ([_dictionaryWithArrayofPhoto count]%4!=0)
         return ([_dictionaryWithArrayofPhoto count]/4)+1;
     
     return [_dictionaryWithArrayofPhoto count]/4;
 }
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath 
-{ 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 80;
 }
 
-- (NSArray*)imageNamed:(NSArray*)arrayWithurl inIndexPaths:(NSIndexPath *)indexPath
-{
-    NSMutableArray *finalArray=[[NSMutableArray alloc]init];
-    NSMutableArray *urlForDownload=[[NSMutableArray alloc]init];
-    for (id obj in arrayWithurl)
-    {
-        UIImage*image=[_staticImageDictionary objectForKey:obj];
-        if (image!=nil)
-        {
+- (NSArray*)imageNamed:(NSArray*)arrayWithurl inIndexPaths:(NSIndexPath *)indexPath{
+    NSMutableArray *finalArray=[NSMutableArray new];
+    NSMutableArray *urlForDownload=[NSMutableArray new];
+    for (NSString* obj in arrayWithurl){
+        UIImage*image=_staticImageDictionary[obj];
+        if (image!=nil){
             [finalArray addObject:image];
         }
-        else if(obj!=nil)   
-        {
+        else if(obj!=nil) {
             [finalArray addObject:_defaultImage];
             [urlForDownload addObject:obj];
             _needCache = YES;
@@ -198,30 +132,24 @@
     if ([urlForDownload count]>=1) {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             
-            
-            if (_staticImageDictionary == nil)
-            {
-                _staticImageDictionary = [[NSMutableDictionary alloc] init];
+            if (_staticImageDictionary == nil){
+                _staticImageDictionary = [NSMutableDictionary new];
             }
-            for (id obj in urlForDownload) 
-            {
+            for (id obj in urlForDownload) {
                 UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:obj]]];
                 [_staticImageDictionary setObject:image forKey:obj];
             }
             
             dispatch_sync(dispatch_get_main_queue(), ^{
-                NSArray *arrayOfIndex=[[NSArray alloc] initWithObjects:indexPath, nil];
+                NSArray *arrayOfIndex=@[indexPath];
                 [_tableView reloadRowsAtIndexPaths:arrayOfIndex withRowAnimation:UITableViewRowAnimationNone];
             });
         });
     }
-    
-    
     return finalArray;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     static NSString *CellIdentifier = @"SecondCell";
     UITableViewCellCustomWithImage *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -230,22 +158,20 @@
         cell = [UITableViewCellCustomWithImage cell];
     }
     
-    NSString *photoUrl=[[_dictionaryWithArrayofPhoto objectForKey:[NSString stringWithFormat:@"PhotoInSection%iInRow1",indexPath.row]]objectForKey:@"src"];
-    NSString *photoUrl2=[[_dictionaryWithArrayofPhoto objectForKey:[NSString stringWithFormat:@"PhotoInSection%iInRow2",indexPath.row]]objectForKey:@"src"];
-    NSString *photoUrl3=[[_dictionaryWithArrayofPhoto objectForKey:[NSString stringWithFormat:@"PhotoInSection%iInRow3",indexPath.row]]objectForKey:@"src"];
-    NSString *photoUrl4=[[_dictionaryWithArrayofPhoto objectForKey:[NSString stringWithFormat:@"PhotoInSection%iInRow4",indexPath.row]]objectForKey:@"src"];
+    NSString *photoUrl=[_dictionaryWithArrayofPhoto objectForKey:[NSString stringWithFormat:@"PhotoInSection%iInRow1",indexPath.row]][@"src"];
+    NSString *photoUrl2=[_dictionaryWithArrayofPhoto objectForKey:[NSString stringWithFormat:@"PhotoInSection%iInRow2",indexPath.row]][@"src"];
+    NSString *photoUrl3=[_dictionaryWithArrayofPhoto objectForKey:[NSString stringWithFormat:@"PhotoInSection%iInRow3",indexPath.row]][@"src"];
+    NSString *photoUrl4=[_dictionaryWithArrayofPhoto objectForKey:[NSString stringWithFormat:@"PhotoInSection%iInRow4",indexPath.row]][@"src"];
     
     NSArray *array=[[NSArray alloc]initWithArray:[self imageNamed:[NSArray arrayWithObjects:photoUrl,photoUrl2,photoUrl3,photoUrl4, nil] inIndexPaths:indexPath]];
  
-    if ([array count]==4)
-    {
-        cell.firstImage.image = [array objectAtIndex:0];
-        cell.secondImage.image = [array objectAtIndex:1];
-        cell.thirdImage.image = [array objectAtIndex:2];
-        cell.fourthImage.image = [array objectAtIndex:3];
+    if ([array count]==4){
+        cell.firstImage.image = array[0];
+        cell.secondImage.image = array[1];
+        cell.thirdImage.image = array[2];
+        cell.fourthImage.image = array[3];
     }
-    else
-    {
+    else{
         cell.firstImage.image = [self imageNamed:photoUrl cache:YES inIndexPath:indexPath];
         cell.secondImage.image = [self imageNamed:photoUrl2 cache:YES inIndexPath:indexPath];
         cell.thirdImage.image = [self imageNamed:photoUrl3 cache:YES inIndexPath:indexPath];
@@ -285,12 +211,10 @@
 -(void)pickImageForEdit :(id) sender
 {
     diplomAppDelegate *delegate = [UIApplication sharedApplication].delegate;
-    if (delegate.internet)
-    {
+    if (delegate.internet){
     UITapGestureRecognizer *gesture = (UITapGestureRecognizer *) sender;
     NSString *photoUrl=[[_dictionaryWithArrayofPhoto objectForKey:[NSString stringWithFormat:@"PhotoInSection%iInRow%i",gesture.view.tag/10,gesture.view.tag%10]]objectForKey:@"src_xbig"];
-    if (photoUrl)
-    {
+    if (photoUrl){
         NSData *photoData = [NSData dataWithContentsOfURL:[NSURL URLWithString:photoUrl]];
     
     GKImageCropViewController *cropController = [[GKImageCropViewController alloc] init];
@@ -298,10 +222,8 @@
     cropController.cropSize = self.cropSize;
     cropController.delegate = self;
     [self.navigationController pushViewController:cropController animated:YES];
-    }
-    }
-    else
-    {
+        }
+    }else{
         UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Ошибка"
                                                             message:@"Отсутствует интернет подключение"
                                                            delegate:nil
@@ -312,82 +234,54 @@
 }
 
 
-- (void)imageCropController:(GKImageCropViewController *)imageCropController didFinishWithCroppedImage:(UIImage *)croppedImage
-{
+- (void)imageCropController:(GKImageCropViewController *)imageCropController didFinishWithCroppedImage:(UIImage *)croppedImage{
     
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard"
                                                              bundle: nil];    
     
-    
     diplomViewController *controller = (diplomViewController*)[mainStoryboard 
                                                                instantiateViewControllerWithIdentifier: @"filterController"];
     controller.imageFromPicker = croppedImage;
-    [self.navigationController pushViewController:controller animated:YES]; 
-    
+    [self.navigationController pushViewController:controller animated:YES];
 }
-
-
 
 #pragma mark - VkontakteDelegate
 
-- (void)vkontakteDidFailedWithError:(NSError *)error
-{
+- (void)vkontakteDidFailedWithError:(NSError *)error{
     NSLog(@"fail");
     [self dismissModalViewControllerAnimated:YES];
 }
 
-- (void)showVkontakteAuthController:(UIViewController *)controller
-{
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) 
-    {
+- (void)showVkontakteAuthController:(UIViewController *)controller{
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         controller.modalPresentationStyle = UIModalPresentationFormSheet;
     }
-    
     [self presentModalViewController:controller animated:YES];
 }
 
-- (void)vkontakteAuthControllerDidCancelled
-{
+- (void)vkontakteAuthControllerDidCancelled{
     [self dismissModalViewControllerAnimated:YES];
 }
 
-- (void)vkontakteDidFinishLogin:(Vkontakte *)vkontakte
-{
+- (void)vkontakteDidFinishLogin:(Vkontakte *)vkontakte{
     [self dismissModalViewControllerAnimated:YES];
 }
 
-- (void)vkontakteDidFinishLogOut:(Vkontakte *)vkontakte
-{
-
+- (void)vkontakteDidFinishLogOut:(Vkontakte *)vkontakte{
+    NSLog(@"finish login");
 }
 
 
-#pragma mark - Table view delegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
-    
-    
-    //[[self navigationController] popViewControllerAnimated:YES];
-}
-
--(void)saveCache
-{
+-(void)saveCache{
     _needCache = NO;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-        _filePath = [DOCUMENTS stringByAppendingPathComponent:_aid];
-        NSMutableData *data = [[NSMutableData alloc]init];
-        NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc]initForWritingWithMutableData:data];
-        [archiver encodeObject:_staticImageDictionary forKey: @"static"];
-        [archiver finishEncoding];
-        [data writeToFile:_filePath atomically:YES];        dispatch_sync(dispatch_get_main_queue(), ^{
+            _filePath = [DOCUMENTS stringByAppendingPathComponent:_aid];
+            NSMutableData *data = [NSMutableData new];
+            NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc]initForWritingWithMutableData:data];
+            [archiver encodeObject:_staticImageDictionary forKey:@"static"];
+            [archiver finishEncoding];
+            [data writeToFile:_filePath atomically:YES];
+        dispatch_sync(dispatch_get_main_queue(), ^{
             NSLog(@"successful save");         
         });
     });

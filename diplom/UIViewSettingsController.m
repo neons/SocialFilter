@@ -18,31 +18,11 @@
 
 @implementation UIViewSettingsController
 
-
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    
-}
-
-- (IBAction)closeButton:(UIButton *)sender 
-{
+- (IBAction)closeButton:(UIButton *)sender {
     [self.presentingViewController dismissModalViewControllerAnimated:YES];
-
 }
+
 #pragma mark - View lifecycle
-
-
 
 - (void)viewDidLoad
 {
@@ -50,20 +30,11 @@
     _arrayWithSettings = [NSArray arrayWithObjects:@"Удалить кэш фото", nil];
 }
 
-
-- (void)viewDidUnload
-{
-    [self setTableView:nil];
-    [super viewDidUnload];
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return [_arrayWithSettings count];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     static NSString *CellIdentifier = @"settingsCell";
     
@@ -71,40 +42,33 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];}
     cell.accessoryType = UITableViewCellAccessoryNone;
-    cell.textLabel.text = [_arrayWithSettings objectAtIndex:indexPath.row];
+    cell.textLabel.text = _arrayWithSettings[indexPath.row];
     return cell;
 }
 
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.row == 0) {
         NSFileManager *fileMgr = [[NSFileManager alloc] init];
         NSError *error = nil;
         NSArray *directoryContents = [fileMgr contentsOfDirectoryAtPath:DOCUMENTS error:&error];
         [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
-        if ((error == nil)&([directoryContents count]>=1)) 
-        {
+        if ((error == nil)&([directoryContents count]>=1)) {
             for (NSString *path in directoryContents) {
                 NSString *fullPath = [DOCUMENTS stringByAppendingPathComponent:path];
                 BOOL removeSuccess = [fileMgr removeItemAtPath:fullPath error:&error];
-                if (!removeSuccess) 
-                {
+                if (!removeSuccess) {
                     NSLog(@"fail delete");
                 }
-                else
-                {
+                else{
                     NSLog(@"all del");
                 }
             }
         }
-        else 
-        {
+        else {
             NSLog(@"some bad or nothing");
         }
     }
 }
-
-
 
 @end

@@ -8,59 +8,25 @@
 
 #import "UITableViewVkAlbumsController.h"
 @interface UITableViewVkAlbumsController()
-@property (nonatomic, strong ) NSMutableDictionary * staticImageDictionary;
-@property (strong, nonatomic)     MBProgressHUD *hud;
 
--(void) createTable;
-
-
+@property (nonatomic, strong ) NSMutableDictionary *staticImageDictionary;
+@property (strong, nonatomic) MBProgressHUD *hud;
 
 @end
 
 @implementation UITableViewVkAlbumsController
 
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
-
-- (void)didReceiveMemoryWarning
-{
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
-}
-
 #pragma mark - View lifecycle
 
-/*
-// Implement loadView to create a view hierarchy programmatically, without using a nib.
-- (void)loadView
-{
-}
-*/
-
-
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad
-{
+- (void)viewDidLoad{
     [super viewDidLoad];
     [self createTable];
 }
 
--(void)createTable
-{
+-(void)createTable{
     _vkontakte = [Vkontakte sharedInstance];
     _vkontakte.delegate = self;
-    if (![_vkontakte isAuthorized]) 
-    {
+    if (![_vkontakte isAuthorized]) {
         [_vkontakte authenticate];
     }
     _hud = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
@@ -76,47 +42,28 @@
             [_hud hide:YES];
             [_hud removeFromSuperview];
             _hud = nil;
-            
         });
     });
 
 }
 
-- (void)viewDidUnload
-{
-    [self setTableView:nil];
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-}
-
-
-
-- (void)vkontakteDidFinishGettinUserAlbumsCount:(NSDictionary *)info;
-{
+- (void)vkontakteDidFinishGettinUserAlbumsCount:(NSDictionary *)info;{
     _dictionaryOfAlbums = info;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    //#warning Incomplete method implementation.
-    // Return the number of rows in the section.
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return [_dictionaryOfAlbums count];
 }
-- (UIImage*)imageNamed:(NSString*)imageNamed cache:(BOOL)cache
-{
-    UIImage* retImage = [_staticImageDictionary objectForKey:imageNamed];
-    if (retImage == nil)
-    {
+- (UIImage*)imageNamed:(NSString*)imageNamed cache:(BOOL)cache{
+    UIImage* retImage = _staticImageDictionary[imageNamed];
+    if (retImage == nil){
         retImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:imageNamed]]];
         
-        if (cache)
-        {
+        if (cache){
             if (_staticImageDictionary == nil)
                 _staticImageDictionary = [[NSMutableDictionary alloc] init];
             
-            if (imageNamed) 
-            {
+            if (imageNamed) {
                 [_staticImageDictionary setObject:retImage forKey:imageNamed];
             }
         }               
@@ -124,85 +71,71 @@
     return retImage;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath 
-{ 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{ 
     return 55;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     static NSString *CellIdentifier = @"albumsCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];}
-    NSDictionary *currentDictionary=[[NSDictionary alloc]init];
+    NSDictionary *currentDictionary=[NSDictionary new];
     currentDictionary = [_dictionaryOfAlbums objectForKey:[NSString stringWithFormat:@"Album%i",indexPath.row+1]];
-    cell.textLabel.text = [currentDictionary objectForKey:@"title"];
-    NSString *photoUrl = [currentDictionary objectForKey:@"thumb_src"];
+    cell.textLabel.text = currentDictionary[@"title"];
+    NSString *photoUrl = currentDictionary[@"thumb_src"];
     cell.imageView.image = [self imageNamed:photoUrl cache:YES];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ photos",[currentDictionary objectForKey:@"size"]];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ photos",currentDictionary[@"size"]];
     
     return cell;
 }
 
 #pragma mark - VkontakteDelegate
 
-- (void)vkontakteDidFailedWithError:(NSError *)error
-{
+- (void)vkontakteDidFailedWithError:(NSError *)error{
     NSLog(@"faaail %@",error);
     [self dismissModalViewControllerAnimated:YES];
-    
 }
 
-- (void)showVkontakteAuthController:(UIViewController *)controller
-{
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) 
-    {
+- (void)showVkontakteAuthController:(UIViewController *)controller{
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         controller.modalPresentationStyle = UIModalPresentationFormSheet;
     }
-    
     [self presentModalViewController:controller animated:YES];
 }
 
-- (void)vkontakteAuthControllerDidCancelled
-{
+- (void)vkontakteAuthControllerDidCancelled{
     [self dismissModalViewControllerAnimated:YES];
 }
 
-- (void)vkontakteDidFinishLogin:(Vkontakte *)vkontakte
-{
+- (void)vkontakteDidFinishLogin:(Vkontakte *)vkontakte{
     [self dismissModalViewControllerAnimated:YES];
     [_vkontakte getUserAlbumsCount];
-    [[self tableView]reloadData];
+    [self.tableView reloadData];
 }
 
-- (void)vkontakteDidFinishLogOut:(Vkontakte *)vkontakte
-{
-    
+- (void)vkontakteDidFinishLogOut:(Vkontakte *)vkontakte{
+    NSLog(@"vk finish logout");
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     diplomAppDelegate *delegate = [UIApplication sharedApplication].delegate;
-    if (delegate.internet)
-    {
-    NSDictionary *currentDictionary=[[NSDictionary alloc]init];
+    if (delegate.internet){
+    NSDictionary *currentDictionary=[NSDictionary new];
     
     currentDictionary = [_dictionaryOfAlbums objectForKey:[NSString stringWithFormat:@"Album%i",indexPath.row+1]];
-    NSString *aid=[currentDictionary objectForKey:@"aid"];
+    NSString *aid=currentDictionary[@"aid"];
   
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard"
                                                              bundle: nil];    
-    
     
     UITableViewControllerForVkPhotos *controller = (UITableViewControllerForVkPhotos*)[mainStoryboard 
                                                                instantiateViewControllerWithIdentifier: @"vkPhotoController"];
     controller.aid = aid;
     [self.navigationController pushViewController:controller animated:YES];
     }
-    else
-    {
+    else{
         UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Ошибка"
                                                             message:@"Отсутствует интернет подключение"
                                                            delegate:nil
@@ -211,9 +144,5 @@
         [alertView show];
     }
 }
-
-
-
-
 
 @end

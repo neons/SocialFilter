@@ -14,7 +14,6 @@
 
 @class UIViewControllerFacebookAlbums;
 
-
 @interface diplomAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;

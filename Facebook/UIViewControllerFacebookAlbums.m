@@ -13,52 +13,22 @@
 
 @property (nonatomic, strong) NSArray *arrayofAlbums;
 @property (nonatomic, strong ) NSMutableDictionary * staticImageDictionary;
-@property (strong, nonatomic)  MBProgressHUD *hud;
-
--(void)createTable;
+@property (strong, nonatomic) MBProgressHUD *hud;
 
 @end
 
 @implementation UIViewControllerFacebookAlbums
 
-
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
-
-
-
-- (void)didReceiveMemoryWarning
-{
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    // Release any cached data, images, etc that aren't in use.
-}
-
 #pragma mark - View lifecycle
 
 
-// Implement loadView to create a view hierarchy programmatically, without using a nib.
-
-
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad
-{
+- (void)viewDidLoad{
     [super viewDidLoad];
     [self createTable];
-    
 }
 - (void)sessionStateChanged:(FBSession *)session
                       state:(FBSessionState) state
-                      error:(NSError *)error
-{
+                      error:(NSError *)error{
     switch (state) {
         case FBSessionStateOpen: {
             [FBRequestConnection startWithGraphPath:@"me/albums?fields=count,photos.fields(picture),description,name" completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
@@ -73,7 +43,6 @@
         case FBSessionStateClosed:
         case FBSessionStateClosedLoginFailed:
          
-            
             [FBSession.activeSession closeAndClearTokenInformation];
             
             break;
@@ -92,8 +61,7 @@
     }
 }
 
--(void) createTable
-{
+-(void) createTable{
     _hud = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
     [self.tableView addSubview:_hud];
 	_hud.dimBackground = YES;
@@ -107,11 +75,9 @@
             [_hud hide:YES];
             [_hud removeFromSuperview];
             _hud = nil;
-            
         }];
     }
-    else
-    {
+    else{
          NSArray * permissions = [[NSArray alloc] initWithObjects:@"offline_access",@"publish_stream",@"user_photos", nil];
                [FBSession openActiveSessionWithPublishPermissions:permissions defaultAudience:FBSessionDefaultAudienceEveryone allowLoginUI:YES completionHandler:^(FBSession *session, FBSessionState status, NSError *error) {
             [self sessionStateChanged:session state:status error:error];
@@ -123,37 +89,23 @@
 - (UIImage*)imageNamed:(NSString*)imageNamed cache:(BOOL)cache
 {
     UIImage* retImage = [_staticImageDictionary objectForKey:imageNamed];
-    if (retImage == nil)
-    {
+    if (retImage == nil){
         retImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:imageNamed]]];
         
-        if (cache)
-        {
+        if (cache){
             if (_staticImageDictionary == nil)
                 _staticImageDictionary = [[NSMutableDictionary alloc] init];
             
-            if (imageNamed) 
-            {
+            if (imageNamed) {
                 [_staticImageDictionary setObject:retImage forKey:imageNamed];
-                
             }
         }               
     }
     return retImage;
 }
-- (void)viewDidUnload
-{
-    [self setTableView:nil];
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-}
 
 
-
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return [_arrayofAlbums count];
 }
 
@@ -170,12 +122,11 @@
 
 
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath 
-{ 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath { 
     return 55;
 }
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     static NSString *CellIdentifier = @"FacebookCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -183,21 +134,15 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];}
     NSDictionary *currentDictionary=[[NSDictionary alloc]init];
     currentDictionary = [_arrayofAlbums objectAtIndex:indexPath.row];
-    cell.textLabel.text = [currentDictionary objectForKey:@"name"];
+    cell.textLabel.text = currentDictionary[@"name"];
     
-    
-    NSString *photo = [NSString stringWithFormat:@"%@",[[[[currentDictionary objectForKey:@"photos"] objectForKey:@"data"] objectAtIndex:0 ]objectForKey:@"picture" ]];
+    NSString *photo = [NSString stringWithFormat:@"%@",currentDictionary[@"photos"][@"data"][0][@"picture"]];
     cell.imageView.image = [self imageNamed:photo cache:YES];
-    cell.detailTextLabel.text =[NSString stringWithFormat:@"%@", [currentDictionary objectForKey:@"count"]];
-    
+    cell.detailTextLabel.text =[NSString stringWithFormat:@"%@",[currentDictionary objectForKey:@"count"]];
     
     return cell;
 }
 
-
-
-
-// Customize the appearance of table view cells.
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     diplomAppDelegate *delegate = [UIApplication sharedApplication].delegate;
@@ -211,10 +156,8 @@
                                                                                        instantiateViewControllerWithIdentifier: @"FacebookPhotos"];
         controller.albumsId = albumsId;
         [self.navigationController pushViewController:controller animated:YES];
-
     }
-    else
-    {
+    else{
         UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Ошибка"
                                                             message:@"Отсутствует интернет подключение"
                                                            delegate:nil
@@ -222,8 +165,6 @@
                                                   otherButtonTitles:nil];
         [alertView show];
     }
-    
- 
 }
 
 @end

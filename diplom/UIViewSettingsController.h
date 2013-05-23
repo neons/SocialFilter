@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface UIViewSettingsController : UIViewController <UINavigationControllerDelegate, UITableViewDelegate, UITableViewDataSource>
-@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @end

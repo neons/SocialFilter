@@ -13,13 +13,10 @@
 #import "GKImageCropViewController.h"
 #define DOCUMENTS [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]
 
-
 @interface UITableViewControllerForVkPhotos : UIViewController <VkontakteDelegate, UINavigationControllerDelegate, UITableViewDelegate, UITableViewDataSource,GKImageCropControllerDelegate, MBProgressHUDDelegate>
 
 @property (strong,nonatomic ) NSString *aid;
 
+-(void)pickImageForEdit:(id)sender;
 
-
-
--(void)pickImageForEdit :(id) sender;
 @end

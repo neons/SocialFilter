@@ -12,25 +12,9 @@
 
 
 
-+(UITableViewCellCustomWithImage*) cell
-{
++(UITableViewCellCustomWithImage*) cell{
     NSArray *objects=[[NSBundle mainBundle] loadNibNamed:@"Cell" owner:nil options:nil];
     return [objects objectAtIndex:0];
-}
-
-
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        // Initialization code
-    }
-    return self;
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
-    [super setSelected:selected animated:animated];
 }
 
 @end

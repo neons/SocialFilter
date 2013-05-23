@@ -11,8 +11,8 @@
 #import "UITableViewControllerForVkPhotos.h"
 #import "diplomViewController.h"
 
-
 @interface UITableViewVkAlbumsController : UIViewController<VkontakteDelegate, UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate>
+
 @property (strong,nonatomic) NSDictionary *dictionaryOfAlbums;
 @property (strong, nonatomic) Vkontakte *vkontakte; 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;

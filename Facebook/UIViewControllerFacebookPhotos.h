@@ -16,4 +16,5 @@
 @interface UIViewControllerFacebookPhotos : UIViewController <UITableViewDataSource, UITableViewDelegate,UINavigationControllerDelegate,GKImageCropControllerDelegate,MBProgressHUDDelegate>
 
 @property (strong, nonatomic) NSString *albumsId;
+
 @end

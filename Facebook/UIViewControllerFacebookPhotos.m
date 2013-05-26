@@ -173,8 +173,7 @@
     NSString *photoUrl3=[_dictionaryWitSortPhotos objectForKey:[NSString stringWithFormat:@"PhotoInSection%iInRow3",indexPath.row]][@"picture"];
     NSString *photoUrl4=[_dictionaryWitSortPhotos objectForKey:[NSString stringWithFormat:@"PhotoInSection%iInRow4",indexPath.row]][@"picture"];
     
-    NSArray *array=[[NSArray alloc]initWithArray:[self imageNamed:@[photoUrl,photoUrl2,photoUrl3,photoUrl4] inIndexPaths:indexPath]];
-    
+    NSArray *array=[[NSArray alloc]initWithArray:[self imageNamed:[NSArray arrayWithObjects:photoUrl,photoUrl2,photoUrl3,photoUrl4, nil] inIndexPaths:indexPath]];    
     if ([array count]==4){
         cell.firstImage.image = array[0];
         cell.secondImage.image = array[1];

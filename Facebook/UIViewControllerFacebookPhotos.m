@@ -242,6 +242,7 @@
 }
 
 -(void)saveCache{
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"cacheSettings"]){
      dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
         _filePath = [DOCUMENTS stringByAppendingPathComponent:_albumsId];
         NSMutableData *data = [NSMutableData new];
@@ -254,7 +255,7 @@
             NSLog(@"successful save");         
         });
     });
-    
+    }
 }
 - (void)imageCropController:(GKImageCropViewController *)imageCropController didFinishWithCroppedImage:(UIImage *)croppedImage{    
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard"

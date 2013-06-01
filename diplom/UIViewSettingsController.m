@@ -11,8 +11,9 @@
 #define DOCUMENTS [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]
 
 @interface UIViewSettingsController()
-
-@property (nonatomic,strong) NSArray *arrayWithSettings;
+@property (strong,nonatomic) NSUserDefaults *userDefaults;
+@property (weak, nonatomic) IBOutlet UISwitch *switcher;
+@property (weak, nonatomic) IBOutlet UIButton *deleteButton;
 
 @end
 
@@ -24,51 +25,50 @@
 
 #pragma mark - View lifecycle
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad{
     [super viewDidLoad];
-    _arrayWithSettings = [NSArray arrayWithObjects:@"Удалить кэш фото", nil];
+    _userDefaults = [NSUserDefaults standardUserDefaults];
+    _switcher.on = [_userDefaults boolForKey:@"cacheSettings"];
+    if(!_switcher.on)
+        _deleteButton.alpha = 0;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [_arrayWithSettings count];
+- (IBAction)enableCache:(UISwitch *)sender {
+    if(sender.isOn){
+        [UIView animateWithDuration:0.3 animations:^{
+            _deleteButton.alpha = 1;
+        }];
+    }
+    else{
+        [UIView animateWithDuration:0.3 animations:^{
+            _deleteButton.alpha = 0;
+        }];
+    }
+    [_userDefaults setBool:sender.on forKey:@"cacheSettings"];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    static NSString *CellIdentifier = @"settingsCell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];}
-    cell.accessoryType = UITableViewCellAccessoryNone;
-    cell.textLabel.text = _arrayWithSettings[indexPath.row];
-    return cell;
-}
-
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.row == 0) {
-        NSFileManager *fileMgr = [[NSFileManager alloc] init];
-        NSError *error = nil;
-        NSArray *directoryContents = [fileMgr contentsOfDirectoryAtPath:DOCUMENTS error:&error];
-        [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
-        if ((error == nil)&([directoryContents count]>=1)) {
-            for (NSString *path in directoryContents) {
-                NSString *fullPath = [DOCUMENTS stringByAppendingPathComponent:path];
-                BOOL removeSuccess = [fileMgr removeItemAtPath:fullPath error:&error];
-                if (!removeSuccess) {
-                    NSLog(@"fail delete");
-                }
-                else{
-                    NSLog(@"all del");
-                }
+- (IBAction)deleteCacheButton:(UIButton *)sender {
+    NSFileManager *fileMgr = [[NSFileManager alloc] init];
+    NSError *error = nil;
+    NSArray *directoryContents = [fileMgr contentsOfDirectoryAtPath:DOCUMENTS error:&error];
+    if ((error == nil)&([directoryContents count]>=1)) {
+        for (NSString *path in directoryContents) {
+            NSString *fullPath = [DOCUMENTS stringByAppendingPathComponent:path];
+            BOOL removeSuccess = [fileMgr removeItemAtPath:fullPath error:&error];
+            if (!removeSuccess) {
+                NSLog(@"fail delete");
+            }
+            else{
+                NSLog(@"all del");
+                [_deleteButton setTitle:@"Память успешно освобождена" forState:UIControlStateNormal];
             }
         }
-        else {
-            NSLog(@"some bad or nothing");
-        }
     }
+    else {
+        [_deleteButton setTitle:@"Нет кешированных фото альбомов" forState:UIControlStateNormal];
+    }
+    _deleteButton.enabled = NO;
 }
+
 
 @end

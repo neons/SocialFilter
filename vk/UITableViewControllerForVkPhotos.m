@@ -273,6 +273,7 @@
 
 
 -(void)saveCache{
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"cacheSettings"]){
     _needCache = NO;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
             _filePath = [DOCUMENTS stringByAppendingPathComponent:_aid];
@@ -285,6 +286,7 @@
             NSLog(@"successful save");         
         });
     });
+    }
 }
 
 @end

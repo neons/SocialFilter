@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		332EDB4D175A3BE2001F4A9A /* textfiald.png in Resources */ = {isa = PBXBuildFile; fileRef = 332EDB4B175A3BE2001F4A9A /* textfiald.png */; };
+		332EDB4E175A3BE2001F4A9A /* textfiald@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 332EDB4C175A3BE2001F4A9A /* textfiald@2x.png */; };
 		33541D1F16F10CCA0089321E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33541D1E16F10CC90089321E /* SystemConfiguration.framework */; };
 		33541D2116F113610089321E /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 33541D1B16F10AEF0089321E /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		33598DE316C56FE9002545BA /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33598DE216C56FE9002545BA /* FacebookSDK.framework */; };
@@ -156,6 +158,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		332EDB4B175A3BE2001F4A9A /* textfiald.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = textfiald.png; path = images/textfiald.png; sourceTree = "<group>"; };
+		332EDB4C175A3BE2001F4A9A /* textfiald@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "textfiald@2x.png"; path = "images/textfiald@2x.png"; sourceTree = "<group>"; };
 		33541D1A16F10AEF0089321E /* Reachability.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		33541D1B16F10AEF0089321E /* Reachability.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		33541D1E16F10CC90089321E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -385,6 +389,8 @@
 				33598DE416C57026002545BA /* Default-568h@2x.png */,
 				3399784C16F284AF00CC0A5D /* ButtonMenu.png */,
 				3399784D16F284AF00CC0A5D /* ButtonMenu@2x.png */,
+				332EDB4B175A3BE2001F4A9A /* textfiald.png */,
+				332EDB4C175A3BE2001F4A9A /* textfiald@2x.png */,
 				84AA0CD9165AD90F00D45358 /* icon.png */,
 				84AA0BF1165ACD6400D45358 /* Camera@2x.png */,
 				84AA0BF2165ACD6400D45358 /* checkedd.png */,
@@ -572,7 +578,6 @@
 		84AE9558162340B60036BF8D = {
 			isa = PBXGroup;
 			children = (
-				3399783C16F2429400CC0A5D /* JTRevealSidebarV2 */,
 				84471D1E16A717B600A942C7 /* instagram */,
 				84D07F66168C9FB3009C5B53 /* filters */,
 				849D70FD164865D00052980B /* crop controller */,
@@ -596,6 +601,7 @@
 		84AE9566162340B60036BF8D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3399783C16F2429400CC0A5D /* JTRevealSidebarV2 */,
 				33541D1E16F10CC90089321E /* SystemConfiguration.framework */,
 				33598DE816C5742F002545BA /* AdSupport.framework */,
 				33598DE616C57423002545BA /* Accounts.framework */,
@@ -817,6 +823,8 @@
 				33598DED16C57483002545BA /* FBUserSettingsViewResources.bundle in Resources */,
 				3399784E16F284AF00CC0A5D /* ButtonMenu.png in Resources */,
 				3399784F16F284AF00CC0A5D /* ButtonMenu@2x.png in Resources */,
+				332EDB4D175A3BE2001F4A9A /* textfiald.png in Resources */,
+				332EDB4E175A3BE2001F4A9A /* textfiald@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

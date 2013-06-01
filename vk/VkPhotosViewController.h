@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "Vkontakte.h"
-#import "UITableViewCellCustomWithImage.h"
-#import "diplomViewController.h"
+#import "CustomTableCellWithImage.h"
+#import "MainEditViewController.h"
 #import "GKImageCropViewController.h"
 #define DOCUMENTS [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]
 
-@interface UITableViewControllerForVkPhotos : UIViewController <VkontakteDelegate, UINavigationControllerDelegate, UITableViewDelegate, UITableViewDataSource,GKImageCropControllerDelegate, MBProgressHUDDelegate>
+@interface VkPhotosViewController : UIViewController <VkontakteDelegate, UINavigationControllerDelegate, UITableViewDelegate, UITableViewDataSource,GKImageCropControllerDelegate, MBProgressHUDDelegate>
 
 @property (strong,nonatomic ) NSString *aid;
 

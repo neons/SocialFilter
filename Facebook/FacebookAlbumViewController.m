@@ -6,10 +6,10 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "UIViewControllerFacebookAlbums.h"
+#import "FacebookAlbumViewController.h"
 
 
-@interface UIViewControllerFacebookAlbums()
+@interface FacebookAlbumViewController()
 
 @property (nonatomic, strong) NSArray *arrayofAlbums;
 @property (nonatomic, strong ) NSMutableDictionary * staticImageDictionary;
@@ -17,7 +17,7 @@
 
 @end
 
-@implementation UIViewControllerFacebookAlbums
+@implementation FacebookAlbumViewController
 
 #pragma mark - View lifecycle
 
@@ -152,7 +152,7 @@
         
         UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard"
                                                                  bundle: nil];
-        UIViewControllerFacebookPhotos *controller = (UIViewControllerFacebookPhotos*)[mainStoryboard
+        FacebookPhotosViewController *controller = (FacebookPhotosViewController*)[mainStoryboard
                                                                                        instantiateViewControllerWithIdentifier: @"FacebookPhotos"];
         controller.albumsId = albumsId;
         [self.navigationController pushViewController:controller animated:YES];

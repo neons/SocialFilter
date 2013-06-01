@@ -173,9 +173,9 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *CellIdentifier = @"SecondCell";
-    UITableViewCellCustomWithImage *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    CustomTableCellWithImage *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [UITableViewCellCustomWithImage cell];
+        cell = [CustomTableCellWithImage cell];
     }
     
     NSString *photoUrl=[_dictionaryWitSortPhotos objectForKey:[NSString stringWithFormat:@"PhotoInSection%iInRow1",indexPath.row]][@"images"][@"thumbnail"][@"url"];
@@ -258,7 +258,7 @@
             UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard"
                                                                  bundle: nil];    
 
-            diplomViewController *controller = (diplomViewController*)[mainStoryboard 
+            MainEditViewController *controller = (MainEditViewController*)[mainStoryboard 
                                                                    instantiateViewControllerWithIdentifier: @"filterController"];
             controller.imageFromPicker = [UIImage imageWithData:photoData];
             [self.navigationController pushViewController:controller animated:YES]; 

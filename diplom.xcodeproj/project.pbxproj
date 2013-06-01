@@ -105,9 +105,9 @@
 		84AA0C47165ACDA100D45358 /* 24.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 84AA0C2F165ACDA100D45358 /* 24.JPG */; };
 		84AA0C56165ACE3B00D45358 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AA0C49165ACE3B00D45358 /* MBProgressHUD.m */; };
 		84AA0C57165ACE3B00D45358 /* NSString+Gender.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AA0C4B165ACE3B00D45358 /* NSString+Gender.m */; };
-		84AA0C58165ACE3B00D45358 /* UITableViewCellCustomWithImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AA0C4D165ACE3B00D45358 /* UITableViewCellCustomWithImage.m */; };
-		84AA0C59165ACE3B00D45358 /* UITableViewControllerForVkPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AA0C4F165ACE3B00D45358 /* UITableViewControllerForVkPhotos.m */; };
-		84AA0C5A165ACE3B00D45358 /* UITableViewVkAlbumsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AA0C51165ACE3B00D45358 /* UITableViewVkAlbumsController.m */; };
+		84AA0C58165ACE3B00D45358 /* CustomTableCellWithImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AA0C4D165ACE3B00D45358 /* CustomTableCellWithImage.m */; };
+		84AA0C59165ACE3B00D45358 /* VkPhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AA0C4F165ACE3B00D45358 /* VkPhotosViewController.m */; };
+		84AA0C5A165ACE3B00D45358 /* VkAlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AA0C51165ACE3B00D45358 /* VkAlbumViewController.m */; };
 		84AA0C5B165ACE3B00D45358 /* Vkontakte.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AA0C53165ACE3B00D45358 /* Vkontakte.m */; };
 		84AA0C5C165ACE3B00D45358 /* VkontakteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AA0C55165ACE3B00D45358 /* VkontakteViewController.m */; };
 		84AA0CDA165AD90F00D45358 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 84AA0CD9165AD90F00D45358 /* icon.png */; };
@@ -118,8 +118,8 @@
 		84AE9574162340B60036BF8D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AE9573162340B60036BF8D /* main.m */; };
 		84AE9578162340B70036BF8D /* diplomAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AE9577162340B70036BF8D /* diplomAppDelegate.m */; };
 		84AE957B162340B70036BF8D /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84AE9579162340B70036BF8D /* MainStoryboard.storyboard */; };
-		84AE957E162340B70036BF8D /* diplomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AE957D162340B70036BF8D /* diplomViewController.m */; };
-		84B72B091654540200586008 /* UIViewSettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B72B081654540200586008 /* UIViewSettingsController.m */; };
+		84AE957E162340B70036BF8D /* MainEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AE957D162340B70036BF8D /* MainEditViewController.m */; };
+		84B72B091654540200586008 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B72B081654540200586008 /* SettingsViewController.m */; };
 		84BC8B551623610E00FF428F /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BC8B541623610E00FF428F /* CoreMedia.framework */; };
 		84BC8B571623611A00FF428F /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BC8B561623611A00FF428F /* CoreVideo.framework */; };
 		84BC8B591623612200FF428F /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BC8B581623612200FF428F /* OpenGLES.framework */; };
@@ -128,9 +128,9 @@
 		84C7F8B0169055AC000E44AE /* blur.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C7F8AF169055AC000E44AE /* blur.png */; };
 		84CC8DB716557894001FE0D5 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84CC8DB616557894001FE0D5 /* MessageUI.framework */; };
 		84D07F6F168CA71F009C5B53 /* CircleBlur.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D07F6E168CA71F009C5B53 /* CircleBlur.m */; };
-		84E19755166029CD00A47A20 /* UIViewControllerFacebookAlbums.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E19754166029CD00A47A20 /* UIViewControllerFacebookAlbums.m */; };
-		84E3E1A516307303008C9446 /* AutorisationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E3E1A316307303008C9446 /* AutorisationController.m */; };
-		84E6F1711661577100403C0A /* UIViewControllerFacebookPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E6F1701661577000403C0A /* UIViewControllerFacebookPhotos.m */; };
+		84E19755166029CD00A47A20 /* FacebookAlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E19754166029CD00A47A20 /* FacebookAlbumViewController.m */; };
+		84E3E1A516307303008C9446 /* AutorisationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E3E1A316307303008C9446 /* AutorisationViewController.m */; };
+		84E6F1711661577100403C0A /* FacebookPhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E6F1701661577000403C0A /* FacebookPhotosViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -299,12 +299,12 @@
 		84AA0C49165ACE3B00D45358 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = vk/MBProgressHUD.m; sourceTree = "<group>"; };
 		84AA0C4A165ACE3B00D45358 /* NSString+Gender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Gender.h"; path = "vk/NSString+Gender.h"; sourceTree = "<group>"; };
 		84AA0C4B165ACE3B00D45358 /* NSString+Gender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Gender.m"; path = "vk/NSString+Gender.m"; sourceTree = "<group>"; };
-		84AA0C4C165ACE3B00D45358 /* UITableViewCellCustomWithImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UITableViewCellCustomWithImage.h; path = vk/UITableViewCellCustomWithImage.h; sourceTree = "<group>"; };
-		84AA0C4D165ACE3B00D45358 /* UITableViewCellCustomWithImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UITableViewCellCustomWithImage.m; path = vk/UITableViewCellCustomWithImage.m; sourceTree = "<group>"; };
-		84AA0C4E165ACE3B00D45358 /* UITableViewControllerForVkPhotos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UITableViewControllerForVkPhotos.h; path = vk/UITableViewControllerForVkPhotos.h; sourceTree = "<group>"; };
-		84AA0C4F165ACE3B00D45358 /* UITableViewControllerForVkPhotos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UITableViewControllerForVkPhotos.m; path = vk/UITableViewControllerForVkPhotos.m; sourceTree = "<group>"; };
-		84AA0C50165ACE3B00D45358 /* UITableViewVkAlbumsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UITableViewVkAlbumsController.h; path = vk/UITableViewVkAlbumsController.h; sourceTree = "<group>"; };
-		84AA0C51165ACE3B00D45358 /* UITableViewVkAlbumsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UITableViewVkAlbumsController.m; path = vk/UITableViewVkAlbumsController.m; sourceTree = "<group>"; };
+		84AA0C4C165ACE3B00D45358 /* CustomTableCellWithImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomTableCellWithImage.h; path = vk/CustomTableCellWithImage.h; sourceTree = "<group>"; };
+		84AA0C4D165ACE3B00D45358 /* CustomTableCellWithImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomTableCellWithImage.m; path = vk/CustomTableCellWithImage.m; sourceTree = "<group>"; };
+		84AA0C4E165ACE3B00D45358 /* VkPhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VkPhotosViewController.h; path = vk/VkPhotosViewController.h; sourceTree = "<group>"; };
+		84AA0C4F165ACE3B00D45358 /* VkPhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VkPhotosViewController.m; path = vk/VkPhotosViewController.m; sourceTree = "<group>"; };
+		84AA0C50165ACE3B00D45358 /* VkAlbumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VkAlbumViewController.h; path = vk/VkAlbumViewController.h; sourceTree = "<group>"; };
+		84AA0C51165ACE3B00D45358 /* VkAlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VkAlbumViewController.m; path = vk/VkAlbumViewController.m; sourceTree = "<group>"; };
 		84AA0C52165ACE3B00D45358 /* Vkontakte.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Vkontakte.h; path = vk/Vkontakte.h; sourceTree = "<group>"; };
 		84AA0C53165ACE3B00D45358 /* Vkontakte.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Vkontakte.m; path = vk/Vkontakte.m; sourceTree = "<group>"; };
 		84AA0C54165ACE3B00D45358 /* VkontakteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VkontakteViewController.h; path = vk/VkontakteViewController.h; sourceTree = "<group>"; };
@@ -321,10 +321,10 @@
 		84AE9576162340B70036BF8D /* diplomAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = diplomAppDelegate.h; sourceTree = "<group>"; };
 		84AE9577162340B70036BF8D /* diplomAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = diplomAppDelegate.m; sourceTree = "<group>"; };
 		84AE957A162340B70036BF8D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		84AE957C162340B70036BF8D /* diplomViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = diplomViewController.h; sourceTree = "<group>"; };
-		84AE957D162340B70036BF8D /* diplomViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = diplomViewController.m; sourceTree = "<group>"; };
-		84B72B071654540200586008 /* UIViewSettingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewSettingsController.h; sourceTree = "<group>"; };
-		84B72B081654540200586008 /* UIViewSettingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewSettingsController.m; sourceTree = "<group>"; };
+		84AE957C162340B70036BF8D /* MainEditViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainEditViewController.h; sourceTree = "<group>"; };
+		84AE957D162340B70036BF8D /* MainEditViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainEditViewController.m; sourceTree = "<group>"; };
+		84B72B071654540200586008 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		84B72B081654540200586008 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		84BC8B541623610E00FF428F /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		84BC8B561623611A00FF428F /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		84BC8B581623612200FF428F /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -334,12 +334,12 @@
 		84CC8DB616557894001FE0D5 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		84D07F6D168CA71F009C5B53 /* CircleBlur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CircleBlur.h; path = filters/CircleBlur.h; sourceTree = "<group>"; };
 		84D07F6E168CA71F009C5B53 /* CircleBlur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CircleBlur.m; path = filters/CircleBlur.m; sourceTree = "<group>"; };
-		84E19753166029CD00A47A20 /* UIViewControllerFacebookAlbums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIViewControllerFacebookAlbums.h; path = Facebook/UIViewControllerFacebookAlbums.h; sourceTree = "<group>"; };
-		84E19754166029CD00A47A20 /* UIViewControllerFacebookAlbums.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIViewControllerFacebookAlbums.m; path = Facebook/UIViewControllerFacebookAlbums.m; sourceTree = "<group>"; };
-		84E3E1A216307303008C9446 /* AutorisationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutorisationController.h; sourceTree = "<group>"; };
-		84E3E1A316307303008C9446 /* AutorisationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutorisationController.m; sourceTree = "<group>"; };
-		84E6F16F1661577000403C0A /* UIViewControllerFacebookPhotos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIViewControllerFacebookPhotos.h; path = Facebook/UIViewControllerFacebookPhotos.h; sourceTree = "<group>"; };
-		84E6F1701661577000403C0A /* UIViewControllerFacebookPhotos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIViewControllerFacebookPhotos.m; path = Facebook/UIViewControllerFacebookPhotos.m; sourceTree = "<group>"; };
+		84E19753166029CD00A47A20 /* FacebookAlbumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FacebookAlbumViewController.h; path = Facebook/FacebookAlbumViewController.h; sourceTree = "<group>"; };
+		84E19754166029CD00A47A20 /* FacebookAlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FacebookAlbumViewController.m; path = Facebook/FacebookAlbumViewController.m; sourceTree = "<group>"; };
+		84E3E1A216307303008C9446 /* AutorisationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutorisationViewController.h; sourceTree = "<group>"; };
+		84E3E1A316307303008C9446 /* AutorisationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutorisationViewController.m; sourceTree = "<group>"; };
+		84E6F16F1661577000403C0A /* FacebookPhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FacebookPhotosViewController.h; path = Facebook/FacebookPhotosViewController.h; sourceTree = "<group>"; };
+		84E6F1701661577000403C0A /* FacebookPhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FacebookPhotosViewController.m; path = Facebook/FacebookPhotosViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -633,12 +633,12 @@
 				84AE9576162340B70036BF8D /* diplomAppDelegate.h */,
 				84AE9577162340B70036BF8D /* diplomAppDelegate.m */,
 				84AE9579162340B70036BF8D /* MainStoryboard.storyboard */,
-				84B72B071654540200586008 /* UIViewSettingsController.h */,
-				84B72B081654540200586008 /* UIViewSettingsController.m */,
-				84E3E1A216307303008C9446 /* AutorisationController.h */,
-				84E3E1A316307303008C9446 /* AutorisationController.m */,
-				84AE957C162340B70036BF8D /* diplomViewController.h */,
-				84AE957D162340B70036BF8D /* diplomViewController.m */,
+				84B72B071654540200586008 /* SettingsViewController.h */,
+				84B72B081654540200586008 /* SettingsViewController.m */,
+				84E3E1A216307303008C9446 /* AutorisationViewController.h */,
+				84E3E1A316307303008C9446 /* AutorisationViewController.m */,
+				84AE957C162340B70036BF8D /* MainEditViewController.h */,
+				84AE957D162340B70036BF8D /* MainEditViewController.m */,
 				84AE956E162340B60036BF8D /* Supporting Files */,
 			);
 			path = diplom;
@@ -670,10 +670,10 @@
 		84E1D5DC163C8FFA0082AC9F /* Facebook */ = {
 			isa = PBXGroup;
 			children = (
-				84E19753166029CD00A47A20 /* UIViewControllerFacebookAlbums.h */,
-				84E19754166029CD00A47A20 /* UIViewControllerFacebookAlbums.m */,
-				84E6F16F1661577000403C0A /* UIViewControllerFacebookPhotos.h */,
-				84E6F1701661577000403C0A /* UIViewControllerFacebookPhotos.m */,
+				84E19753166029CD00A47A20 /* FacebookAlbumViewController.h */,
+				84E19754166029CD00A47A20 /* FacebookAlbumViewController.m */,
+				84E6F16F1661577000403C0A /* FacebookPhotosViewController.h */,
+				84E6F1701661577000403C0A /* FacebookPhotosViewController.m */,
 			);
 			name = Facebook;
 			sourceTree = "<group>";
@@ -681,12 +681,12 @@
 		84E3E1981630717F008C9446 /* vk */ = {
 			isa = PBXGroup;
 			children = (
-				84AA0C4C165ACE3B00D45358 /* UITableViewCellCustomWithImage.h */,
-				84AA0C4D165ACE3B00D45358 /* UITableViewCellCustomWithImage.m */,
-				84AA0C4E165ACE3B00D45358 /* UITableViewControllerForVkPhotos.h */,
-				84AA0C4F165ACE3B00D45358 /* UITableViewControllerForVkPhotos.m */,
-				84AA0C50165ACE3B00D45358 /* UITableViewVkAlbumsController.h */,
-				84AA0C51165ACE3B00D45358 /* UITableViewVkAlbumsController.m */,
+				84AA0C4C165ACE3B00D45358 /* CustomTableCellWithImage.h */,
+				84AA0C4D165ACE3B00D45358 /* CustomTableCellWithImage.m */,
+				84AA0C4E165ACE3B00D45358 /* VkPhotosViewController.h */,
+				84AA0C4F165ACE3B00D45358 /* VkPhotosViewController.m */,
+				84AA0C50165ACE3B00D45358 /* VkAlbumViewController.h */,
+				84AA0C51165ACE3B00D45358 /* VkAlbumViewController.m */,
 				84AA0C52165ACE3B00D45358 /* Vkontakte.h */,
 				84AA0C53165ACE3B00D45358 /* Vkontakte.m */,
 				848AC1D516431261007B8A17 /* Cell.xib */,
@@ -838,9 +838,9 @@
 				33541D2116F113610089321E /* Reachability.m in Sources */,
 				84AE9574162340B60036BF8D /* main.m in Sources */,
 				84AE9578162340B70036BF8D /* diplomAppDelegate.m in Sources */,
-				84AE957E162340B70036BF8D /* diplomViewController.m in Sources */,
-				84E3E1A516307303008C9446 /* AutorisationController.m in Sources */,
-				84B72B091654540200586008 /* UIViewSettingsController.m in Sources */,
+				84AE957E162340B70036BF8D /* MainEditViewController.m in Sources */,
+				84E3E1A516307303008C9446 /* AutorisationViewController.m in Sources */,
+				84B72B091654540200586008 /* SettingsViewController.m in Sources */,
 				84AA0BD3165ACC1C00D45358 /* CaptionShadowFilter.m in Sources */,
 				84AA0BD4165ACC1C00D45358 /* DemotivationFilter.m in Sources */,
 				84AA0BD5165ACC1C00D45358 /* EdgeeFilter.m in Sources */,
@@ -866,13 +866,13 @@
 				84AA0BEF165ACD3F00D45358 /* GKImageCropViewController.m in Sources */,
 				84AA0C56165ACE3B00D45358 /* MBProgressHUD.m in Sources */,
 				84AA0C57165ACE3B00D45358 /* NSString+Gender.m in Sources */,
-				84AA0C58165ACE3B00D45358 /* UITableViewCellCustomWithImage.m in Sources */,
-				84AA0C59165ACE3B00D45358 /* UITableViewControllerForVkPhotos.m in Sources */,
-				84AA0C5A165ACE3B00D45358 /* UITableViewVkAlbumsController.m in Sources */,
+				84AA0C58165ACE3B00D45358 /* CustomTableCellWithImage.m in Sources */,
+				84AA0C59165ACE3B00D45358 /* VkPhotosViewController.m in Sources */,
+				84AA0C5A165ACE3B00D45358 /* VkAlbumViewController.m in Sources */,
 				84AA0C5B165ACE3B00D45358 /* Vkontakte.m in Sources */,
 				84AA0C5C165ACE3B00D45358 /* VkontakteViewController.m in Sources */,
-				84E19755166029CD00A47A20 /* UIViewControllerFacebookAlbums.m in Sources */,
-				84E6F1711661577100403C0A /* UIViewControllerFacebookPhotos.m in Sources */,
+				84E19755166029CD00A47A20 /* FacebookAlbumViewController.m in Sources */,
+				84E6F1711661577100403C0A /* FacebookPhotosViewController.m in Sources */,
 				84D07F6F168CA71F009C5B53 /* CircleBlur.m in Sources */,
 				849BF4C4169CD8BE002E2E81 /* ShareViewController.m in Sources */,
 				84471D2216A718A100A942C7 /* InstagramPhotosVIewController.m in Sources */,

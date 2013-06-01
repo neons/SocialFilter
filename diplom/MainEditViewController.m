@@ -6,9 +6,9 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "diplomViewController.h"
+#import "MainEditViewController.h"
 
-@interface diplomViewController()
+@interface MainEditViewController()
 
 @property (strong, nonatomic) MBProgressHUD *hud;
 @property (strong, nonatomic) IBOutlet UISlider *slider;
@@ -26,7 +26,7 @@
 
 @end
 
-@implementation diplomViewController
+@implementation MainEditViewController
 
 -(void)blurIt:(CircleBlur *)sender{
     GPUImageGaussianSelectiveBlurFilter *stillImageFilter = [[GPUImageGaussianSelectiveBlurFilter alloc] init];
@@ -69,7 +69,7 @@
                                                           delegate:self 
                                                  cancelButtonTitle:@"Cancel" 
                                             destructiveButtonTitle:nil 
-                                                 otherButtonTitles:@"Save Photo", @"Email",@"share in VK",@"share in FB",@"Мега пост",nil];
+                                                 otherButtonTitles:@"Сохранить фото", @"Email",@"Отправить в VK",@"Отправить в FB",@"Расширенная отправка",nil];
     actSheet.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
     [actSheet showInView:self.view];
 }
@@ -226,7 +226,7 @@
     }
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(diplomViewController *)sender{
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(MainEditViewController *)sender{
     if ([[segue identifier] isEqualToString:@"ShareSegue"]){
         ShareViewController *destViewController = segue.destinationViewController;
         destViewController.imageForPreview = _mainImage.image;      

@@ -6,17 +6,17 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "AutorisationController.h"
-#import "diplomViewController.h"
+#import "AutorisationViewController.h"
+#import "MainEditViewController.h"
 
-@interface AutorisationController()
+@interface AutorisationViewController()
 
 @property (strong, nonatomic) UIImagePickerController *picker;
 
 @end
 
 
-@implementation AutorisationController
+@implementation AutorisationViewController
 
 - (IBAction)cameraActionButton:(id)sender{
     _picker = [[UIImagePickerController alloc] init];
@@ -55,7 +55,7 @@
         UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard"
                                                                  bundle: nil];    
         
-        diplomViewController *controller = (diplomViewController*)[mainStoryboard                                instantiateViewControllerWithIdentifier: @"filterController"];
+        MainEditViewController *controller = (MainEditViewController*)[mainStoryboard                                instantiateViewControllerWithIdentifier: @"filterController"];
         controller.imageFromPicker = [info objectForKey:UIImagePickerControllerEditedImage];
         [picker dismissModalViewControllerAnimated:NO];
         [self.navigationController pushViewController:controller animated:YES]; 
@@ -67,7 +67,7 @@
     
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard"
                                                              bundle: nil];
-    diplomViewController *controller = (diplomViewController*)[mainStoryboard 
+    MainEditViewController *controller = (MainEditViewController*)[mainStoryboard 
                                                                instantiateViewControllerWithIdentifier: @"filterController"];
     controller.imageFromPicker = croppedImage;
     [self.navigationController pushViewController:controller animated:YES];

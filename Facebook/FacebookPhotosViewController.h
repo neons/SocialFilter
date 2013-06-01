@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "UIViewControllerFacebookAlbums.h"
-#import "UITableViewCellCustomWithImage.h"
-#import "diplomViewController.h"
+#import "FacebookAlbumViewController.h"
+#import "CustomTableCellWithImage.h"
+#import "MainEditViewController.h"
 #import "GKImageCropViewController.h"
 #define DOCUMENTS [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]
 
-@interface UIViewControllerFacebookPhotos : UIViewController <UITableViewDataSource, UITableViewDelegate,UINavigationControllerDelegate,GKImageCropControllerDelegate,MBProgressHUDDelegate>
+@interface FacebookPhotosViewController : UIViewController <UITableViewDataSource, UITableViewDelegate,UINavigationControllerDelegate,GKImageCropControllerDelegate,MBProgressHUDDelegate>
 
 @property (strong, nonatomic) NSString *albumsId;
 

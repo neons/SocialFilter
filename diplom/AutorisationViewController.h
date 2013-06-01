@@ -11,6 +11,6 @@
 #import "GKImageCropViewController.h"
 
 
-@interface AutorisationController : UIViewController <UIImagePickerControllerDelegate,UINavigationControllerDelegate, GKImageCropControllerDelegate>
+@interface AutorisationViewController : UIViewController <UIImagePickerControllerDelegate,UINavigationControllerDelegate, GKImageCropControllerDelegate>
 
 @end

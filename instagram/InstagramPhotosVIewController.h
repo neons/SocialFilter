@@ -9,8 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "IGConnect.h"
 #import "diplomAppDelegate.h"
-#import "UITableViewCellCustomWithImage.h"
-
+#import "CustomTableCellWithImage.h"
 @interface InstagramPhotosViewController : UIViewController <IGSessionDelegate, IGRequestDelegate, UITableViewDataSource, UITableViewDelegate,UINavigationControllerDelegate>
 
 @end

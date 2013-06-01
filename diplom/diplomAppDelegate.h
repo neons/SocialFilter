@@ -9,15 +9,15 @@
 #import <UIKit/UIKit.h>
 #import <FacebookSDK/FacebookSDK.h>
 #import "IGConnect.h"
-#import "UIViewControllerFacebookAlbums.h"
+#import "FacebookAlbumViewController.h"
 #import "Reachability.h"
 
-@class UIViewControllerFacebookAlbums;
+@class FacebookAlbumViewController;
 
 @interface diplomAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-@property (nonatomic, retain)  UIViewControllerFacebookAlbums *facebookController;
+@property (nonatomic, retain)  FacebookAlbumViewController *facebookController;
 @property (strong, nonatomic) Instagram *instagram;
 @property (nonatomic) BOOL internet;
 

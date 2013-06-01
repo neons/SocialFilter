@@ -6,9 +6,9 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "UIViewControllerFacebookPhotos.h"
+#import "FacebookPhotosViewController.h"
 
-@interface UIViewControllerFacebookPhotos()
+@interface FacebookPhotosViewController()
 @property (strong, nonatomic) NSMutableDictionary *dictionaryWitSortPhotos;
 @property (nonatomic) BOOL needCache;
 @property (strong, nonatomic) UIImage *defaultImage;
@@ -23,7 +23,7 @@
 
 @end
 
-@implementation UIViewControllerFacebookPhotos
+@implementation FacebookPhotosViewController
 
 
 
@@ -163,9 +163,9 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *CellIdentifier = @"SecondCell";
-    UITableViewCellCustomWithImage *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    CustomTableCellWithImage *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [UITableViewCellCustomWithImage cell];
+        cell = [CustomTableCellWithImage cell];
     }
     
     NSString *photoUrl=[_dictionaryWitSortPhotos objectForKey:[NSString stringWithFormat:@"PhotoInSection%iInRow1",indexPath.row]][@"picture"];
@@ -261,7 +261,7 @@
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard"
                                                              bundle: nil];    
     
-    diplomViewController *controller = (diplomViewController*)[mainStoryboard 
+    MainEditViewController *controller = (MainEditViewController*)[mainStoryboard 
                                                                instantiateViewControllerWithIdentifier: @"filterController"];
     controller.imageFromPicker = croppedImage;
     [self.navigationController pushViewController:controller animated:YES]; 

@@ -6,8 +6,8 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "UITableViewControllerForVkPhotos.h"
-@interface UITableViewControllerForVkPhotos()
+#import "VkPhotosViewController.h"
+@interface VkPhotosViewController()
 @property (nonatomic) BOOL  needCache;
 @property (nonatomic, strong ) NSString * filePath;
 @property (strong, nonatomic) MBProgressHUD *hud;
@@ -22,7 +22,7 @@
 
 @end
 
-@implementation UITableViewControllerForVkPhotos
+@implementation VkPhotosViewController
 
 #pragma mark - View lifecycle
 
@@ -152,10 +152,10 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     static NSString *CellIdentifier = @"SecondCell";
-    UITableViewCellCustomWithImage *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    CustomTableCellWithImage *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) 
     {
-        cell = [UITableViewCellCustomWithImage cell];
+        cell = [CustomTableCellWithImage cell];
     }
     
     NSString *photoUrl=[_dictionaryWithArrayofPhoto objectForKey:[NSString stringWithFormat:@"PhotoInSection%iInRow1",indexPath.row]][@"src"];
@@ -239,7 +239,7 @@
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard"
                                                              bundle: nil];    
     
-    diplomViewController *controller = (diplomViewController*)[mainStoryboard 
+    MainEditViewController *controller = (MainEditViewController*)[mainStoryboard 
                                                                instantiateViewControllerWithIdentifier: @"filterController"];
     controller.imageFromPicker = croppedImage;
     [self.navigationController pushViewController:controller animated:YES];

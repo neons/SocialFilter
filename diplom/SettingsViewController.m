@@ -6,18 +6,18 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "UIViewSettingsController.h"
+#import "SettingsViewController.h"
 
 #define DOCUMENTS [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]
 
-@interface UIViewSettingsController()
+@interface SettingsViewController()
 @property (strong,nonatomic) NSUserDefaults *userDefaults;
 @property (weak, nonatomic) IBOutlet UISwitch *switcher;
 @property (weak, nonatomic) IBOutlet UIButton *deleteButton;
 
 @end
 
-@implementation UIViewSettingsController
+@implementation SettingsViewController
 
 - (IBAction)closeButton:(UIButton *)sender {
     [self.presentingViewController dismissModalViewControllerAnimated:YES];

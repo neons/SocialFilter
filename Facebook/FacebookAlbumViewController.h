@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "diplomAppDelegate.h"
-#import "UIViewControllerFacebookPhotos.h"
+#import "FacebookPhotosViewController.h"
 
-@interface UIViewControllerFacebookAlbums : UIViewController <UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface FacebookAlbumViewController : UIViewController <UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 

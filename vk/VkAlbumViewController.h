@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "Vkontakte.h"
-#import "UITableViewControllerForVkPhotos.h"
-#import "diplomViewController.h"
+#import "VkPhotosViewController.h"
+#import "MainEditViewController.h"
 
-@interface UITableViewVkAlbumsController : UIViewController<VkontakteDelegate, UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface VkAlbumViewController : UIViewController<VkontakteDelegate, UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 
 @property (strong,nonatomic) NSDictionary *dictionaryOfAlbums;
 @property (strong, nonatomic) Vkontakte *vkontakte; 

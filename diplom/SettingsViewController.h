@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIViewSettingsController : UIViewController
+@interface SettingsViewController : UIViewController
 
 
 @end

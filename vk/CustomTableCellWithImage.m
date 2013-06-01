@@ -6,13 +6,13 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "UITableViewCellCustomWithImage.h"
+#import "CustomTableCellWithImage.h"
 
-@implementation UITableViewCellCustomWithImage
+@implementation CustomTableCellWithImage
 
 
 
-+(UITableViewCellCustomWithImage*) cell{
++(CustomTableCellWithImage*) cell{
     NSArray *objects=[[NSBundle mainBundle] loadNibNamed:@"Cell" owner:nil options:nil];
     return [objects objectAtIndex:0];
 }

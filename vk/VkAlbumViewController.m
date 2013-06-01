@@ -6,15 +6,15 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "UITableViewVkAlbumsController.h"
-@interface UITableViewVkAlbumsController()
+#import "VkAlbumViewController.h"
+@interface VkAlbumViewController()
 
 @property (nonatomic, strong ) NSMutableDictionary *staticImageDictionary;
 @property (strong, nonatomic) MBProgressHUD *hud;
 
 @end
 
-@implementation UITableViewVkAlbumsController
+@implementation VkAlbumViewController
 
 #pragma mark - View lifecycle
 
@@ -130,7 +130,7 @@
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard"
                                                              bundle: nil];    
     
-    UITableViewControllerForVkPhotos *controller = (UITableViewControllerForVkPhotos*)[mainStoryboard 
+    VkPhotosViewController *controller = (VkPhotosViewController*)[mainStoryboard
                                                                instantiateViewControllerWithIdentifier: @"vkPhotoController"];
     controller.aid = aid;
     [self.navigationController pushViewController:controller animated:YES];

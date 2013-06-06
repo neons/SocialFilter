@@ -125,7 +125,10 @@
     NSDictionary *currentDictionary=[NSDictionary new];
     
     currentDictionary = [_dictionaryOfAlbums objectForKey:[NSString stringWithFormat:@"Album%i",indexPath.row+1]];
-    NSString *aid=[currentDictionary[@"aid"]stringValue];
+    NSString *aid=currentDictionary[@"aid"];
+        if(![aid isKindOfClass:[NSString class]]){
+            aid = [(NSNumber*)aid stringValue];
+        }
   
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard"
                                                              bundle: nil];    
